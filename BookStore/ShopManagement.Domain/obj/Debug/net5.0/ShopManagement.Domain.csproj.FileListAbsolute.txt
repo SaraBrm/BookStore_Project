@@ -1,0 +1,17 @@
+D:\BookStoreProject\BookStore\ShopManagement.Domain\bin\Debug\net5.0\ShopManagement.Domain.deps.json
+D:\BookStoreProject\BookStore\ShopManagement.Domain\bin\Debug\net5.0\ShopManagement.Domain.dll
+D:\BookStoreProject\BookStore\ShopManagement.Domain\bin\Debug\net5.0\ref\ShopManagement.Domain.dll
+D:\BookStoreProject\BookStore\ShopManagement.Domain\bin\Debug\net5.0\ShopManagement.Domain.pdb
+D:\BookStoreProject\BookStore\ShopManagement.Domain\obj\Debug\net5.0\ShopManagement.Domain.csproj.AssemblyReference.cache
+D:\BookStoreProject\BookStore\ShopManagement.Domain\obj\Debug\net5.0\ShopManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\BookStoreProject\BookStore\ShopManagement.Domain\obj\Debug\net5.0\ShopManagement.Domain.AssemblyInfoInputs.cache
+D:\BookStoreProject\BookStore\ShopManagement.Domain\obj\Debug\net5.0\ShopManagement.Domain.AssemblyInfo.cs
+D:\BookStoreProject\BookStore\ShopManagement.Domain\obj\Debug\net5.0\ShopManagement.Domain.csproj.CoreCompileInputs.cache
+D:\BookStoreProject\BookStore\ShopManagement.Domain\obj\Debug\net5.0\ShopManagement.Domain.dll
+D:\BookStoreProject\BookStore\ShopManagement.Domain\obj\Debug\net5.0\ref\ShopManagement.Domain.dll
+D:\BookStoreProject\BookStore\ShopManagement.Domain\obj\Debug\net5.0\ShopManagement.Domain.pdb
+D:\BookStoreProject\BookStore\ShopManagement.Domain\bin\Debug\net5.0\0_Framework.dll
+D:\BookStoreProject\BookStore\ShopManagement.Domain\bin\Debug\net5.0\ShopManagement.Application.Contracts.dll
+D:\BookStoreProject\BookStore\ShopManagement.Domain\bin\Debug\net5.0\0_Framework.pdb
+D:\BookStoreProject\BookStore\ShopManagement.Domain\bin\Debug\net5.0\ShopManagement.Application.Contracts.pdb
+D:\BookStoreProject\BookStore\ShopManagement.Domain\obj\Debug\net5.0\ShopManagement.Domain.csproj.CopyComplete
