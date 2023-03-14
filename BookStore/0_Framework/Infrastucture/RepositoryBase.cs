@@ -38,7 +38,7 @@ namespace _0_Framework.Infrastucture
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            _context.SaveChanges();
         }
     }
 }
