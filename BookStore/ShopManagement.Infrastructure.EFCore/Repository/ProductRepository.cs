@@ -52,6 +52,8 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 Picture = x.Picture,
                 Category = x.Category.Name,
                 CategoryId = x.CategoryId,
+                CreationDate=x.CreationDate.ToString(),
+                UnitPrice= x.UnitPrice
             });
 
             if (!string.IsNullOrWhiteSpace(searchModel.Name))
