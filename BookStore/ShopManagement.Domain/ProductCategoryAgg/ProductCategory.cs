@@ -1,4 +1,6 @@
 ﻿using _0_Framework.Domain;
+using ShopManagement.Domain.ProductAgg;
+using System.Collections.Generic;
 
 namespace ShopManagement.Domain.ProductCategoryAgg
 {
@@ -12,6 +14,12 @@ namespace ShopManagement.Domain.ProductCategoryAgg
         public string Keywords { get; set; }
         public string MetaDescription { get; set; }
         public string Slug { get; set; }
+        public List<Product> Products { get; set; }
+
+        public ProductCategory()
+        {
+            Products=new List<Product>();
+        }
 
         public ProductCategory(string name, string description, string picture, 
             string pictureAlt, string pictureTitle, string keywords,
