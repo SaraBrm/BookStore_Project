@@ -13,5 +13,6 @@
         public long CategoryId { get; set; }
         public double UnitPrice { get; set; }
         public string CreationDate { get; set; }
+        public bool IsInStock { get; set; }
     }
 }
