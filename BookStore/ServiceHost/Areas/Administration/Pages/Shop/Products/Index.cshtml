@@ -5,14 +5,14 @@
 
 @{
     Layout = "Shared/_AdminLayout";
-    ViewData["title"] = "مدیریت محصولات";
+    ViewData["title"] = "مدیریت کتاب ها";
 }
 
 <div class="row">
     <div class="col-sm-12">
         <h4 class="page-title pull-right">@ViewData["title"]</h4>
         <p class="pull-left">
-            <a class="btn btn-success btn-lg" href="#showmodal=@Url.Page("./Index", "Create")">ایجاد محصول جدید</a>
+            <a class="btn btn-success btn-lg" href="#showmodal=@Url.Page("./Index", "Create")">ایجاد کتاب جدید</a>
         </p>
     </div>
 </div>
@@ -21,7 +21,7 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">جستجو در محصولات</h3>
+                <h3 class="panel-title">جستجو در کتاب ها</h3>
             </div>
             <div class="panel-body">
                 <form class="form-inline" role="form" method="get">
@@ -55,7 +55,7 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">لیست محصولات</h3>
+                <h3 class="panel-title">لیست کتاب ها</h3>
             </div>
             <div class="panel-body">
                 <div class="row">
