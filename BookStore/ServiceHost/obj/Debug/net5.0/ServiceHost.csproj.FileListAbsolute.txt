@@ -167,7 +167,6 @@ D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administr
 D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\Products\Create.cshtml.g.cs
 D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\Products\Edit.cshtml.g.cs
 D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\Products\Index.cshtml.g.cs
-D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
-D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
-D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
-D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\ProductPictures\Create.cshtml.g.cs
+D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\ProductPictures\Edit.cshtml.g.cs
+D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\ProductPictures\Index.cshtml.g.cs
