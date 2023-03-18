@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace ShopManagement.Application
 {
-    internal class SlideApplication : ISlideApplication
+    public class SlideApplication : ISlideApplication
     {
         private readonly ISlideRepository _slideRepository;
 
