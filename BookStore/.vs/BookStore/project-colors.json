@@ -50,7 +50,12 @@
       "ProjectGuid": "8e615d0c-b7ab-41ad-998d-7789fb09df46",
       "DisplayName": "ShopManagement.Configuration",
       "ColorIndex": 8
+    },
+    "a56b0029-328d-43c2-b663-ae44e79c92b9": {
+      "ProjectGuid": "a56b0029-328d-43c2-b663-ae44e79c92b9",
+      "DisplayName": "01_BookStoreQuery",
+      "ColorIndex": 9
     }
   },
-  "NextColorIndex": 9
+  "NextColorIndex": 10
 }

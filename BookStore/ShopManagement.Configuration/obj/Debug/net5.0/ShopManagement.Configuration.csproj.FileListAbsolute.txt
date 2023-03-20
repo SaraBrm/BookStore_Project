@@ -24,3 +24,5 @@ D:\BookStoreProject\BookStore\ShopManagement.Configuration\obj\Debug\net5.0\Shop
 D:\BookStoreProject\BookStore\ShopManagement.Configuration\obj\Debug\net5.0\ref\ShopManagement.Configuration.dll
 D:\BookStoreProject\BookStore\ShopManagement.Configuration\obj\Debug\net5.0\ShopManagement.Configuration.pdb
 D:\BookStoreProject\BookStore\ShopManagement.Configuration\obj\Debug\net5.0\ShopManagement.Configuration.genruntimeconfig.cache
+D:\BookStoreProject\BookStore\ShopManagement.Configuration\bin\Debug\net5.0\01_BookStoreQuery.dll
+D:\BookStoreProject\BookStore\ShopManagement.Configuration\bin\Debug\net5.0\01_BookStoreQuery.pdb
