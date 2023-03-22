@@ -177,3 +177,4 @@ D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administr
 D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\01_BookStoreQuery.dll
 D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\01_BookStoreQuery.pdb
 D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\Slide\Default.cshtml.g.cs
+D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\ProductCategory\Default.cshtml.g.cs
