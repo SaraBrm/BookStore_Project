@@ -55,7 +55,17 @@
       "ProjectGuid": "a56b0029-328d-43c2-b663-ae44e79c92b9",
       "DisplayName": "01_BookStoreQuery",
       "ColorIndex": 9
+    },
+    "d67fa042-18d1-4672-b3e3-1215f4e5428e": {
+      "ProjectGuid": "d67fa042-18d1-4672-b3e3-1215f4e5428e",
+      "DisplayName": "DiscountManagement.Domain",
+      "ColorIndex": 10
+    },
+    "db0e21a4-7fdd-4778-a225-93a91761be27": {
+      "ProjectGuid": "db0e21a4-7fdd-4778-a225-93a91761be27",
+      "DisplayName": "DiscountManagement.Application.Contract",
+      "ColorIndex": 11
     }
   },
-  "NextColorIndex": 10
+  "NextColorIndex": 12
 }
