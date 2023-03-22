@@ -1,0 +1,15 @@
+D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.deps.json
+D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.runtimeconfig.json
+D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.runtimeconfig.dev.json
+D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.dll
+D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\ref\DiscountManagement.Infrastructure.EFCore.dll
+D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.pdb
+D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.csproj.AssemblyReference.cache
+D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.GeneratedMSBuildEditorConfig.editorconfig
+D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.AssemblyInfoInputs.cache
+D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.AssemblyInfo.cs
+D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.csproj.CoreCompileInputs.cache
+D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.dll
+D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\ref\DiscountManagement.Infrastructure.EFCore.dll
+D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.pdb
+D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.genruntimeconfig.cache

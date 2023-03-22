@@ -65,7 +65,17 @@
       "ProjectGuid": "db0e21a4-7fdd-4778-a225-93a91761be27",
       "DisplayName": "DiscountManagement.Application.Contract",
       "ColorIndex": 11
+    },
+    "25efd95a-e413-4bb5-9841-c5bb1305f760": {
+      "ProjectGuid": "25efd95a-e413-4bb5-9841-c5bb1305f760",
+      "DisplayName": "DiscountManagement.Application",
+      "ColorIndex": 12
+    },
+    "f5d30fac-8290-4261-872c-f8c712280689": {
+      "ProjectGuid": "f5d30fac-8290-4261-872c-f8c712280689",
+      "DisplayName": "DiscountManagement.Infrastructure.EFCore",
+      "ColorIndex": 13
     }
   },
-  "NextColorIndex": 12
+  "NextColorIndex": 14
 }
