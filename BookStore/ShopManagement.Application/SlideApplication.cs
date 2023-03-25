@@ -21,7 +21,7 @@ namespace ShopManagement.Application
                 command.Title, command.Text, command.BtnText, command.Link);
             _slideRepository.Create(slide);
             _slideRepository.SaveChanges();
-            return operation.Succedded();
+            return operation.Succeeded();
         }
 
         public OperationResult Edit(EditSlide command)
@@ -34,7 +34,7 @@ namespace ShopManagement.Application
             slide.Edit(command.Picture, command.PictureAlt, command.PictureTitle, command.Heading,
                 command.Title, command.Text, command.BtnText, command.Link);
             _slideRepository.SaveChanges();
-            return operation.Succedded();
+            return operation.Succeeded();
         }
 
         public EditSlide GetDetails(long id)
@@ -56,7 +56,7 @@ namespace ShopManagement.Application
 
             slide.Remove();
             _slideRepository.SaveChanges();
-            return operation.Succedded();
+            return operation.Succeeded();
         }
 
         public OperationResult Restore(long id)
@@ -68,7 +68,7 @@ namespace ShopManagement.Application
 
             slide.Restore();
             _slideRepository.SaveChanges();
-            return operation.Succedded();
+            return operation.Succeeded();
         }
     }
 }

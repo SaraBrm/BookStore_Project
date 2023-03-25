@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mnfHVuXJCgzxbuvv+r/0tSp4OPbcQBRs0Fy2Db7HHUp+o7xZ4zCYsoKqH80MjbwqqkzIQfmKhW1gYt1a+DCVxw==",
+  "dgSpecHash": "HR3+vb1yrSzOO+giMASFLfyOI82BT35LC0THQeaoT/PZjsSudNA/ZoBqdzdzIElBnJfcwp/VmBT/gk2Iqcb/dA==",
   "success": true,
   "projectFilePath": "D:\\BookStoreProject\\BookStore\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj",
   "expectedPackageFiles": [

@@ -100,6 +100,9 @@
             "projectReferences": {
               "D:\\BookStoreProject\\BookStore\\0_Framework\\0_Framework.csproj": {
                 "projectPath": "D:\\BookStoreProject\\BookStore\\0_Framework\\0_Framework.csproj"
+              },
+              "D:\\BookStoreProject\\BookStore\\ShopManagement.Application.Contracts\\ShopManagement.Application.Contracts.csproj": {
+                "projectPath": "D:\\BookStoreProject\\BookStore\\ShopManagement.Application.Contracts\\ShopManagement.Application.Contracts.csproj"
               }
             }
           }

@@ -37,11 +37,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DM.Application", "DM.Applic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscountManagement.Application.Contract", "DiscountManagement.Application.Contract\DiscountManagement.Application.Contract.csproj", "{DB0E21A4-7FDD-4778-A225-93A91761BE27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountManagement.Application", "DiscountManagement.Application\DiscountManagement.Application.csproj", "{25EFD95A-E413-4BB5-9841-C5BB1305F760}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscountManagement.Application", "DiscountManagement.Application\DiscountManagement.Application.csproj", "{25EFD95A-E413-4BB5-9841-C5BB1305F760}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DM.Infrastructure", "DM.Infrastructure", "{035D8FDF-3780-4EF7-A1E1-1470B4A31FA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountManagement.Infrastructure.EFCore", "DiscountManagement.Infrastructure.EFCore\DiscountManagement.Infrastructure.EFCore.csproj", "{F5D30FAC-8290-4261-872C-F8C712280689}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscountManagement.Infrastructure.EFCore", "DiscountManagement.Infrastructure.EFCore\DiscountManagement.Infrastructure.EFCore.csproj", "{F5D30FAC-8290-4261-872C-F8C712280689}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountManagement.Configuration", "DiscountManagement.Configuration\DiscountManagement.Configuration.csproj", "{FACE30F3-6729-484D-BB14-1273013605FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +99,10 @@ Global
 		{F5D30FAC-8290-4261-872C-F8C712280689}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5D30FAC-8290-4261-872C-F8C712280689}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5D30FAC-8290-4261-872C-F8C712280689}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FACE30F3-6729-484D-BB14-1273013605FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FACE30F3-6729-484D-BB14-1273013605FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FACE30F3-6729-484D-BB14-1273013605FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FACE30F3-6729-484D-BB14-1273013605FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -117,6 +123,7 @@ Global
 		{25EFD95A-E413-4BB5-9841-C5BB1305F760} = {167EB583-C95D-4EC9-B076-CF246417F3C3}
 		{035D8FDF-3780-4EF7-A1E1-1470B4A31FA7} = {78F3CB96-ABB0-448D-9C64-432744A1351A}
 		{F5D30FAC-8290-4261-872C-F8C712280689} = {035D8FDF-3780-4EF7-A1E1-1470B4A31FA7}
+		{FACE30F3-6729-484D-BB14-1273013605FC} = {035D8FDF-3780-4EF7-A1E1-1470B4A31FA7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D4C6D7A9-1936-4075-BF0D-4A0E9E697C79}

@@ -17,3 +17,5 @@ D:\BookStoreProject\BookStore\DiscountManagement.Application\obj\Debug\net5.0\re
 D:\BookStoreProject\BookStore\DiscountManagement.Application\obj\Debug\net5.0\DiscountManagement.Application.pdb
 D:\BookStoreProject\BookStore\DiscountManagement.Application\bin\Debug\net5.0\DiscountManagement.Domain.dll
 D:\BookStoreProject\BookStore\DiscountManagement.Application\bin\Debug\net5.0\DiscountManagement.Domain.pdb
+D:\BookStoreProject\BookStore\DiscountManagement.Application\bin\Debug\net5.0\ShopManagement.Application.Contracts.dll
+D:\BookStoreProject\BookStore\DiscountManagement.Application\bin\Debug\net5.0\ShopManagement.Application.Contracts.pdb

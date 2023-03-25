@@ -149,10 +149,19 @@
       },
       "DiscountManagement.Application.Contract/1.0.0": {
         "dependencies": {
-          "0_Framework": "1.0.0"
+          "0_Framework": "1.0.0",
+          "ShopManagement.Application.Contracts": "1.0.0"
         },
         "runtime": {
           "DiscountManagement.Application.Contract.dll": {}
+        }
+      },
+      "ShopManagement.Application.Contracts.Reference/1.0.0.0": {
+        "runtime": {
+          "ShopManagement.Application.Contracts.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
@@ -268,6 +277,11 @@
     },
     "DiscountManagement.Application.Contract/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ShopManagement.Application.Contracts.Reference/1.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

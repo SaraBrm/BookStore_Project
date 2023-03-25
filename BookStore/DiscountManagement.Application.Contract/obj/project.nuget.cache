@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7I7FhYdn9U2c5XkQfCk/ZsDJYtVTf5yh5MVTLNbymvRX+1Xn0Ns3Ar8SA/1H6CWOMaTChMmHMCCToRF8V06I+A==",
+  "dgSpecHash": "CndQ4egc1AEUKwM8BONN/OSeMV1JVfQ5HrnBna+dkcyjAoo+NDs1J8R0PRBrlPu4PbN7zh/p+ctUQ00y/MO7YQ==",
   "success": true,
   "projectFilePath": "D:\\BookStoreProject\\BookStore\\DiscountManagement.Application.Contract\\DiscountManagement.Application.Contract.csproj",
   "expectedPackageFiles": [

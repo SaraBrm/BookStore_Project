@@ -64,7 +64,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Products
         public IActionResult OnGetNotInStock(long id)
         {
             var result=_productApplication.NotInStock(id);
-            if (result.IsSuccedded)
+            if (result.IsSucceeded)
                 return RedirectToPage("./Index");
 
             Message = result.Message;
@@ -74,7 +74,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Products
         public IActionResult OnGetIsInStock(long id)
         {
             var result=_productApplication.InStock(id);
-            if (result.IsSuccedded)
+            if (result.IsSucceeded)
                 return RedirectToPage("./Index");
 
             Message = result.Message;

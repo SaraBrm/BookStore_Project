@@ -8,7 +8,6 @@ D:\BookStoreProject\BookStore\ShopManagement.Application\bin\Debug\net5.0\ShopMa
 D:\BookStoreProject\BookStore\ShopManagement.Application\bin\Debug\net5.0\ShopManagement.Application.Contracts.pdb
 D:\BookStoreProject\BookStore\ShopManagement.Application\bin\Debug\net5.0\ShopManagement.Domain.pdb
 D:\BookStoreProject\BookStore\ShopManagement.Application\bin\Debug\net5.0\0_Framework.pdb
-D:\BookStoreProject\BookStore\ShopManagement.Application\obj\Debug\net5.0\ShopManagement.Application.csproj.AssemblyReference.cache
 D:\BookStoreProject\BookStore\ShopManagement.Application\obj\Debug\net5.0\ShopManagement.Application.GeneratedMSBuildEditorConfig.editorconfig
 D:\BookStoreProject\BookStore\ShopManagement.Application\obj\Debug\net5.0\ShopManagement.Application.AssemblyInfoInputs.cache
 D:\BookStoreProject\BookStore\ShopManagement.Application\obj\Debug\net5.0\ShopManagement.Application.AssemblyInfo.cs
@@ -17,3 +16,4 @@ D:\BookStoreProject\BookStore\ShopManagement.Application\obj\Debug\net5.0\ShopMa
 D:\BookStoreProject\BookStore\ShopManagement.Application\obj\Debug\net5.0\ShopManagement.Application.dll
 D:\BookStoreProject\BookStore\ShopManagement.Application\obj\Debug\net5.0\ref\ShopManagement.Application.dll
 D:\BookStoreProject\BookStore\ShopManagement.Application\obj\Debug\net5.0\ShopManagement.Application.pdb
+D:\BookStoreProject\BookStore\ShopManagement.Application\obj\Debug\net5.0\ShopManagement.Application.csproj.AssemblyReference.cache

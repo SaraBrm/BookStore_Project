@@ -9,8 +9,6 @@
       "ShopManagement.Configuration/1.0.0": {
         "dependencies": {
           "01_BookStoreQuery": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "5.0.17",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.17",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.17",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
           "ShopManagement.Application": "1.0.0",
