@@ -195,3 +195,6 @@ D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\Microsoft.AspNetCore.
 D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
 D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
 D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Discounts\ColleagueDiscounts\Create.cshtml.g.cs
+D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Discounts\ColleagueDiscounts\Edit.cshtml.g.cs
+D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Discounts\ColleagueDiscounts\Index.cshtml.g.cs
