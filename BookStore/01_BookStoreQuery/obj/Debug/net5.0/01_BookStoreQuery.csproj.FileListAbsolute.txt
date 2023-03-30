@@ -10,7 +10,6 @@ D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\ShopManagement.
 D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\0_Framework.pdb
 D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\ShopManagement.Application.Contracts.pdb
 D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\ShopManagement.Domain.pdb
-D:\BookStoreProject\BookStore\01_BookStoreQuery\obj\Debug\net5.0\01_BookStoreQuery.csproj.AssemblyReference.cache
 D:\BookStoreProject\BookStore\01_BookStoreQuery\obj\Debug\net5.0\01_BookStoreQuery.GeneratedMSBuildEditorConfig.editorconfig
 D:\BookStoreProject\BookStore\01_BookStoreQuery\obj\Debug\net5.0\01_BookStoreQuery.AssemblyInfoInputs.cache
 D:\BookStoreProject\BookStore\01_BookStoreQuery\obj\Debug\net5.0\01_BookStoreQuery.AssemblyInfo.cs
@@ -19,3 +18,4 @@ D:\BookStoreProject\BookStore\01_BookStoreQuery\obj\Debug\net5.0\01_BookStoreQue
 D:\BookStoreProject\BookStore\01_BookStoreQuery\obj\Debug\net5.0\01_BookStoreQuery.dll
 D:\BookStoreProject\BookStore\01_BookStoreQuery\obj\Debug\net5.0\ref\01_BookStoreQuery.dll
 D:\BookStoreProject\BookStore\01_BookStoreQuery\obj\Debug\net5.0\01_BookStoreQuery.pdb
+D:\BookStoreProject\BookStore\01_BookStoreQuery\obj\Debug\net5.0\01_BookStoreQuery.csproj.AssemblyReference.cache
