@@ -16,4 +16,3 @@ D:\BookStoreProject\BookStore\ShopManagement.Application\obj\Debug\net5.0\ShopMa
 D:\BookStoreProject\BookStore\ShopManagement.Application\obj\Debug\net5.0\ShopManagement.Application.dll
 D:\BookStoreProject\BookStore\ShopManagement.Application\obj\Debug\net5.0\ref\ShopManagement.Application.dll
 D:\BookStoreProject\BookStore\ShopManagement.Application\obj\Debug\net5.0\ShopManagement.Application.pdb
-D:\BookStoreProject\BookStore\ShopManagement.Application\obj\Debug\net5.0\ShopManagement.Application.csproj.AssemblyReference.cache

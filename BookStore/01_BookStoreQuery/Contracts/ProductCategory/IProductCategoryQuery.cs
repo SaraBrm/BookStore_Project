@@ -5,5 +5,7 @@ namespace _01_BookStoreQuery.Contracts.ProductCategory
     public interface IProductCategoryQuery
     {
         List<ProductCategoryQueryModel> GetProductCategories();
+        List<ProductCategoryQueryModel> GetProductCategoriesWithProducts();
+
     }
 }

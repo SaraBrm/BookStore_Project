@@ -1,5 +1,9 @@
-﻿using _01_BookStoreQuery.Contracts.ProductCategory;
+﻿using _01_BookStoreQuery.Contracts.Product;
+using _01_BookStoreQuery.Contracts.ProductCategory;
+using Microsoft.EntityFrameworkCore;
+using ShopManagement.Domain.ProductAgg;
 using ShopManagement.Infrastructure.EFCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -25,6 +29,39 @@ namespace _01_BookStoreQuery.Query
                 PictureTitle=x.PictureTitle,
                 Slug=x.Slug
             }).ToList();
+        }
+
+        public List<ProductCategoryQueryModel> GetProductCategoriesWithProducts()
+        {
+            return _shopContext.ProductCategories.Include(x => x.Products).
+                ThenInclude(x => x.Category).
+                Select(x => new ProductCategoryQueryModel
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Products = MapProduct(x.Products)
+                }).ToList();
+        }
+
+        private static List<ProductQueryModel> MapProduct(List<Product> products)
+        {
+            var result=new List<ProductQueryModel>();
+            foreach (var product in products)
+            {
+                var item = new ProductQueryModel
+                {
+                    Id = product.Id,
+                    Category = product.Category.Name,
+                    Name = product.Name,
+                    Picture = product.Picture,
+                    PictureAlt = product.PictureAlt,
+                    PictureTitle = product.PictureTitle,
+                    Slug = product.Slug
+                };
+                result.Add(item);
+            }
+
+            return result;
         }
     }
 }
