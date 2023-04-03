@@ -19,3 +19,15 @@ D:\BookStoreProject\BookStore\01_BookStoreQuery\obj\Debug\net5.0\01_BookStoreQue
 D:\BookStoreProject\BookStore\01_BookStoreQuery\obj\Debug\net5.0\ref\01_BookStoreQuery.dll
 D:\BookStoreProject\BookStore\01_BookStoreQuery\obj\Debug\net5.0\01_BookStoreQuery.pdb
 D:\BookStoreProject\BookStore\01_BookStoreQuery\obj\Debug\net5.0\01_BookStoreQuery.csproj.AssemblyReference.cache
+D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\DiscountManagement.Application.Contract.dll
+D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\DiscountManagement.Domain.dll
+D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.dll
+D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\InventoryManagement.Application.Contract.dll
+D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\InventoryManagement.Domain.dll
+D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\InventoryManagement.Infrastructure.EFCore.dll
+D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.pdb
+D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\InventoryManagement.Infrastructure.EFCore.pdb
+D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\DiscountManagement.Application.Contract.pdb
+D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\DiscountManagement.Domain.pdb
+D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\InventoryManagement.Application.Contract.pdb
+D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\InventoryManagement.Domain.pdb
