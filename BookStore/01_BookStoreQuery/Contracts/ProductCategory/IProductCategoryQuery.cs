@@ -6,6 +6,6 @@ namespace _01_BookStoreQuery.Contracts.ProductCategory
     {
         List<ProductCategoryQueryModel> GetProductCategories();
         List<ProductCategoryQueryModel> GetProductCategoriesWithProducts();
-
+        ProductCategoryQueryModel GetProductCategoryWithProductsBy(string slug);
     }
 }
