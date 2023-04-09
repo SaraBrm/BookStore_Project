@@ -216,3 +216,5 @@ D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Pages\ProductCa
 D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\Footer\Default.cshtml.g.cs
 D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\Menu\Default.cshtml.g.cs
 D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Pages\Search.cshtml.g.cs
+D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Pages\Product.cshtml.g.cs
+D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\Comments\Index.cshtml.g.cs

@@ -1,4 +1,5 @@
 ﻿using _0_Framework.Domain;
+using ShopManagement.Domain.CommentAgg;
 using ShopManagement.Domain.ProductCategoryAgg;
 using ShopManagement.Domain.ProductPictureAgg;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace ShopManagement.Domain.ProductAgg
         public long CategoryId { get; private set; }
         public ProductCategory Category { get; private set; }
         public List<ProductPicture> ProductPictures { get; private set; }
+        public List<Comment> Comments { get; private set; }
 
         public Product(string code, string name, string author, string translator, 
             string publication, string shortDescription, string description,

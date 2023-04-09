@@ -1,5 +1,4 @@
 using _01_BookStoreQuery.Contracts.ProductCategory;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ServiceHost.Pages
