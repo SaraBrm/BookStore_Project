@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3hnYD0nGbNzePlWDfe6JVLmfjyx03xz4+4JofCmUFcP67goCOm/KuP35emyLjI68+hlrjzQI2Oeu2KyrZMcq1g==",
+  "dgSpecHash": "TH7+LR2Y+h5VUT4GHua2ov01DEF4WzDLFWc8EMeBPT3dOWi/IUdWlX91GhDD2yyzMGaRqRXTswZrWNFBcxSseQ==",
   "success": true,
   "projectFilePath": "D:\\BookStoreProject\\BookStore\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj",
   "expectedPackageFiles": [

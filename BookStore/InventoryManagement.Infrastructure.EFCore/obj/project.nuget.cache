@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9Lgmk4D7DFgJdXPETwHOWAA11ujcIuqW4Cb789+gZMVToEvyzmLxR71k/nXyp6bzCvqFK5UXMez27oZXNy/cQQ==",
+  "dgSpecHash": "puMPil1l1lHIvMxd+mqJOzCCuMimwXyFZ1IYvcQlh+uk0oy7ICxkPT/TGfzrHINRf30aLwyzbPH0xRVZZ9icHA==",
   "success": true,
   "projectFilePath": "D:\\BookStoreProject\\BookStore\\InventoryManagement.Infrastructure.EFCore\\InventoryManagement.Infrastructure.EFCore.csproj",
   "expectedPackageFiles": [

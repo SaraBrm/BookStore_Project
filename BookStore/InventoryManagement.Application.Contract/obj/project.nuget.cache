@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MMKG+4SoV5RguRlJbSUUsd8IOm93ilE5G9Bcct5UYzK/KFWLnuM7V7CozVtFL0rDETP7UJjTXJcLYxUUBIhp+w==",
+  "dgSpecHash": "RkBQKDTepTGEGkat4QM48YTVwKdLVqw/0MLQaR/iDsBxqIxxv8J4eSAzQLlIua0P9LeCXRpUH2vrnZAXZM3FJg==",
   "success": true,
   "projectFilePath": "D:\\BookStoreProject\\BookStore\\InventoryManagement.Application.Contract\\InventoryManagement.Application.Contract.csproj",
   "expectedPackageFiles": [
