@@ -11,9 +11,8 @@ namespace ShopManagement.Application.Contracts.ProductCategory
 
         public string Description { get; set; }
 
-        [Required(ErrorMessage =ValidationMessages.IsRequired)]
+        //[Required(ErrorMessage =ValidationMessages.IsRequired)]
         [FileExtentionLimitation(new string[] { ".jpeg", ".jpg", ".png" }, ErrorMessage = ValidationMessages.InvalidFileFormat)]
-        // man azin validation sa dar nemiaram .. file jquey koja bud ?
         [MaxFileSize(3 * 1024*1024, ErrorMessage = ValidationMessages.MaxFileSize)]
         public IFormFile Picture { get; set; }
         
