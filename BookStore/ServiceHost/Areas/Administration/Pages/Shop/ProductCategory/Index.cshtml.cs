@@ -44,8 +44,9 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.ProductCategory
         {
             if (ModelState.IsValid)
             {
-
+                
             }
+            
 
             var result=_productCategoryApplication.Edit(command);
             return new JsonResult(result);

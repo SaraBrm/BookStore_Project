@@ -66,23 +66,6 @@
                                         <td>@item.Product</td>
                                         <td>@item.DiscountRate%</td>
                                         <td>@item.CreationDate</td>
-                                        @*<td>
-                                            <a class="btn btn-warning waves-effect waves-light m-b-5"
-                                               href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
-                                                <i class="fa fa-edit"></i> ویرایش
-                                            </a>
-                                            @if (item.IsRemoved)
-                                            {
-                                                <a asp-page="./Index" asp-page-handler="Restore" asp-route-id="@item.Id"
-                                                class="btn btn-success">فعال سازی</a>
-                                            }
-                                            else
-                                            {
-                                                <a asp-page="./Index" asp-page-handler="Remove" asp-route-id="@item.Id"
-                                                class="btn btn-danger">غیرفعال</a>
-                                            }
-                                        </td>*@
-
                                         <td>
                                             <a class="btn btn-warning" 
                                                href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">

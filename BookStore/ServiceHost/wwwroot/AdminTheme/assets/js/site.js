@@ -16,9 +16,16 @@ SinglePage.LoadModal = function () {
             $.validator.unobtrusive.parse(newForm);
             showModal();
         }).fail(function (error) {
-            alert("خطایی رخ داده، لطفا با مدیر سیستم تماس بگیرید.");
+           alert("خطایی رخ داده، لطفا با مدیر سیستم تماس بگیرید.");
         });
 };
+
+
+function closeModal() {
+    window.location.reload(true);
+
+    /*    hideModal();*/
+}
 
 function showModal() {
     $("#MainModal").modal("show");
@@ -193,18 +200,19 @@ jQuery.validator.addMethod("maxFileSize",
         else {
             return true;
         }
+
+
     });
-jQuery.validator.unobtrusive.adapters.addBool("maxFileSize");
+jQuery.validator.unobtrusive.adapters.addBool("fileExtentionLimit");
 
+jQuery.validator.addMethod("fileExtentionLimit",
+    function (value, element, params) {
+        var typeFile = element.files[0].type;
+        if (typeFile == 'image/jpg' || typeFile == 'image/png' || typeFile == 'image/jpeg')
+            return true;
+        else {
+            return false;
+        }
 
-//jQuery.validator.addMethod("fileExtentionLimitation",
-//    function (value, element, params) {
-//        var ext = element.files[0].extention;
-//        var extention = [".jpeg", ".jpg", ".png"];
-//        if (ext != extention)
-//            return false;
-//        else {
-//            return true;
-//        }
-//    });
-//jQuery.validator.unobtrusive.adapters.addBool("fileExtentionLimitation");
+    });
+jQuery.validator.unobtrusive.adapters.addBool("fileExtentionLimit");
