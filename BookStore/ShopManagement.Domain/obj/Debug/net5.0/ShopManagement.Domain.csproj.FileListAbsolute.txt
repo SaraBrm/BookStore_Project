@@ -14,4 +14,3 @@ D:\BookStoreProject\BookStore\ShopManagement.Domain\bin\Debug\net5.0\ShopManagem
 D:\BookStoreProject\BookStore\ShopManagement.Domain\bin\Debug\net5.0\0_Framework.pdb
 D:\BookStoreProject\BookStore\ShopManagement.Domain\bin\Debug\net5.0\ShopManagement.Application.Contracts.pdb
 D:\BookStoreProject\BookStore\ShopManagement.Domain\obj\Debug\net5.0\ShopManagement.Domain.csproj.CopyComplete
-D:\BookStoreProject\BookStore\ShopManagement.Domain\obj\Debug\net5.0\ShopManagement.Domain.csproj.AssemblyReference.cache
