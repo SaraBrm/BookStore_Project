@@ -1,4 +1,5 @@
-﻿using _0_Framework.Infrastucture;
+﻿using _0_Framework.Application;
+using _0_Framework.Infrastucture;
 using BlogManagement.Application.Contracts.ArticleCategory;
 using BlogManagement.Domain.ArticleCategoryAgg;
 using System.Collections.Generic;
@@ -9,7 +10,6 @@ namespace BlogManagement.Infrastructure.EFCore.Repository
     public class ArticleCategoryRepository : RepositoryBase<long, ArticleCategory>, IArticleCategoryRepository
     {
         private readonly BlogContext _blogContext;
-        private object acvm;
 
         public ArticleCategoryRepository(BlogContext blogContext):base(blogContext)
         {
@@ -27,7 +27,9 @@ namespace BlogManagement.Infrastructure.EFCore.Repository
                 Keywords = x.Keywords,
                 MetaDescription = x.MetaDescription,
                 ShowOrder = x.ShowOrder,
-                Slug = x.Slug
+                Slug = x.Slug,
+                PictureAlt=x.PictureAlt,
+                PictureTitle=x.PictureTitle
             }).FirstOrDefault(x => x.Id == id);
         }
 
@@ -39,7 +41,8 @@ namespace BlogManagement.Infrastructure.EFCore.Repository
                 Name = x.Name,
                 Description = x.Description,
                 Picture = x.Picture,
-                ShowOrder = x.ShowOrder
+                ShowOrder = x.ShowOrder,
+                CreationDate=x.CreationDate.ToFarsi()
             });
 
             if (!string.IsNullOrWhiteSpace(searchModel.Name))

@@ -222,3 +222,16 @@ D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\Microsoft.AspNetCore.
 D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\System.IO.Pipelines.dll
 D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\ServiceHost.MvcApplicationPartsAssemblyInfo.cs
+D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Blog\ArticleCategories\Create.cshtml.g.cs
+D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Blog\ArticleCategories\Edit.cshtml.g.cs
+D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Blog\ArticleCategories\Index.cshtml.g.cs
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\BlogManagement.Application.Contracts.dll
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\BlogManagement.Application.dll
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\BlogManagement.Domain.dll
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\BlogManagement.Infrastructure.Configuration.dll
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\BlogManagement.Infrastructure.EFCore.dll
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\BlogManagement.Infrastructure.Configuration.pdb
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\BlogManagement.Application.pdb
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\BlogManagement.Application.Contracts.pdb
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\BlogManagement.Domain.pdb
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\BlogManagement.Infrastructure.EFCore.pdb
