@@ -249,6 +249,9 @@
               },
               "D:\\BookStoreProject\\BookStore\\BlogManagement.Domain\\BlogManagement.Domain.csproj": {
                 "projectPath": "D:\\BookStoreProject\\BookStore\\BlogManagement.Domain\\BlogManagement.Domain.csproj"
+              },
+              "D:\\BookStoreProject\\BookStore\\BlogManagement.Infrastructure.EFCore\\BlogManagement.Infrastructure.EFCore.csproj": {
+                "projectPath": "D:\\BookStoreProject\\BookStore\\BlogManagement.Infrastructure.EFCore\\BlogManagement.Infrastructure.EFCore.csproj"
               }
             }
           }
