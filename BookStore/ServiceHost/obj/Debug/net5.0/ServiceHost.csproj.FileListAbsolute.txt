@@ -238,3 +238,4 @@ D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\BlogManagement.Infras
 D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Blog\Articles\Index.cshtml.g.cs
 D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Blog\Articles\Create.cshtml.g.cs
 D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Blog\Articles\Edit.cshtml.g.cs
+D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\LatestArticles\Default.cshtml.g.cs

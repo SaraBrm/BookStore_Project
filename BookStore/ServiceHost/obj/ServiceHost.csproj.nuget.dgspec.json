@@ -33,6 +33,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "D:\\BookStoreProject\\BookStore\\BlogManagement.Infrastructure.EFCore\\BlogManagement.Infrastructure.EFCore.csproj": {
+                "projectPath": "D:\\BookStoreProject\\BookStore\\BlogManagement.Infrastructure.EFCore\\BlogManagement.Infrastructure.EFCore.csproj"
+              },
               "D:\\BookStoreProject\\BookStore\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj": {
                 "projectPath": "D:\\BookStoreProject\\BookStore\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj"
               },
@@ -379,6 +382,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "D:\\BookStoreProject\\BookStore\\01_BookStoreQuery\\01_BookStoreQuery.csproj": {
+                "projectPath": "D:\\BookStoreProject\\BookStore\\01_BookStoreQuery\\01_BookStoreQuery.csproj"
+              },
               "D:\\BookStoreProject\\BookStore\\BlogManagement.Application.Contracts\\BlogManagement.Application.Contracts.csproj": {
                 "projectPath": "D:\\BookStoreProject\\BookStore\\BlogManagement.Application.Contracts\\BlogManagement.Application.Contracts.csproj"
               },

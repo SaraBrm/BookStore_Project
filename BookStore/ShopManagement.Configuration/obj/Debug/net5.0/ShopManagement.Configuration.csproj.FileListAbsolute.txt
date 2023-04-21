@@ -38,3 +38,9 @@ D:\BookStoreProject\BookStore\ShopManagement.Configuration\bin\Debug\net5.0\Disc
 D:\BookStoreProject\BookStore\ShopManagement.Configuration\bin\Debug\net5.0\InventoryManagement.Application.Contract.pdb
 D:\BookStoreProject\BookStore\ShopManagement.Configuration\bin\Debug\net5.0\InventoryManagement.Domain.pdb
 D:\BookStoreProject\BookStore\ShopManagement.Configuration\bin\Debug\net5.0\InventoryManagement.Infrastructure.EFCore.pdb
+D:\BookStoreProject\BookStore\ShopManagement.Configuration\bin\Debug\net5.0\BlogManagement.Application.Contracts.dll
+D:\BookStoreProject\BookStore\ShopManagement.Configuration\bin\Debug\net5.0\BlogManagement.Domain.dll
+D:\BookStoreProject\BookStore\ShopManagement.Configuration\bin\Debug\net5.0\BlogManagement.Infrastructure.EFCore.dll
+D:\BookStoreProject\BookStore\ShopManagement.Configuration\bin\Debug\net5.0\BlogManagement.Application.Contracts.pdb
+D:\BookStoreProject\BookStore\ShopManagement.Configuration\bin\Debug\net5.0\BlogManagement.Domain.pdb
+D:\BookStoreProject\BookStore\ShopManagement.Configuration\bin\Debug\net5.0\BlogManagement.Infrastructure.EFCore.pdb

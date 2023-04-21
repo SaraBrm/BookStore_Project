@@ -31,3 +31,9 @@ D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\DiscountManagem
 D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\DiscountManagement.Domain.pdb
 D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\InventoryManagement.Application.Contract.pdb
 D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\InventoryManagement.Domain.pdb
+D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\BlogManagement.Application.Contracts.dll
+D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\BlogManagement.Domain.dll
+D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\BlogManagement.Infrastructure.EFCore.dll
+D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\BlogManagement.Infrastructure.EFCore.pdb
+D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\BlogManagement.Application.Contracts.pdb
+D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\BlogManagement.Domain.pdb
