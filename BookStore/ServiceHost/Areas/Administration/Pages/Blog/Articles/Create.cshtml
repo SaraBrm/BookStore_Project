@@ -15,7 +15,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label asp-for="Command.Title" class="control-label">نام</label>
+                                <label asp-for="Command.Title" class="control-label">عنوان مقاله</label>
                                 <input type="text" class="form-control" asp-for="Command.Title" onchange="makeSlug('Title', 'Slug')">
                                 <span asp-validation-for="Command.Title" class="error"></span>
                             </div>
@@ -120,3 +120,14 @@
         </div>
     </div>
 </div>
+
+@section scripts{
+    <script src="~/AdminTheme/ckeditor/ckeditor.js"></script>
+    <script src="~/AdminTheme/ckeditor/adapters/jquery.js"></script>
+
+    <script>
+        $(function () {
+            $('#BodyContent').ckeditor();
+        });
+    </script>
+}

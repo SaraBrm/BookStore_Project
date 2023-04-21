@@ -49,7 +49,7 @@ namespace BlogManagement.Application
             if (article == null)
                 return operation.Failed(ApplicationMessages.RecordNotFound);
 
-            if (_articleRepository.Exists(x => x.Title == command.Title && x.Id!=command.Id))
+            if (_articleRepository.Exists(x => x.Title == command.Title && x.Id != command.Id))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
             var slug = command.Slug.Slugify();
@@ -57,10 +57,9 @@ namespace BlogManagement.Application
             var pictureName = _fileUploader.Upload(command.Picture, path);
             var publishDate = command.PublishDate.ToGeorgianDateTime();
 
-           article.Edit(command.Title, command.ShortDescription, command.Description,
-                pictureName, command.PictureAlt, command.PictureTitle, publishDate, slug,
-                command.MetaDescription, command.Keywords, command.CanonicalAddress,
-                command.CategoryId);
+            article.Edit(command.Title, command.ShortDescription, command.Description, pictureName,
+                command.PictureAlt, command.PictureTitle, publishDate, slug, command.Keywords, command.MetaDescription,
+                command.CanonicalAddress, command.CategoryId);
 
             _articleRepository.SaveChanges();
             return operation.Succeeded();
