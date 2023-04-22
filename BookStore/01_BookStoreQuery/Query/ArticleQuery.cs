@@ -17,25 +17,43 @@ namespace _01_BookStoreQuery.Query
             _blogContext = blogContext;
         }
 
+        public ArticleQueryModel GetArticleDetails(string slug)
+        {
+            return _blogContext.Articles.Include(x => x.Category).
+                Where(x => x.PublishDate <= DateTime.Now).
+                Select(x => new ArticleQueryModel
+                {
+                    Title = x.Title,
+                    ShortDescription = x.ShortDescription,
+                    Description = x.Description,
+                    Picture = x.Picture,
+                    PictureAlt = x.PictureAlt,
+                    PictureTitle = x.PictureTitle,
+                    PublishDate = x.PublishDate.ToFarsi(),
+                    Slug = x.Slug,
+                    MetaDescription = x.MetaDescription,
+                    Keywords = x.Keywords,
+                    CanonicalAddress = x.CanonicalAddress,
+                    CategoryName = x.Category.Name,
+                    CategorySlug = x.Category.Slug
+                }).FirstOrDefault(x=>x.Slug==slug);
+        }
+
         public List<ArticleQueryModel> LatestArticles()
         {
-            return _blogContext.Articles.Include(x => x.Category).Where(x => x.PublishDate <= DateTime.Now).Select(x => new ArticleQueryModel
+            return _blogContext.Articles.Include(x => x.Category).
+                Where(x => x.PublishDate <= DateTime.Now).
+                Select(x => new ArticleQueryModel
             {
+                Id= x.Id,
                 Title = x.Title,
                 ShortDescription = x.ShortDescription,
-                Description = x.Description,
                 Picture = x.Picture,
                 PictureAlt = x.PictureAlt,
                 PictureTitle = x.PictureTitle,
                 PublishDate = x.PublishDate.ToFarsi(),
                 Slug = x.Slug,
-                MetaDescription = x.MetaDescription,
-                Keywords = x.Keywords,
-                CanonicalAddress = x.CanonicalAddress,
-                CategoryId = x.CategoryId,
-                CategoryName = x.Category.Name,
-                CategorySlug = x.Category.Slug
-            }).ToList();
+            }).AsNoTracking().OrderByDescending(x=>x.Id).Take(6).ToList();
         }
     }
 }
