@@ -19,7 +19,7 @@ namespace _01_BookStoreQuery.Query
 
         public ArticleQueryModel GetArticleDetails(string slug)
         {
-            return _blogContext.Articles.Include(x => x.Category).
+            var article= _blogContext.Articles.Include(x => x.Category).
                 Where(x => x.PublishDate <= DateTime.Now).
                 Select(x => new ArticleQueryModel
                 {
@@ -37,6 +37,9 @@ namespace _01_BookStoreQuery.Query
                     CategoryName = x.Category.Name,
                     CategorySlug = x.Category.Slug
                 }).FirstOrDefault(x=>x.Slug==slug);
+
+            article.KeywordList = article.Keywords.Split(",").ToList();
+            return article;
         }
 
         public List<ArticleQueryModel> LatestArticles()

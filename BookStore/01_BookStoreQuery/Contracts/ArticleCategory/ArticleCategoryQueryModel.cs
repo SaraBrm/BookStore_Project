@@ -1,4 +1,7 @@
-﻿namespace _01_BookStoreQuery.Contracts.ArticleCategory
+﻿using _01_BookStoreQuery.Contracts.Article;
+using System.Collections.Generic;
+
+namespace _01_BookStoreQuery.Contracts.ArticleCategory
 {
     public class ArticleCategoryQueryModel
     {
@@ -13,5 +16,6 @@
         public string MetaDescription { get; set; }
         public string CanonicalAddress { get; set; }
         public long ArticlesCount { get; set; }
+        public List<ArticleQueryModel> Articles { get; set; }
     }
 }

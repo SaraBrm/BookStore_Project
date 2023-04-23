@@ -3,6 +3,7 @@ using _0_Framework.Infrastucture;
 using BlogManagement.Application.Contracts.Article;
 using BlogManagement.Domain.ArticleAgg;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,16 +11,16 @@ namespace BlogManagement.Infrastructure.EFCore.Repository
 {
     public class ArticleRepository : RepositoryBase<long, Article>, IArticleRepository
     {
-        private readonly BlogContext _blogContext;
+        private readonly BlogContext _context;
 
-        public ArticleRepository(BlogContext blogContext):base(blogContext)
+        public ArticleRepository(BlogContext context) : base(context)
         {
-            _blogContext = blogContext;
+            _context = context;
         }
 
         public EditArticle GetDetails(long id)
         {
-            return _blogContext.Articles.Select(x => new EditArticle
+            return _context.Articles.Select(x => new EditArticle
             {
                 Id = x.Id,
                 CanonicalAddress = x.CanonicalAddress,
@@ -38,29 +39,29 @@ namespace BlogManagement.Infrastructure.EFCore.Repository
 
         public Article GetWithCategory(long id)
         {
-            return _blogContext.Articles.
-                Include(x=>x.Category).FirstOrDefault(x=> x.Id == id);
+            return _context.Articles.Include(x => x.Category).FirstOrDefault(x => x.Id == id);
         }
 
         public List<ArticleViewModel> Search(ArticleSearchModel searchModel)
         {
-            var query = _blogContext.Articles.Select(x => new ArticleViewModel
+            var query = _context.Articles.Select(x => new ArticleViewModel
             {
                 Id = x.Id,
-                Title = x.Title,
-                ShortDescription = x.ShortDescription,
+                CategoryId = x.CategoryId,
+                Category = x.Category.Name,
                 Picture = x.Picture,
                 PublishDate = x.PublishDate.ToFarsi(),
-                Category = x.Category.Name
+                ShortDescription = x.ShortDescription.Substring(0, Math.Min(x.ShortDescription.Length, 50)) + " ...",
+                Title = x.Title
             });
 
-            if(!string.IsNullOrWhiteSpace(searchModel.Title))
-                query=query.Where(x=>x.Title.Contains(searchModel.Title));
+            if (!string.IsNullOrWhiteSpace(searchModel.Title))
+                query = query.Where(x => x.Title.Contains(searchModel.Title));
 
-            if(searchModel.CategoryId>0)
-                query=query.Where(x=>x.CategoryId==searchModel.CategoryId);
+            if (searchModel.CategoryId > 0)
+                query = query.Where(x => x.CategoryId == searchModel.CategoryId);
 
-            return query.OrderByDescending(x=>x.Id).ToList();
+            return query.OrderByDescending(x => x.Id).ToList();
         }
     }
 }
