@@ -38,7 +38,9 @@ namespace _01_BookStoreQuery.Query
                     CategorySlug = x.Category.Slug
                 }).FirstOrDefault(x=>x.Slug==slug);
 
-            article.KeywordList = article.Keywords.Split(",").ToList();
+            if (!string.IsNullOrWhiteSpace(article.Keywords))
+                article.KeywordList = article.Keywords.Split(",").ToList();
+           
             return article;
         }
 
