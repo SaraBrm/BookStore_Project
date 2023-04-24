@@ -1,9 +1,10 @@
 ﻿using _0_Framework.Application;
 using _01_BookStoreQuery.Contracts.Product;
+using CommentManagement.Infrastructure.EFCore;
+using CommnetManagement.Infrastructure.EFCore;
 using DiscountManagement.Infrastructure.EFCore;
 using InventoryManagement.Infrastructure.EFCore;
 using Microsoft.EntityFrameworkCore;
-using ShopManagement.Domain.CommentAgg;
 using ShopManagement.Domain.ProductPictureAgg;
 using ShopManagement.Infrastructure.EFCore;
 using System;
@@ -17,15 +18,18 @@ namespace _01_BookStoreQuery.Query
         private readonly ShopContext _shopContext;
         private readonly InventoryContext _inventoryContext;
         private readonly DiscountContext _discountContext;
+        private readonly CommentContext _commentContext;
 
-        public ProductQuery(ShopContext shopContext, InventoryContext inventoryContext, DiscountContext discountContext)
+        public ProductQuery(ShopContext shopContext, InventoryContext inventoryContext,
+            DiscountContext discountContext, CommentContext commentContext)
         {
             _shopContext = shopContext;
             _inventoryContext = inventoryContext;
             _discountContext = discountContext;
+            _commentContext = commentContext;
         }
 
-        public ProductQueryModel GetDetails(string slug)
+        public ProductQueryModel GetProductDetails(string slug)
         {
             var inventory = _inventoryContext.Inventory.
                 Select(x => new { x.ProductId, x.UnitPrice,x.InStock }).ToList();
@@ -35,7 +39,7 @@ namespace _01_BookStoreQuery.Query
                 Select(x => new { x.DiscountRate, x.ProductId }).ToList();
             
             var product = _shopContext.Products.Include(x => x.Category).
-                Include(x=>x.ProductPictures).Include(x=>x.Comments).
+                Include(x=>x.ProductPictures).
                 Select(product => new ProductQueryModel
                 {
                     Id = product.Id,
@@ -51,7 +55,6 @@ namespace _01_BookStoreQuery.Query
                     Keywords=product.Keywords,
                     MetaDescription=product.MetaDescription,
                     ShortDescription=product.ShortDescription,
-                    Comments=MapComments(product.Comments),
                     Pictures=MapProductPictures(product.ProductPictures)
                 }).AsNoTracking().FirstOrDefault(x=>x.Slug==slug);
 
@@ -75,20 +78,22 @@ namespace _01_BookStoreQuery.Query
                     }
                 }
 
-            return product;
-        }
-
-        private static List<CommentQueryModel> MapComments(List<Comment> comments)
-        {
-            return comments.Where(x => !x.IsCanceled).Where(x => x.IsConfirmed).
+            product.Comments = _commentContext.Comments.
+                Where(x => x.Type == CommentType.Product).
+                Where(x => !x.IsCanceled).
+                Where(x => x.IsConfirmed).
+                Where(x => x.OwnerRecordId == product.Id).
                 Select(x => new CommentQueryModel
             {
                 Id = x.Id,
                 Message = x.Message,
                 Name = x.Name
-            }).OrderByDescending(x=>x.Id).ToList();
+            }).OrderByDescending(x => x.Id).ToList();
+
+            return product;
         }
 
+        
         private static List<ProductPictureQueryModel> MapProductPictures(List<ProductPicture> pictures)
         {
             return pictures.Select(x => new ProductPictureQueryModel

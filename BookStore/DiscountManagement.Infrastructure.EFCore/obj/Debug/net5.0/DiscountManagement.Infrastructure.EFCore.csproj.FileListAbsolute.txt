@@ -4,7 +4,6 @@ D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\bin\Debug
 D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.dll
 D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\ref\DiscountManagement.Infrastructure.EFCore.dll
 D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.pdb
-D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.csproj.AssemblyReference.cache
 D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.GeneratedMSBuildEditorConfig.editorconfig
 D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.AssemblyInfoInputs.cache
 D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.AssemblyInfo.cs
@@ -26,3 +25,4 @@ D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\bin\Debug
 D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\ShopManagement.Application.Contracts.pdb
 D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\ShopManagement.Domain.pdb
 D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.csproj.CopyComplete
+D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.csproj.AssemblyReference.cache

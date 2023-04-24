@@ -217,7 +217,6 @@ D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Co
 D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\Menu\Default.cshtml.g.cs
 D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Pages\Search.cshtml.g.cs
 D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Pages\Product.cshtml.g.cs
-D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\Comments\Index.cshtml.g.cs
 D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
 D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\System.IO.Pipelines.dll
@@ -241,3 +240,14 @@ D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administr
 D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\LatestArticles\Default.cshtml.g.cs
 D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Pages\Article.cshtml.g.cs
 D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Pages\ArticleCategory.cshtml.g.cs
+D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Comments\Index.cshtml.g.cs
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\CommentManagement.Application.Contracts.dll
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\CommentManagement.Application.dll
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\CommentManagement.Configuration.dll
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\CommentManagement.Domain.dll
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\CommentManagement.Infrastructure.EFCore.dll
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\CommentManagement.Application.Contracts.pdb
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\CommentManagement.Configuration.pdb
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\CommentManagement.Application.pdb
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\CommentManagement.Domain.pdb
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\CommentManagement.Infrastructure.EFCore.pdb

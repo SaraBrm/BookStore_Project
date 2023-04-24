@@ -2,7 +2,6 @@ D:\BookStoreProject\BookStore\ShopManagement.Application.Contracts\bin\Debug\net
 D:\BookStoreProject\BookStore\ShopManagement.Application.Contracts\bin\Debug\net5.0\ShopManagement.Application.Contracts.dll
 D:\BookStoreProject\BookStore\ShopManagement.Application.Contracts\bin\Debug\net5.0\ref\ShopManagement.Application.Contracts.dll
 D:\BookStoreProject\BookStore\ShopManagement.Application.Contracts\bin\Debug\net5.0\ShopManagement.Application.Contracts.pdb
-D:\BookStoreProject\BookStore\ShopManagement.Application.Contracts\obj\Debug\net5.0\ShopManagement.Application.Contracts.csproj.AssemblyReference.cache
 D:\BookStoreProject\BookStore\ShopManagement.Application.Contracts\obj\Debug\net5.0\ShopManagement.Application.Contracts.GeneratedMSBuildEditorConfig.editorconfig
 D:\BookStoreProject\BookStore\ShopManagement.Application.Contracts\obj\Debug\net5.0\ShopManagement.Application.Contracts.AssemblyInfoInputs.cache
 D:\BookStoreProject\BookStore\ShopManagement.Application.Contracts\obj\Debug\net5.0\ShopManagement.Application.Contracts.AssemblyInfo.cs

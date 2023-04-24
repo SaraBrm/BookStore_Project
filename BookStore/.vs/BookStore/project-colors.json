@@ -130,7 +130,32 @@
       "ProjectGuid": "0e1e5a70-65e4-4954-8b37-92cff88b48bd",
       "DisplayName": "BlogManagement.Infrastructure.Configuration",
       "ColorIndex": 8
+    },
+    "bdfefdcb-1191-4ecc-b05e-951d6800f8a9": {
+      "ProjectGuid": "bdfefdcb-1191-4ecc-b05e-951d6800f8a9",
+      "DisplayName": "CommentManagement.Domain",
+      "ColorIndex": 9
+    },
+    "421b237f-72ee-4e5e-af8a-a430fdbcc387": {
+      "ProjectGuid": "421b237f-72ee-4e5e-af8a-a430fdbcc387",
+      "DisplayName": "CommentManagement.Application.Contracts",
+      "ColorIndex": 10
+    },
+    "b10e8440-f7d5-47cf-a89f-381926063769": {
+      "ProjectGuid": "b10e8440-f7d5-47cf-a89f-381926063769",
+      "DisplayName": "CommentManagement.Application",
+      "ColorIndex": 11
+    },
+    "32e99e86-6c19-485f-a6f0-b57f9a7d1fa7": {
+      "ProjectGuid": "32e99e86-6c19-485f-a6f0-b57f9a7d1fa7",
+      "DisplayName": "CommentManagement.Infrastructure.EFCore",
+      "ColorIndex": 12
+    },
+    "972cdb36-a6b9-4920-872f-df6502e8a028": {
+      "ProjectGuid": "972cdb36-a6b9-4920-872f-df6502e8a028",
+      "DisplayName": "CommentManagement.Configuration",
+      "ColorIndex": 13
     }
   },
-  "NextColorIndex": 9
+  "NextColorIndex": 14
 }
