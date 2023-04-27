@@ -58,8 +58,8 @@ namespace BlogManagement.Application
             var publishDate = command.PublishDate.ToGeorgianDateTime();
 
             article.Edit(command.Title, command.ShortDescription, command.Description, pictureName,
-                command.PictureAlt, command.PictureTitle, publishDate, slug, command.Keywords, command.MetaDescription,
-                command.CanonicalAddress, command.CategoryId);
+                command.PictureAlt, command.PictureTitle, publishDate, slug, command.Keywords,
+                command.MetaDescription,command.CanonicalAddress, command.CategoryId);
 
             _articleRepository.SaveChanges();
             return operation.Succeeded();

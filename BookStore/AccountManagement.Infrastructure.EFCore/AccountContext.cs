@@ -1,4 +1,5 @@
 ﻿using AccountManagement.Domain.AccountAgg;
+using AccountManagement.Infrastructure.EFCore.Mappings;
 using Microsoft.EntityFrameworkCore;
 
 namespace AccountManagement.Infrastructure.EFCore
@@ -7,7 +8,7 @@ namespace AccountManagement.Infrastructure.EFCore
     {
         public DbSet<Account> Accounts { get; set; }
 
-        public AccountContext(DbContextOptions<AccountContext> options)
+        public AccountContext(DbContextOptions<AccountContext> options):base(options)
         {
         }
 
