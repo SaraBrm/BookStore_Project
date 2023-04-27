@@ -25,4 +25,3 @@ D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\bin\Debu
 D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\ShopManagement.Infrastructure.EFCore.pdb
 D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\ShopManagement.Application.Contracts.pdb
 D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\ShopManagement.Domain.pdb
-D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\obj\Debug\net5.0\InventoryManagement.Infrastructure.EFCore.csproj.AssemblyReference.cache

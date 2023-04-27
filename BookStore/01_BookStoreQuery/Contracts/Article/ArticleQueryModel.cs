@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using _01_BookStoreQuery.Contracts.Comment;
+using System.Collections.Generic;
 
 namespace _01_BookStoreQuery.Contracts.Article
 {
@@ -20,5 +21,6 @@ namespace _01_BookStoreQuery.Contracts.Article
         public long CategoryId { get; set; }
         public string CategoryName { get; set; }
         public string CategorySlug { get; set; }
+        public List<CommentQueryModel> Comments { get; set; }
     }
 }

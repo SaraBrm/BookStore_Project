@@ -25,4 +25,3 @@ D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\bin\Debug
 D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\ShopManagement.Application.Contracts.pdb
 D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\ShopManagement.Domain.pdb
 D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.csproj.CopyComplete
-D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.csproj.AssemblyReference.cache

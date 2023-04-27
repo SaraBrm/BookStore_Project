@@ -1,6 +1,9 @@
 ﻿using _0_Framework.Application;
 using _01_BookStoreQuery.Contracts.Article;
+using _01_BookStoreQuery.Contracts.Comment;
 using BlogManagement.Infrastructure.EFCore;
+using CommentManagement.Infrastructure.EFCore;
+using CommnetManagement.Infrastructure.EFCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -11,10 +14,12 @@ namespace _01_BookStoreQuery.Query
     public class ArticleQuery : IArticleQuery
     {
         private readonly BlogContext _blogContext;
+        private readonly CommentContext _commentContext;
 
-        public ArticleQuery(BlogContext blogContext)
+        public ArticleQuery(BlogContext blogContext, CommentContext commentContext)
         {
             _blogContext = blogContext;
+            _commentContext = commentContext;
         }
 
         public ArticleQueryModel GetArticleDetails(string slug)
@@ -23,6 +28,7 @@ namespace _01_BookStoreQuery.Query
                 Where(x => x.PublishDate <= DateTime.Now).
                 Select(x => new ArticleQueryModel
                 {
+                    Id=x.Id,
                     Title = x.Title,
                     ShortDescription = x.ShortDescription,
                     Description = x.Description,
@@ -40,7 +46,29 @@ namespace _01_BookStoreQuery.Query
 
             if (!string.IsNullOrWhiteSpace(article.Keywords))
                 article.KeywordList = article.Keywords.Split(",").ToList();
-           
+
+            var comments= _commentContext.Comments
+                .Where(x => !x.IsCanceled)
+                .Where(x => x.IsConfirmed)
+                .Where(x => x.Type == CommentType.Article)
+                .Where(x => x.OwnerRecordId == article.Id)
+                .Select(x => new CommentQueryModel
+                {
+                    Id = x.Id,
+                    Message = x.Message,
+                    Name = x.Name,
+                    ParentId = x.ParentId,
+                    CreationDate = x.CreationDate.ToFarsi()
+                }).OrderByDescending(x => x.Id).ToList();
+
+            foreach (var comment in comments)
+            {
+                if (comment.ParentId > 0)
+                    comment.ParentName = comments.FirstOrDefault(x => x.Id == comment.ParentId)?.Name;
+            }
+
+            article.Comments = comments;
+
             return article;
         }
 

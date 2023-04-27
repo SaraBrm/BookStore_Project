@@ -6628,6 +6628,7 @@ h3.comment-counter {
             -webkit-flex-basis: 50px;
             -ms-flex-preferred-size: 50px;
             flex-basis: 50px;
+            
         }
 
         .comment-container .single-comment .content {
@@ -8359,3 +8360,5 @@ h3.comment-counter {
         opacity: 1;
     }
 }
+
+

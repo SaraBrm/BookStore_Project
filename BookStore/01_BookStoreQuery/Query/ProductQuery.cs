@@ -1,4 +1,5 @@
 ﻿using _0_Framework.Application;
+using _01_BookStoreQuery.Contracts.Comment;
 using _01_BookStoreQuery.Contracts.Product;
 using CommentManagement.Infrastructure.EFCore;
 using CommnetManagement.Infrastructure.EFCore;
@@ -87,8 +88,9 @@ namespace _01_BookStoreQuery.Query
             {
                 Id = x.Id,
                 Message = x.Message,
-                Name = x.Name
-            }).OrderByDescending(x => x.Id).ToList();
+                Name = x.Name,
+                CreationDate = x.CreationDate.ToFarsi()
+                }).OrderByDescending(x => x.Id).ToList();
 
             return product;
         }
