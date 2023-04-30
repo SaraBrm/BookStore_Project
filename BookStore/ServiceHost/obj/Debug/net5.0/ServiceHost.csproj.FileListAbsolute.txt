@@ -260,3 +260,7 @@ D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\AccountManagement.App
 D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\AccountManagement.Domain.pdb
 D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.pdb
 D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\AcountManagement.Application.Contracts.pdb
+D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\ServiceHost.MvcApplicationPartsAssemblyInfo.cs
+D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Accounts\Account\Create.cshtml.g.cs
+D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Accounts\Account\Edit.cshtml.g.cs
+D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Accounts\Account\Index.cshtml.g.cs

@@ -12,4 +12,3 @@ D:\BookStoreProject\BookStore\ShopManagement.Application.Contracts\obj\Debug\net
 D:\BookStoreProject\BookStore\ShopManagement.Application.Contracts\bin\Debug\net5.0\0_Framework.dll
 D:\BookStoreProject\BookStore\ShopManagement.Application.Contracts\bin\Debug\net5.0\0_Framework.pdb
 D:\BookStoreProject\BookStore\ShopManagement.Application.Contracts\obj\Debug\net5.0\ShopManagement.Application.Contracts.csproj.CopyComplete
-D:\BookStoreProject\BookStore\ShopManagement.Application.Contracts\obj\Debug\net5.0\ShopManagement.Application.Contracts.csproj.AssemblyReference.cache

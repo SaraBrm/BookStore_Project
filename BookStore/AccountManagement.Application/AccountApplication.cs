@@ -52,11 +52,11 @@ namespace AccountManagement.Application
             if (account == null)
                 return operation.Failed(ApplicationMessages.RecordNotFound);
 
-            if (_accountRepository.Exists(x => x.Username == command.Username || x.Mobile == command.Mobile 
-                    && x.Id!=command.Id))
+            if (_accountRepository.Exists(x =>
+                (x.Username == command.Username || x.Mobile == command.Mobile) && x.Id != command.Id))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
-            account.Edit(command.Fullname, command.Username,  command.Mobile, command.RoleId);
+            account.Edit(command.Fullname, command.Username, command.Mobile, command.RoleId);
             _accountRepository.SaveChanges();
             return operation.Succeeded();
         }
