@@ -20,9 +20,10 @@ namespace BlogManagement.Infrastructure.EFCore.Repository
 
         public EditArticle GetDetails(long id)
         {
+ 
             return _context.Articles.Select(x => new EditArticle
             {
-                Id = x.Id,
+                ArticleId = x.Id,
                 CanonicalAddress = x.CanonicalAddress,
                 CategoryId = x.CategoryId,
                 Description = x.Description,
@@ -34,7 +35,7 @@ namespace BlogManagement.Infrastructure.EFCore.Repository
                 ShortDescription = x.ShortDescription,
                 Slug = x.Slug,
                 Title = x.Title
-            }).FirstOrDefault(x => x.Id == id);
+            }).FirstOrDefault(x => x.ArticleId == id);
         }
 
         public Article GetWithCategory(long id)

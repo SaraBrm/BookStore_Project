@@ -27,5 +27,6 @@ namespace ServiceHost.Areas.Administration.Pages.Blog.Articles
             ArticleCategories = new SelectList(_articleCategoryApplication.GetArticleCategories(), "Id", "Name");
             Articles = _articleApplication.Search(searchModel);
         }
+
     }
 }

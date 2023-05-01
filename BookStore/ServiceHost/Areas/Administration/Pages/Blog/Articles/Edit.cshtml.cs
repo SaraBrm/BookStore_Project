@@ -25,11 +25,11 @@ namespace ServiceHost.Areas.Administration.Pages.Blog.Articles
             Command = _articleApplication.GetDetails(id);
             ArticleCategories = new SelectList(_articleCategoryApplication.GetArticleCategories(), "Id", "Name");
         }
-
+    
         public IActionResult OnPost(EditArticle command)
         {
             var result = _articleApplication.Edit(command);
             return RedirectToPage("./Index");
         }
     }
-}
+} 

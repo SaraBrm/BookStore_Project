@@ -42,7 +42,7 @@ namespace ServiceHost.Areas.Administration.Pages.Accounts.Account
         }
 
         public IActionResult OnGetEdit(long id)
-        {
+        { 
             var account = _accountApplication.GetDetails(id);
             return Partial("Edit", account);
         }
@@ -64,5 +64,6 @@ namespace ServiceHost.Areas.Administration.Pages.Accounts.Account
             var result = _accountApplication.ChangePassword(command);
             return new JsonResult(result);
         }
+       
     }
 }

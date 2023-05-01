@@ -43,13 +43,14 @@ namespace BlogManagement.Application
 
         public OperationResult Edit(EditArticle command)
         {
+
             var operation = new OperationResult();
-            var article = _articleRepository.GetWithCategory(command.Id);
+            var article = _articleRepository.GetWithCategory(command.ArticleId);
 
             if (article == null)
                 return operation.Failed(ApplicationMessages.RecordNotFound);
 
-            if (_articleRepository.Exists(x => x.Title == command.Title && x.Id != command.Id))
+            if (_articleRepository.Exists(x => x.Title == command.Title && x.Id != command.ArticleId))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
             var slug = command.Slug.Slugify();
