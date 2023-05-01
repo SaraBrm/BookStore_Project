@@ -1,4 +1,4 @@
-﻿@model AcountManagement.Application.Contracts.Account.EditAccount 
+﻿@model AcountManagement.Application.Contracts.Account.EditAccount
 @{
 }
 
@@ -38,7 +38,7 @@
                     <span asp-validation-for="Mobile" class="error"></span>
                 </div>
             </div>
-           @* <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="form-group">
                     <label asp-for="RoleId" class="control-label">نقش</label>
                     <select class="form-control" asp-for="RoleId"
@@ -47,10 +47,11 @@
                     </select>
                     <span asp-validation-for="RoleId" class="error"></span>
                 </div>
-            </div>*@
+            </div>
         </div>
+    
 
-        <input type="hidden" asp-for="Id" value="@Model.Id" />
+    <input type="hidden" asp-for="Id" value="@Model.Id" />
     </div>
     <div class="modal-footer">
         <button type="button" onclick="closeModal()" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>

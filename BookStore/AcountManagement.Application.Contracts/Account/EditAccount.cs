@@ -6,19 +6,10 @@ using System.ComponentModel.DataAnnotations;
 namespace AcountManagement.Application.Contracts.Account
 
 {
-    public class EditAccount 
+    public class EditAccount :CreateAccount
     {
         public long Id { get; set; }
-        [Required(ErrorMessage = ValidationMessages.IsRequired)]
-        public string Fullname { get; set; }
-
-        [Required(ErrorMessage = ValidationMessages.IsRequired)]
-        public string Username { get; set; }
-
-        [Required(ErrorMessage = ValidationMessages.IsRequired)]
-        public string Mobile { get; set; }
-
-        public long RoleId { get; set; }
+       
 
 
     }
