@@ -1,4 +1,5 @@
 using _0_Framework.Application;
+using _0_Framework.Infrastucture;
 using AccountManagement.Configuration;
 using BlogManagement.Infrastructure.Configuration;
 using CommentManagement.Configuration;
@@ -19,6 +20,7 @@ using System.Linq;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
 using System.Threading.Tasks;
+using Roles = _0_Framework.Infrastucture.Roles;
 
 namespace ServiceHost
 {
@@ -63,7 +65,35 @@ namespace ServiceHost
                     o.AccessDeniedPath = new PathString("/AccessDenied");
                 });
 
-            services.AddRazorPages();
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminArea",
+                    builder => builder.RequireRole(new List<string> { Roles.Administrator, Roles.ContentUploader }));
+
+                options.AddPolicy("Shop",
+                    builder => builder.RequireRole(new List<string> { Roles.Administrator }));
+
+                options.AddPolicy("Discount",
+                    builder => builder.RequireRole(new List<string> { Roles.Administrator }));
+
+                options.AddPolicy("Inventory",
+                    builder => builder.RequireRole(new List<string> { Roles.Administrator }));
+
+                options.AddPolicy("Account",
+                    builder => builder.RequireRole(new List<string> { Roles.Administrator }));
+            });
+
+            services.AddRazorPages().AddRazorPagesOptions(options =>
+            {
+                options.Conventions.AuthorizeAreaFolder("Administration", "/", "AdminArea");
+                options.Conventions.AuthorizeAreaFolder("Administration", "/Shop", "Shop");
+                options.Conventions.AuthorizeAreaFolder("Administration", "/Discounts", "Discount");
+                options.Conventions.AuthorizeAreaFolder("Administration", "/Inventory", "Discount");
+                options.Conventions.AuthorizeAreaFolder("Administration", "/Accounts", "Inventory");
+            });
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -87,7 +117,7 @@ namespace ServiceHost
             app.UseStaticFiles();
 
             app.UseCookiePolicy();
-             
+
             app.UseRouting();
 
             app.UseAuthorization();
@@ -95,7 +125,7 @@ namespace ServiceHost
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
-                
+
             });
         }
     }
