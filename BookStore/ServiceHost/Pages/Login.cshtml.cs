@@ -7,7 +7,7 @@ namespace ServiceHost.Pages
     public class LoginModel : PageModel
     {
         [TempData]
-        public string Message { get; set; }
+        public string LoginMessage { get; set; }
         private readonly IAccountApplication _accountApplication;
 
         public LoginModel(IAccountApplication accountApplication)
@@ -24,7 +24,7 @@ namespace ServiceHost.Pages
             var result = _accountApplication.Login(command);
             if (result.IsSucceeded)
                 return RedirectToPage("./Index");
-            Message=result.Message;
+            LoginMessage=result.Message;
             return RedirectToPage("./Login");
         }
 

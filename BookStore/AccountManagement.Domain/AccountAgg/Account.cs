@@ -19,6 +19,10 @@ namespace AccountManagement.Domain.AccountAgg
             Password = password;
             Mobile = mobile;
             RoleId = roleId;
+
+            if (roleId == 0)
+                RoleId = 2;
+
         }
 
         public void Edit(string fullname, string username, string mobile, long roleId)

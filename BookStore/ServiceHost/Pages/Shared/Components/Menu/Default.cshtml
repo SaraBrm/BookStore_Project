@@ -56,6 +56,13 @@
                                     <a asp-page="./Register">ثبت نام</a>
                                     </li>*@
 
+                                @if (AuthHelper.IsAuthenticated())
+                                {
+                                    <li>
+                                        <a asp-page="./Login" asp-page-handler="Logout">خروج</a>
+                                    </li>
+                                }
+
                             </ul>
                         </nav>
                     </div>
@@ -219,11 +226,20 @@
                             <a href="#">پروفایل من </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="login-register.html">ثبت نام</a>
+                                    <a asp-page="./Register">ثبت نام</a>
                                 </li>
-                                <li>
-                                    <a href="login-register.html">ورود</a>
-                                </li>
+                                @if (AuthHelper.IsAuthenticated())
+                                {
+                                    <li>
+                                        <a asp-page="./Login" asp-page-handler="Logout">خروج</a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li>
+                                        <a asp-page="./Login">ورود</a>
+                                    </li>
+                                }
                             </ul>
                         </li>
                     </ul>
