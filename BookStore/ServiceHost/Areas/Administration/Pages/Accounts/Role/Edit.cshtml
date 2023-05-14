@@ -24,14 +24,7 @@
                                 <div class="col-md-6">
                                     <label class="control-label col-md-3">انتخاب دسترسی ها</label>
                                     <div class="col-md-12">
-                                        <select name="permission" class="multi-select" multiple="multiple" id="my_multi_select3">
-                                            
-                                                <option>sara</option>
-                                                <option>roya</option>
-                                            
-                                            
-                                                <option>mahsa</option>
-                                                <option>roz</option>
+                                        <select asp-for="Command.Permissions" asp-items="Model.Permissions" class="multi-select" multiple="multiple" id="my_multi_select3">
                                             
                                         </select>
                                     </div>

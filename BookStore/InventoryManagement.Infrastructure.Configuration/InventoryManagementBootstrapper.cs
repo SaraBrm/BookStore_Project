@@ -1,6 +1,8 @@
-﻿using InventoryManagement.Application;
+﻿using _0_Framework.Infrastucture;
+using InventoryManagement.Application;
 using InventoryManagement.Application.Contract.Inventory;
 using InventoryManagement.Domain.InventoryAgg;
+using InventoryManagement.Infrastructure.Configuration.Permissions;
 using InventoryManagement.Infrastructure.EFCore;
 using InventoryManagement.Infrastructure.EFCore.Repository;
 using Microsoft.EntityFrameworkCore;
@@ -10,12 +12,14 @@ namespace InventoryManagement.Infrastructure.Configuration
 {
     public class InventoryManagementBootstrapper
     {
-        public static void Configure(IServiceCollection service,string connectionString)
+        public static void Configure(IServiceCollection services,string connectionString)
         {
-            service.AddTransient<IInventoryRepository, InventoryRepository>();
-            service.AddTransient<IInventoryApplication, InventoryApplication>();
+            services.AddTransient<IInventoryRepository, InventoryRepository>();
+            services.AddTransient<IInventoryApplication, InventoryApplication>();
 
-            service.AddDbContext<InventoryContext>(x => x.UseSqlServer(connectionString));
+            services.AddTransient<IPermissionExposer, InventoryPermissionExposer>();
+
+            services.AddDbContext<InventoryContext>(x => x.UseSqlServer(connectionString));
         }
     }
 }

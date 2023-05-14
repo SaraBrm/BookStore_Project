@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using _0_Framework.Infrastucture;
-using AccountManagement.Infrastructure.EFCore;
 using AcountManagement.Application.Contracts.Role;
+using System;
+using AccountManagement.Infrastructure.EFCore;
 
 namespace AccountMangement.Infrastructure.EFCore.Repository
 {
@@ -23,9 +24,15 @@ namespace AccountMangement.Infrastructure.EFCore.Repository
             return _accountContext.Roles.Select(x => new EditRole
                 {
                     Id = x.Id,
-                    Name = x.Name
-                }).AsNoTracking().FirstOrDefault(x => x.Id == id);
+                    Name = x.Name,
+                    MappedPermissions = MapPermissions(x.Permissions)
+            }).AsNoTracking().FirstOrDefault(x => x.Id == id);
 
+        }
+
+        private static List<PermissionDto> MapPermissions(IEnumerable<Permission> permissions)
+        {
+            return permissions.Select(x => new PermissionDto(x.Code, x.Name)).ToList();
         }
 
         public List<RoleViewModel> List()
