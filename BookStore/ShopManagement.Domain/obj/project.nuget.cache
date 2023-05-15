@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "C7+6Jm5FHAUZajxDUFWkMQLmf2b7d3/8q5WEcf6qr4Tw5FYAQPmxoUP6xKJeG6+Rp1Kv84G+QoJI1BxZh37igQ==",
+  "dgSpecHash": "7+ZvCitJi2NINg1TD2H3lNQq4w0blSud9DqTBEZadDdlgwqcQ+QKn4K/xMDgqfsg2n/4W6F3Nvg0+7Hw6fG+qQ==",
   "success": true,
   "projectFilePath": "D:\\BookStoreProject\\BookStore\\ShopManagement.Domain\\ShopManagement.Domain.csproj",
   "expectedPackageFiles": [
@@ -39,6 +39,7 @@
     "C:\\Users\\Pars\\.nuget\\packages\\microsoft.net.http.headers\\2.2.0\\microsoft.net.http.headers.2.2.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\Pars\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\Pars\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
     "C:\\Users\\Pars\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",

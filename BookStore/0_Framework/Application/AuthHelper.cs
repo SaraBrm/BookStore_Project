@@ -6,6 +6,7 @@ using _0_Framework.Infrastucture;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace _0_Framework.Application
 {
@@ -40,24 +41,31 @@ namespace _0_Framework.Application
             return null;
         }
 
+        public List<int> GetPermissions()
+        {
+            if (!IsAuthenticated())
+                return new List<int>();
+
+            var permissions = _contextAccessor.HttpContext.User.Claims.
+                FirstOrDefault(x => x.Type == "permissions")?.Value;
+            return JsonConvert.DeserializeObject<List<int>>(permissions);
+        }
+
         public bool IsAuthenticated()
         {
-            var claims=_contextAccessor.HttpContext.User.Claims.ToList();
-
-            //if (claims.Count > 0)
-            //    return true;
-            //return false;
-            return claims.Count> 0;
+            return _contextAccessor.HttpContext.User.Identity.IsAuthenticated;
         }
 
         public void Signin(AuthViewModel account)
         {
+            var permissions=JsonConvert.SerializeObject(account.Permissions);
             var claims = new List<Claim>
             {
                 new Claim("AccountId", account.Id.ToString()),
                 new Claim(ClaimTypes.Name, account.Fullname),
                 new Claim(ClaimTypes.Role, account.RoleId.ToString()),
-                new Claim("Username", account.Username)
+                new Claim("Username", account.Username),
+                new Claim("permissions",permissions)
             };
 
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
