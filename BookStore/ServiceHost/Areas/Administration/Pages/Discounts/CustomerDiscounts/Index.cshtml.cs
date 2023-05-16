@@ -1,4 +1,6 @@
+using _0_Framework.Infrastucture;
 using DiscountManagement.Application.Contract.CustomerDiscount;
+using DiscountManagement.Configuration.Permissions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -25,6 +27,7 @@ namespace ServiceHost.Areas.Administration.Pages.Discounts.CustomerDiscounts
             _customerDiscountApplication = customerDiscountApplication;
         }
 
+        [NeedsPermission(DiscountPermissions.ListCustomers)]
         public void OnGet(CustomerDiscountSearchModel searchModel)
         {
             Products = new SelectList(_productApplication.GetProducts(), "Id", "Name");
@@ -40,6 +43,7 @@ namespace ServiceHost.Areas.Administration.Pages.Discounts.CustomerDiscounts
             return Partial("./Create", command);
         }
 
+        [NeedsPermission(DiscountPermissions.DefineCustomer)]
         public JsonResult OnPostCreate(DefineCustomerDiscount command)
         {
             var result = _customerDiscountApplication.Define(command);
@@ -53,6 +57,7 @@ namespace ServiceHost.Areas.Administration.Pages.Discounts.CustomerDiscounts
             return Partial("./Edit", customerDiscount);
         }
 
+        [NeedsPermission(DiscountPermissions.EditCustomer)]
         public JsonResult OnPostEdit(EditCustomerDiscount command)
         {
             var result = _customerDiscountApplication.Edit(command);
