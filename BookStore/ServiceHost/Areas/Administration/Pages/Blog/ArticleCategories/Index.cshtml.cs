@@ -1,4 +1,6 @@
+using _0_Framework.Infrastucture;
 using BlogManagement.Application.Contracts.ArticleCategory;
+using BlogManagement.Infrastructure.Configuration.Permissions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;
@@ -17,6 +19,7 @@ namespace ServiceHost.Areas.Administration.Pages.Blog.ArticleCategories
             _articleCategoryApplication = articleCategoryApplication;
         }
 
+        [NeedsPermission(BlogPermissions.ListArticleCategories)]
         public void OnGet(ArticleCategorySearchModel searchModel)
         {
             ArticleCategories = _articleCategoryApplication.Search(searchModel);
@@ -27,6 +30,7 @@ namespace ServiceHost.Areas.Administration.Pages.Blog.ArticleCategories
             return Partial("./Create", new CreateArticleCategory());
         }
 
+        [NeedsPermission(BlogPermissions.CreateArticleCategory)]
         public JsonResult OnPostCreate(CreateArticleCategory command)
         {
             var result = _articleCategoryApplication.Create(command);
@@ -39,6 +43,7 @@ namespace ServiceHost.Areas.Administration.Pages.Blog.ArticleCategories
             return Partial("Edit", productCategory);
         }
 
+        [NeedsPermission(BlogPermissions.EditArticleCategory)]
         public JsonResult OnPostEdit(EditArticleCategory command)
         {
             var result = _articleCategoryApplication.Edit(command);
