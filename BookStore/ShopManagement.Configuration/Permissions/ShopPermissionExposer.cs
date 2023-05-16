@@ -10,21 +10,42 @@ namespace ShopManagement.Configuration.Permissions
             return new Dictionary<string, List<PermissionDto>>
             {
                 {
-                    "Product",new List<PermissionDto>
+                    "Book",new List<PermissionDto>
                     {
-                        new PermissionDto(ShopPermissions.ListProducts,"ListProducts"),
-                        new PermissionDto(ShopPermissions.SearchProducts,"SearchProducts"),
-                        new PermissionDto(ShopPermissions.CreateProduct,"CreateProduct"),
-                        new PermissionDto(ShopPermissions.EditProduct,"EditProduct"),
+                        new PermissionDto(ShopPermissions.ListProducts,"لیست"),
+                        new PermissionDto(ShopPermissions.SearchProducts,"جستجو"),
+                        new PermissionDto(ShopPermissions.CreateProduct,"ایجاد"),
+                        new PermissionDto(ShopPermissions.EditProduct,"ویرایش"),
                     }
                 },
                 {
-                    "ProductCategory",new List<PermissionDto>
+                    "BookCategory",new List<PermissionDto>
                     {
-                        new PermissionDto(ShopPermissions.ListProductCategories,"listProductCategories"),
-                        new PermissionDto(ShopPermissions.SearchProductCategories,"SearchProductCategories"),
-                        new PermissionDto(ShopPermissions.CreateProductCategory,"CreateProductCategory"),
-                        new PermissionDto(ShopPermissions.EditProductCategory,"EditProductCategory"),
+                        new PermissionDto(ShopPermissions.ListProductCategories,"لیست"),
+                        new PermissionDto(ShopPermissions.SearchProductCategories,"جستجو"),
+                        new PermissionDto(ShopPermissions.CreateProductCategory,"ایجاد"),
+                        new PermissionDto(ShopPermissions.EditProductCategory,"ویرایش"),
+                    }
+                },
+                {
+                    "Slider",new List<PermissionDto>
+                    {
+                        new PermissionDto(ShopPermissions.ListSlides,"لیست"),
+                        new PermissionDto(ShopPermissions.CreateSlide,"ایجاد"),
+                        new PermissionDto(ShopPermissions.EditSlide,"ویرایش"),
+                        new PermissionDto(ShopPermissions.RemoveSlide,"حذف"),
+                        new PermissionDto(ShopPermissions.RestoreSlide,"فعال سازی"),
+                    }
+                },
+                {
+                    "BookPictures",new List<PermissionDto>
+                    {
+                        new PermissionDto(ShopPermissions.ListProductPictures,"لیست"),
+                        new PermissionDto(ShopPermissions.SearchProductPicture,"جستجو"),
+                        new PermissionDto(ShopPermissions.CreateProductPicture,"ایجاد"),
+                        new PermissionDto(ShopPermissions.EditProductPicture,"ویرایش"),
+                        new PermissionDto(ShopPermissions.RemoveProductPicture,"حذف"),
+                        new PermissionDto(ShopPermissions.RestoreProductPicture,"فعال سازی"),
                     }
                 }
             };

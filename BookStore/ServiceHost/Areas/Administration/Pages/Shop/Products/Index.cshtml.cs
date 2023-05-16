@@ -45,7 +45,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Products
             return Partial("./Create", command);
         }
 
-        [NeedsPermission(ShopPermissions.CreateProduct)]
+        [NeedsPermission(ShopPermissions.CreateSlide)]
         public JsonResult OnPostCreate(CreateProduct command)
         {
             var result=_productApplication.Create(command);

@@ -1,9 +1,8 @@
+using _0_Framework.Infrastucture;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using ShopManagement.Application.Contracts.Product;
-using ShopManagement.Application.Contracts.ProductPicture;
 using ShopManagement.Application.Contracts.Slide;
+using ShopManagement.Configuration.Permissions;
 using System.Collections.Generic;
 
 namespace ServiceHost.Areas.Administration.Pages.Shop.Slides
@@ -21,6 +20,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Slides
             _slideApplication = slideApplication;
         }
 
+        [NeedsPermission(ShopPermissions.ListSlides)]
         public void OnGet()
         {
             Slides = _slideApplication.GetList();
@@ -32,6 +32,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Slides
             return Partial("./Create", command);
         }
 
+        [NeedsPermission(ShopPermissions.CreateSlide)]
         public JsonResult OnPostCreate(CreateSlide command)
         {
             var result = _slideApplication.Create(command);
@@ -44,12 +45,14 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Slides
             return Partial("Edit", slide);
         }
 
+        [NeedsPermission(ShopPermissions.EditSlide)]
         public JsonResult OnPostEdit(EditSlide command)
         {
             var result = _slideApplication.Edit(command);
             return new JsonResult(result);
         }
 
+        [NeedsPermission(ShopPermissions.RemoveSlide)]
         public IActionResult OnGetRemove(long id)
         {
             var result = _slideApplication.Remove(id);
@@ -60,6 +63,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Slides
             return RedirectToPage("./Index");
         }
 
+        [NeedsPermission(ShopPermissions.RestoreSlide)]
         public IActionResult OnGetRestore(long id)
         {
             var result = _slideApplication.Restore(id);
