@@ -1,35 +1,25 @@
 
-/**
-* Theme: Moltran Admin Template
-* Author: Coderthemes
-* SweetAlert - 
-* Usage: $.SweetAlert.methodname
-*/
+
 
 !function($) {
     "use strict";
 
     var SweetAlert = function() {};
 
-    //examples 
     SweetAlert.prototype.init = function() {
         
-    //Basic
-    $('#sa-basic').click(function(){
+      $('#sa-basic').click(function(){
         swal("Here's a message!");
     });
 
-    //A title with a text under
     $('#sa-title').click(function(){
         swal("Here's a message!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat, tincidunt vitae ipsum et, pellentesque maximus enim. Mauris eleifend ex semper, lobortis purus sed, pharetra felis")
     });
 
-    //Success Message
     $('#sa-success').click(function(){
         swal("Good job!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat, tincidunt vitae ipsum et, pellentesque maximus enim. Mauris eleifend ex semper, lobortis purus sed, pharetra felis", "success")
     });
 
-    //Warning Message
     $('#sa-warning').click(function(){
         swal({   
             title: "Are you sure?",   
@@ -44,7 +34,6 @@
         });
     });
 
-    //Parameter
     $('#sa-params').click(function(){
         swal({   
             title: "Are you sure?",   
@@ -65,7 +54,6 @@
         });
     });
 
-    //Custom Image
     $('#sa-image').click(function(){
         swal({   
             title: "Sweet!",   
@@ -74,7 +62,6 @@
         });
     });
 
-    //Auto Close Timer
     $('#sa-close').click(function(){
          swal({   
             title: "Auto close alert!",   
@@ -86,11 +73,9 @@
 
 
     },
-    //init
     $.SweetAlert = new SweetAlert, $.SweetAlert.Constructor = SweetAlert
 }(window.jQuery),
 
-//initializing 
 function($) {
     "use strict";
     $.SweetAlert.init()

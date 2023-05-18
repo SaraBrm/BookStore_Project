@@ -45,7 +45,6 @@ CodeMirror.defineMode("xml", function(config, parserConfig) {
   };
   var alignCDATA = parserConfig.alignCDATA;
 
-  // Return variables for tokenizers
   var tagName, type, setStyle;
 
   function inText(stream, state) {
@@ -295,14 +294,12 @@ CodeMirror.defineMode("xml", function(config, parserConfig) {
 
     indent: function(state, textAfter, fullLine) {
       var context = state.context;
-      // Indent multi-line strings (e.g. css).
       if (state.tokenize.isInAttribute) {
         return state.stringStartCol + 1;
       }
       if (context && context.noIndent) return CodeMirror.Pass;
       if (state.tokenize != inTag && state.tokenize != inText)
         return fullLine ? fullLine.match(/^(\s*)/)[0].length : 0;
-      // Indent the starts of attribute names.
       if (state.tagName) {
         if (multilineTagIndentPastTag)
           return state.tagStart + state.tagName.length + 2;

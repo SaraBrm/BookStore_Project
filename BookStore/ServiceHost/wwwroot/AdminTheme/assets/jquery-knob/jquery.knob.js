@@ -1,26 +1,10 @@
-/*!jQuery Knob*/
-/**
- * Downward compatible, touchable dial
- *
- * Version: 1.2.0 (15/07/2012)
- * Requires: jQuery v1.7+
- *
- * Copyright (c) 2012 Anthony Terrien
- * Under MIT License (http://www.opensource.org/licenses/mit-license.php)
- *
- * Thanks to vor, eskimoblood, spiffistan, FabrizioC
- */
+
 (function($) {
 
-    /**
-     * Kontrol library
-     */
     "use strict";
 
-    /**
-     * Definition of globals and core
-     */
-    var k = {}, // kontrol
+    
+    var k = {},
         max = Math.max,
         min = Math.min;
 
@@ -30,44 +14,35 @@
         return e.originalEvent.touches.length - 1;
     };
 
-    /**
-     * Kontrol Object
-     *
-     * Definition of an abstract UI control
-     *
-     * Each concrete component must call this one.
-     * <code>
-     * k.o.call(this);
-     * </code>
-     */
+  
     k.o = function () {
         var s = this;
 
-        this.o = null; // array of options
-        this.$ = null; // jQuery wrapped element
-        this.i = null; // mixed HTMLInputElement or array of HTMLInputElement
-        this.g = null; // deprecated 2D graphics context for 'pre-rendering'
-        this.v = null; // value ; mixed array or integer
-        this.cv = null; // change value ; not commited value
-        this.x = 0; // canvas x position
-        this.y = 0; // canvas y position
-        this.w = 0; // canvas width
-        this.h = 0; // canvas height
-        this.$c = null; // jQuery canvas element
-        this.c = null; // rendered canvas context
-        this.t = 0; // touches index
+        this.o = null; 
+        this.$ = null; 
+        this.i = null; 
+        this.g = null; 
+        this.v = null;
+        this.cv = null; 
+        this.x = 0; 
+        this.y = 0; 
+        this.w = 0; 
+        this.h = 0; 
+        this.$c = null; 
+        this.c = null; 
+        this.t = 0; 
         this.isInit = false;
-        this.fgColor = null; // main color
-        this.pColor = null; // previous color
-        this.dH = null; // draw hook
-        this.cH = null; // change hook
-        this.eH = null; // cancel hook
-        this.rH = null; // release hook
-        this.scale = 1; // scale factor
+        this.fgColor = null; 
+        this.pColor = null; 
+        this.dH = null;
+        this.cH = null; 
+        this.eH = null; 
+        this.rH = null;
+        this.scale = 1; 
         this.relative = false;
         this.relativeWidth = false;
         this.relativeHeight = false;
-        this.$div = null; // component div
+        this.$div = null; 
 
         this.run = function () {
             var cf = function (e, conf) {
@@ -86,13 +61,11 @@
             this.extend();
             this.o = $.extend(
                 {
-                    // Config
                     min : this.$.data('min') || 0,
                     max : this.$.data('max') || 100,
                     stopper : true,
                     readOnly : this.$.data('readonly') || (this.$.attr('readonly') === 'readonly'),
 
-                    // UI
                     cursor : (this.$.data('cursor') === true && 30) ||
                                 this.$.data('cursor') || 0,
                     thickness : (
@@ -111,23 +84,19 @@
                     inline : false,
                     step : this.$.data('step') || 1,
 
-                    // Hooks
-                    draw : null, // function () {}
-                    change : null, // function (value) {}
-                    cancel : null, // function () {}
-                    release : null // function (value) {}
+                    draw : null, 
+                    change : null, 
+                    cancel : null, 
+                    release : null 
                 }, this.o
             );
 
-            // finalize options
             if(!this.o.inputColor) {
                 this.o.inputColor = this.o.fgColor;
             }
 
-            // routing value
             if(this.$.is('fieldset')) {
 
-                // fieldset = array of integer
                 this.v = {};
                 this.i = this.$.find('input');
                 this.i.each(function(k) {
@@ -148,7 +117,6 @@
 
             } else {
 
-                // input = integer
                 this.i = this.$;
                 this.v = this.$.val();
                 (this.v === '') && (this.v = this.o.min);
@@ -164,14 +132,11 @@
 
             (!this.o.displayInput) && this.$.hide();
 
-            // adds needed DOM elements (canvas, div)
             this.$c = $(document.createElement('canvas')).attr({
                 width: this.o.width,
                 height: this.o.height
             });
 
-            // wraps all elements in a div
-            // add to DOM before Canvas init is triggered
             this.$div = $('<div style="'
                 + (this.o.inline ? 'display:inline;' : '')
                 + 'width:' + this.o.width + 'px;height:' + this.o.height + 'px;'
@@ -194,7 +159,6 @@
                 }
             }
 
-            // hdpi support
             this.scale = (window.devicePixelRatio || 1) /
                         (
                             this.c.webkitBackingStorePixelRatio ||
@@ -204,17 +168,14 @@
                             this.c.backingStorePixelRatio || 1
                         );
 
-            // detects relative width / height
             this.relativeWidth = ((this.o.width % 1 !== 0) &&
                 this.o.width.indexOf('%'));
             this.relativeHeight = ((this.o.height % 1 !== 0) &&
                 this.o.height.indexOf('%'));
             this.relative = (this.relativeWidth || this.relativeHeight);
 
-            // computes size and carves the component
             this._carve();
 
-            // prepares props for transaction
             if (this.v instanceof Object) {
                 this.cv = {};
                 this.copy(this.v, this.cv);
@@ -222,13 +183,11 @@
                 this.cv = this.v;
             }
 
-            // binds configure event
             this.$
                 .bind("configure", cf)
                 .parent()
                 .bind("configure", cf);
 
-            // finalize init
             this._listen()
                 ._configure()
                 ._xy()
@@ -236,7 +195,6 @@
 
             this.isInit = true;
 
-            // the most important !
             this._draw();
 
             return this;
@@ -253,27 +211,23 @@
                             parseInt(this.o.height) / 100 :
                             this.$div.parent().height();
 
-                // apply relative
                 this.w = this.h = Math.min(w, h);
             } else {
                 this.w = this.o.width;
                 this.h = this.o.height;
             }
 
-            // finalize div
             this.$div.css({
                 'width': this.w + 'px',
                 'height': this.h + 'px'
             });
 
-            // finalize canvas with computed width
             this.$c.attr({
                 width: this.w,
                 height: this.h
             });
 
-            // scaling
-            if (this.scale !== 1) {
+             if (this.scale !== 1) {
                 this.$c[0].width = this.$c[0].width * this.scale;
                 this.$c[0].height = this.$c[0].height * this.scale;
                 this.$c.width(this.w);
@@ -285,7 +239,6 @@
 
         this._draw = function () {
 
-            // canvas pre-rendering
             var d = true;
 
             s.g = s.c;
@@ -316,13 +269,10 @@
                 s._draw();
             };
 
-            // get touches index
             this.t = k.c.t(e);
 
-            // First touch
             touchMove(e);
 
-            // Touch events listeners
             k.c.d
                 .bind("touchmove.k", touchMove)
                 .bind(
@@ -349,14 +299,11 @@
                 s._draw();
             };
 
-            // First click
             mouseMove(e);
 
-            // Mouse events listeners
             k.c.d
                 .bind("mousemove.k", mouseMove)
                 .bind(
-                    // Escape key cancel current change
                     "keyup.k"
                     , function (e) {
                         if (e.keyCode === 27) {
@@ -426,7 +373,6 @@
 
         this._configure = function () {
 
-            // Hooks
             if (this.o.draw) this.dH = this.o.draw;
             if (this.o.change) this.cH = this.o.change;
             if (this.o.cancel) this.eH = this.o.cancel;
@@ -450,17 +396,15 @@
             return (~~ (((v < 0) ? -0.5 : 0.5) + (v/this.o.step))) * this.o.step;
         };
 
-        // Abstract methods
-        this.listen = function () {}; // on start, one time
-        this.extend = function () {}; // each time configure triggered
-        this.init = function () {}; // each time configure triggered
-        this.change = function (v) {}; // on change
-        this.val = function (v) {}; // on release
-        this.xy2val = function (x, y) {}; //
-        this.draw = function () {}; // on change / on release
+        this.listen = function () {}; 
+        this.extend = function () {}; 
+        this.init = function () {};
+        this.change = function (v) {}; 
+        this.val = function (v) {}; 
+        this.xy2val = function (x, y) {}; 
+        this.draw = function () {}; 
         this.clear = function () { this._clear(); };
 
-        // Utils
         this.h2rgba = function (h, a) {
             var rgb;
             h = h.substring(1,7)
@@ -475,10 +419,6 @@
         };
     };
 
-
-    /**
-     * k.Dial
-     */
     k.Dial = function () {
         k.o.call(this);
 
@@ -527,7 +467,6 @@
                     ) - this.angleOffset;
 
             if(this.angleArc != this.PI2 && (a < 0) && (a > -0.5)) {
-                // if isset angleArc option, set to min if .5 under min
                 a = 0;
             } else if (a < 0) {
                 a += this.PI2;
@@ -542,7 +481,6 @@
         };
 
         this.listen = function () {
-            // bind MouseWheel
             var s = this, mwTimerStop, mwTimerRelease,
                 mw = function (e) {
                     e.preventDefault();
@@ -558,14 +496,12 @@
                     s.val(v, false);
 
                     if(s.rH) {
-                        // Handle mousewheel stop
                         clearTimeout(mwTimerStop);
                         mwTimerStop = setTimeout(function() {
                             s.rH(v);
                             mwTimerStop = null;
                         }, 100);
 
-                        // Handle mousewheel releases
                         if(!mwTimerRelease) {
                             mwTimerRelease = setTimeout(function() {
                                 if(mwTimerStop) s.rH(v);
@@ -582,7 +518,6 @@
                     ,function (e) {
                         var kc = e.keyCode;
 
-                        // numpad support
                         if(kc >= 96 && kc <= 105) {
                             kc = e.keyCode = kc - 48;
                         }
@@ -591,13 +526,12 @@
 
                         if (isNaN(kval)) {
 
-                            (kc !== 13)         // enter
-                            && (kc !== 8)       // bs
-                            && (kc !== 9)       // tab
-                            && (kc !== 189)     // -
+                            (kc !== 13)         
+                            && (kc !== 8)       
+                            && (kc !== 9)       
+                            && (kc !== 189)    
                             && e.preventDefault();
 
-                            // arrows
                             if ($.inArray(kc,[37,38,39,40]) > -1) {
                                 e.preventDefault();
 
@@ -608,7 +542,6 @@
                                 s.change(v);
                                 s._draw();
 
-                                // long time keydown speed-up
                                 to = window.setTimeout(
                                     function () { m *= 2; }, 30
                                 );
@@ -627,7 +560,6 @@
                                 s.val(s.$.val());
                             }
                         } else {
-                            // kval postcond
                             (s.$.val() > s.o.max && s.$.val(s.o.max))
                             || (s.$.val() < s.o.min && s.$.val(s.o.min));
                         }
@@ -660,11 +592,9 @@
             this.o.angleArc
             && (this.o.angleArc = isNaN(this.o.angleArc) ? this.PI2 : this.o.angleArc);
 
-            // deg to rad
             this.angleOffset = this.o.angleOffset * Math.PI / 180;
             this.angleArc = this.o.angleArc * Math.PI / 180;
 
-            // compute start and end angles
             this.startAngle = 1.5 * Math.PI + this.angleOffset;
             this.endAngle = 1.5 * Math.PI + this.angleOffset + this.angleArc;
 
@@ -707,11 +637,11 @@
 
         this.draw = function () {
 
-            var c = this.g,                 // context
-                a = this.angle(this.cv)    // Angle
-                , sat = this.startAngle     // Start angle
-                , eat = sat + a             // End angle
-                , sa, ea                    // Previous angles
+            var c = this.g,                 
+                a = this.angle(this.cv)   
+                , sat = this.startAngle     
+                , eat = sat + a             
+                , sa, ea                    
                 , r = 1;
 
             c.lineWidth = this.lineWidth;

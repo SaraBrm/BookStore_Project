@@ -1,11 +1,4 @@
-/*!
- * jQuery Validation Plugin v1.17.0
- *
- * https://jqueryvalidation.org/
- *
- * Copyright (c) 2017 Jörn Zaefferer
- * Released under the MIT license
- */
+
 (function( factory ) {
 	if ( typeof define === "function" && define.amd ) {
 		define( ["jquery", "./jquery.validate"], factory );
@@ -43,10 +36,8 @@
 
 }() );
 
-// Accept a value from a file input based on a required mimetype
 $.validator.addMethod( "accept", function( value, element, param ) {
 
-	// Split mime on commas in case we have multiple types we can accept
 	var typeParam = typeof param === "string" ? param.replace( /\s/g, "" ) : "image/*",
 		optionalValue = this.optional( element ),
 		i, file, regex;
@@ -58,9 +49,6 @@ $.validator.addMethod( "accept", function( value, element, param ) {
 
 	if ( $( element ).attr( "type" ) === "file" ) {
 
-		// Escape string to be used in the regex
-		// see: https://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex
-		// Escape also "/*" as "/.*" as a wildcard
 		typeParam = typeParam
 				.replace( /[\-\[\]\/\{\}\(\)\+\?\.\\\^\$\|]/g, "\\$&" )
 				.replace( /,/g, "|" )
@@ -80,8 +68,6 @@ $.validator.addMethod( "accept", function( value, element, param ) {
 		}
 	}
 
-	// Either return true because we've validated each file, or because the
-	// browser does not support element.files and the FileList feature
 	return true;
 }, $.validator.format( "Please enter a value with a valid mimetype." ) );
 
@@ -89,12 +75,7 @@ $.validator.addMethod( "alphanumeric", function( value, element ) {
 	return this.optional( element ) || /^\w+$/i.test( value );
 }, "Letters, numbers, and underscores only please" );
 
-/*
- * Dutch bank account numbers (not 'giro' numbers) have 9 digits
- * and pass the '11 check'.
- * We accept the notation with spaces, as that is common.
- * acceptable: 123456789 or 12 34 56 789
- */
+
 $.validator.addMethod( "bankaccountNL", function( value, element ) {
 	if ( this.optional( element ) ) {
 		return true;
@@ -122,75 +103,12 @@ $.validator.addMethod( "bankorgiroaccountNL", function( value, element ) {
 			( $.validator.methods.giroaccountNL.call( this, value, element ) );
 }, "Please specify a valid bank or giro account number" );
 
-/**
- * BIC is the business identifier code (ISO 9362). This BIC check is not a guarantee for authenticity.
- *
- * BIC pattern: BBBBCCLLbbb (8 or 11 characters long; bbb is optional)
- *
- * Validation is case-insensitive. Please make sure to normalize input yourself.
- *
- * BIC definition in detail:
- * - First 4 characters - bank code (only letters)
- * - Next 2 characters - ISO 3166-1 alpha-2 country code (only letters)
- * - Next 2 characters - location code (letters and digits)
- *   a. shall not start with '0' or '1'
- *   b. second character must be a letter ('O' is not allowed) or digit ('0' for test (therefore not allowed), '1' denoting passive participant, '2' typically reverse-billing)
- * - Last 3 characters - branch code, optional (shall not start with 'X' except in case of 'XXX' for primary office) (letters and digits)
- */
+
 $.validator.addMethod( "bic", function( value, element ) {
     return this.optional( element ) || /^([A-Z]{6}[A-Z2-9][A-NP-Z1-9])(X{3}|[A-WY-Z0-9][A-Z0-9]{2})?$/.test( value.toUpperCase() );
 }, "Please specify a valid BIC code" );
 
-/*
- * Código de identificación fiscal ( CIF ) is the tax identification code for Spanish legal entities
- * Further rules can be found in Spanish on http://es.wikipedia.org/wiki/C%C3%B3digo_de_identificaci%C3%B3n_fiscal
- *
- * Spanish CIF structure:
- *
- * [ T ][ P ][ P ][ N ][ N ][ N ][ N ][ N ][ C ]
- *
- * Where:
- *
- * T: 1 character. Kind of Organization Letter: [ABCDEFGHJKLMNPQRSUVW]
- * P: 2 characters. Province.
- * N: 5 characters. Secuencial Number within the province.
- * C: 1 character. Control Digit: [0-9A-J].
- *
- * [ T ]: Kind of Organizations. Possible values:
- *
- *   A. Corporations
- *   B. LLCs
- *   C. General partnerships
- *   D. Companies limited partnerships
- *   E. Communities of goods
- *   F. Cooperative Societies
- *   G. Associations
- *   H. Communities of homeowners in horizontal property regime
- *   J. Civil Societies
- *   K. Old format
- *   L. Old format
- *   M. Old format
- *   N. Nonresident entities
- *   P. Local authorities
- *   Q. Autonomous bodies, state or not, and the like, and congregations and religious institutions
- *   R. Congregations and religious institutions (since 2008 ORDER EHA/451/2008)
- *   S. Organs of State Administration and regions
- *   V. Agrarian Transformation
- *   W. Permanent establishments of non-resident in Spain
- *
- * [ C ]: Control Digit. It can be a number or a letter depending on T value:
- * [ T ]  -->  [ C ]
- * ------    ----------
- *   A         Number
- *   B         Number
- *   E         Number
- *   H         Number
- *   K         Letter
- *   P         Letter
- *   Q         Letter
- *   S         Letter
- *
- */
+
 $.validator.addMethod( "cifES", function( value, element ) {
 	"use strict";
 
@@ -213,7 +131,6 @@ $.validator.addMethod( "cifES", function( value, element ) {
 		return n % 2 === 0;
 	}
 
-	// Quick format test
 	if ( value.length !== 9 || !cifRegEx.test( value ) ) {
 		return false;
 	}
@@ -221,17 +138,13 @@ $.validator.addMethod( "cifES", function( value, element ) {
 	for ( i = 0; i < number.length; i++ ) {
 		n = parseInt( number[ i ], 10 );
 
-		// Odd positions
 		if ( isOdd( i ) ) {
 
-			// Odd positions are multiplied first.
 			n *= 2;
 
-			// If the multiplication is bigger than 10 we need to adjust
 			odd_sum += n < 10 ? n : n - 9;
 
-		// Even positions
-		// Just sum them
+		
 		} else {
 			even_sum += n;
 		}
@@ -256,13 +169,9 @@ $.validator.addMethod( "cifES", function( value, element ) {
 
 }, "Please specify a valid CIF number." );
 
-/*
- * Brazillian CPF number (Cadastrado de Pessoas Físicas) is the equivalent of a Brazilian tax registration number.
- * CPF numbers have 11 digits in total: 9 numbers followed by 2 check numbers that are being used for validation.
- */
+
 $.validator.addMethod( "cpfBR", function( value ) {
 
-	// Removing special characters from value
 	value = value.replace( /([~!@#$%^&*()_+=`{}\[\]\-|\\:;'<>,.\/? ])+/g, "" );
 
 	// Checking value to have 11 digits only
@@ -305,7 +214,6 @@ $.validator.addMethod( "cpfBR", function( value ) {
 		sum = sum + parseInt( value.substring( i - 1, i ), 10 ) * ( 11 - i );
 	}
 
-	// If first Check Number (CN) is valid, move to Step 2 - using second Check Number:
 	if ( checkResult( sum, firstCN ) ) {
 		sum = 0;
 		for ( i = 1; i <= 10; i++ ) {
@@ -317,8 +225,6 @@ $.validator.addMethod( "cpfBR", function( value ) {
 
 }, "Please specify a valid CPF number" );
 
-// https://jqueryvalidation.org/creditcard-method/
-// based on https://en.wikipedia.org/wiki/Luhn_algorithm
 $.validator.addMethod( "creditcard", function( value, element ) {
 	if ( this.optional( element ) ) {
 		return "dependency-mismatch";
@@ -336,8 +242,6 @@ $.validator.addMethod( "creditcard", function( value, element ) {
 
 	value = value.replace( /\D/g, "" );
 
-	// Basing min and max length on
-	// https://developer.ean.com/general_info/Valid_Credit_Card_Types
 	if ( value.length < 13 || value.length > 19 ) {
 		return false;
 	}
@@ -358,10 +262,7 @@ $.validator.addMethod( "creditcard", function( value, element ) {
 	return ( nCheck % 10 ) === 0;
 }, "Please enter a valid credit card number." );
 
-/* NOTICE: Modified version of Castle.Components.Validator.CreditCardValidator
- * Redistributed under the the Apache License 2.0 at http://www.apache.org/licenses/LICENSE-2.0
- * Valid Types: mastercard, visa, amex, dinersclub, enroute, discover, jcb, unknown, all (overrides all other settings)
- */
+
 $.validator.addMethod( "creditcardtypes", function( value, element, param ) {
 	if ( /[^0-9\-]+/.test( value ) ) {
 		return false;
@@ -428,34 +329,7 @@ $.validator.addMethod( "creditcardtypes", function( value, element, param ) {
 	return false;
 }, "Please enter a valid credit card number." );
 
-/**
- * Validates currencies with any given symbols by @jameslouiz
- * Symbols can be optional or required. Symbols required by default
- *
- * Usage examples:
- *  currency: ["£", false] - Use false for soft currency validation
- *  currency: ["$", false]
- *  currency: ["RM", false] - also works with text based symbols such as "RM" - Malaysia Ringgit etc
- *
- *  <input class="currencyInput" name="currencyInput">
- *
- * Soft symbol checking
- *  currencyInput: {
- *     currency: ["$", false]
- *  }
- *
- * Strict symbol checking (default)
- *  currencyInput: {
- *     currency: "$"
- *     //OR
- *     currency: ["$", true]
- *  }
- *
- * Multiple Symbols
- *  currencyInput: {
- *     currency: "$,£,¢"
- *  }
- */
+
 $.validator.addMethod( "currency", function( value, element, param ) {
     var isParamString = typeof param === "string",
         symbol = isParamString ? param : param[ 0 ],
@@ -474,25 +348,7 @@ $.validator.addMethod( "dateFA", function( value, element ) {
 	return this.optional( element ) || /^[1-4]\d{3}\/((0?[1-6]\/((3[0-1])|([1-2][0-9])|(0?[1-9])))|((1[0-2]|(0?[7-9]))\/(30|([1-2][0-9])|(0?[1-9]))))$/.test( value );
 }, $.validator.messages.date );
 
-/**
- * Return true, if the value is a valid date, also making this formal check dd/mm/yyyy.
- *
- * @example $.validator.methods.date("01/01/1900")
- * @result true
- *
- * @example $.validator.methods.date("01/13/1990")
- * @result false
- *
- * @example $.validator.methods.date("01.01.1900")
- * @result false
- *
- * @example <input name="pippo" class="{dateITA:true}" />
- * @desc Declares an optional input element whose value must be a valid date.
- *
- * @name $.validator.methods.dateITA
- * @type Boolean
- * @cat Plugins/Validate/Methods
- */
+
 $.validator.addMethod( "dateITA", function( value, element ) {
 	var check = false,
 		re = /^\d{1,2}\/\d{1,2}\/\d{4}$/,
@@ -518,25 +374,17 @@ $.validator.addMethod( "dateNL", function( value, element ) {
 	return this.optional( element ) || /^(0?[1-9]|[12]\d|3[01])[\.\/\-](0?[1-9]|1[012])[\.\/\-]([12]\d)?(\d\d)$/.test( value );
 }, $.validator.messages.date );
 
-// Older "accept" file extension method. Old docs: http://docs.jquery.com/Plugins/Validation/Methods/accept
 $.validator.addMethod( "extension", function( value, element, param ) {
 	param = typeof param === "string" ? param.replace( /,/g, "|" ) : "png|jpe?g|gif";
 	return this.optional( element ) || value.match( new RegExp( "\\.(" + param + ")$", "i" ) );
 }, $.validator.format( "Please enter a value with a valid extension." ) );
 
-/**
- * Dutch giro account numbers (not bank numbers) have max 7 digits
- */
+
 $.validator.addMethod( "giroaccountNL", function( value, element ) {
 	return this.optional( element ) || /^[0-9]{1,7}$/.test( value );
 }, "Please specify a valid giro account number" );
 
-/**
- * IBAN is the international bank account number.
- * It has a country - specific format, that is checked here too
- *
- * Validation is case-insensitive. Please make sure to normalize input yourself.
- */
+
 $.validator.addMethod( "iban", function( value, element ) {
 
 	// Some quick simple tests to prevent needless work
@@ -552,11 +400,6 @@ $.validator.addMethod( "iban", function( value, element ) {
 		cOperator = "",
 		countrycode, ibancheck, charAt, cChar, bbanpattern, bbancountrypatterns, ibanregexp, i, p;
 
-	// Check for IBAN code length.
-	// It contains:
-	// country code ISO 3166-1 - two letters,
-	// two check digits,
-	// Basic Bank Account Number (BBAN) - up to 30 chars
 	var minimalIBANlength = 5;
 	if ( iban.length < minimalIBANlength ) {
 		return false;
@@ -633,13 +476,6 @@ $.validator.addMethod( "iban", function( value, element ) {
 
 	bbanpattern = bbancountrypatterns[ countrycode ];
 
-	// As new countries will start using IBAN in the
-	// future, we only check if the countrycode is known.
-	// This prevents false negatives, while almost all
-	// false positives introduced by this, will be caught
-	// by the checksum validation below anyway.
-	// Strict checking should return FALSE for unknown
-	// countries.
 	if ( typeof bbanpattern !== "undefined" ) {
 		ibanregexp = new RegExp( "^[A-Z]{2}\\d{2}" + bbanpattern + "$", "" );
 		if ( !( ibanregexp.test( iban ) ) ) {
@@ -647,7 +483,6 @@ $.validator.addMethod( "iban", function( value, element ) {
 		}
 	}
 
-	// Now check the checksum, first convert to digits
 	ibancheck = iban.substring( 4, iban.length ) + iban.substring( 0, 4 );
 	for ( i = 0; i < ibancheck.length; i++ ) {
 		charAt = ibancheck.charAt( i );
@@ -692,14 +527,7 @@ $.validator.addMethod( "mobileNL", function( value, element ) {
 	return this.optional( element ) || /^((\+|00(\s|\s?\-\s?)?)31(\s|\s?\-\s?)?(\(0\)[\-\s]?)?|0)6((\s|\s?\-\s?)?[0-9]){8}$/.test( value );
 }, "Please specify a valid mobile number" );
 
-/* For UK phone functions, do the following server side processing:
- * Compare original input with this RegEx pattern:
- * ^\(?(?:(?:00\)?[\s\-]?\(?|\+)(44)\)?[\s\-]?\(?(?:0\)?[\s\-]?\(?)?|0)([1-9]\d{1,4}\)?[\s\d\-]+)$
- * Extract $1 and set $prefix to '+44<space>' if $1 is '44', otherwise set $prefix to '0'
- * Extract $2 and remove hyphens, spaces and parentheses. Phone number is combined $prefix and $2.
- * A number of very detailed GB telephone number RegEx patterns can also be found at:
- * http://www.aa-asterisk.org.uk/index.php/Regular_Expressions_for_Validating_and_Formatting_GB_Telephone_Numbers
- */
+
 $.validator.addMethod( "mobileUK", function( phone_number, element ) {
 	phone_number = phone_number.replace( /\(|\)|\s+|-/g, "" );
 	return this.optional( element ) || phone_number.length > 9 &&
@@ -710,14 +538,7 @@ $.validator.addMethod( "netmask", function( value, element ) {
     return this.optional( element ) || /^(254|252|248|240|224|192|128)\.0\.0\.0|255\.(254|252|248|240|224|192|128|0)\.0\.0|255\.255\.(254|252|248|240|224|192|128|0)\.0|255\.255\.255\.(254|252|248|240|224|192|128|0)/i.test( value );
 }, "Please enter a valid netmask." );
 
-/*
- * The NIE (Número de Identificación de Extranjero) is a Spanish tax identification number assigned by the Spanish
- * authorities to any foreigner.
- *
- * The NIE is the equivalent of a Spaniards Número de Identificación Fiscal (NIF) which serves as a fiscal
- * identification number. The CIF number (Certificado de Identificación Fiscal) is equivalent to the NIF, but applies to
- * companies rather than individuals. The NIE consists of an 'X' or 'Y' followed by 7 or 8 digits then another letter.
- */
+
 $.validator.addMethod( "nieES", function( value, element ) {
 	"use strict";
 
@@ -732,14 +553,10 @@ $.validator.addMethod( "nieES", function( value, element ) {
 
 	value = value.toString().toUpperCase();
 
-	// Quick format test
 	if ( value.length > 10 || value.length < 9 || !nieRegEx.test( value ) ) {
 		return false;
 	}
 
-	// X means same number
-	// Y means number + 10000000
-	// Z means number + 20000000
 	value = value.replace( /^[X]/, "0" )
 		.replace( /^[Y]/, "1" )
 		.replace( /^[Z]/, "2" );
@@ -750,9 +567,7 @@ $.validator.addMethod( "nieES", function( value, element ) {
 
 }, "Please specify a valid NIE number." );
 
-/*
- * The Número de Identificación Fiscal ( NIF ) is the way tax identification used in Spain for individuals
- */
+
 $.validator.addMethod( "nifES", function( value, element ) {
 	"use strict";
 
@@ -772,7 +587,6 @@ $.validator.addMethod( "nifES", function( value, element ) {
 		return ( "TRWAGMYFPDXBNJZSQVHLCKE".charAt( value.substring( 8, 0 ) % 23 ) === value.charAt( 8 ) );
 	}
 
-	// Test specials NIF (starts with K, L or M)
 	if ( /^[KLM]{1}/.test( value ) ) {
 		return ( value[ 8 ] === "TRWAGMYFPDXBNJZSQVHLCKE".charAt( value.substring( 8, 1 ) % 23 ) );
 	}
@@ -781,9 +595,6 @@ $.validator.addMethod( "nifES", function( value, element ) {
 
 }, "Please specify a valid NIF number." );
 
-/*
- * Numer identyfikacji podatkowej ( NIP ) is the way tax identification used in Poland for companies
- */
 $.validator.addMethod( "nipPL", function( value ) {
 	"use strict";
 
@@ -812,19 +623,7 @@ $.validator.addMethod( "nowhitespace", function( value, element ) {
 	return this.optional( element ) || /^\S+$/i.test( value );
 }, "No white space please" );
 
-/**
-* Return true if the field value matches the given format RegExp
-*
-* @example $.validator.methods.pattern("AR1004",element,/^AR\d{4}$/)
-* @result true
-*
-* @example $.validator.methods.pattern("BR1004",element,/^AR\d{4}$/)
-* @result false
-*
-* @name $.validator.methods.pattern
-* @type Boolean
-* @cat Plugins/Validate/Methods
-*/
+
 $.validator.addMethod( "pattern", function( value, element, param ) {
 	if ( this.optional( element ) ) {
 		return true;
@@ -835,90 +634,39 @@ $.validator.addMethod( "pattern", function( value, element, param ) {
 	return param.test( value );
 }, "Invalid format." );
 
-/**
- * Dutch phone numbers have 10 digits (or 11 and start with +31).
- */
+
 $.validator.addMethod( "phoneNL", function( value, element ) {
 	return this.optional( element ) || /^((\+|00(\s|\s?\-\s?)?)31(\s|\s?\-\s?)?(\(0\)[\-\s]?)?|0)[1-9]((\s|\s?\-\s?)?[0-9]){8}$/.test( value );
 }, "Please specify a valid phone number." );
 
-/* For UK phone functions, do the following server side processing:
- * Compare original input with this RegEx pattern:
- * ^\(?(?:(?:00\)?[\s\-]?\(?|\+)(44)\)?[\s\-]?\(?(?:0\)?[\s\-]?\(?)?|0)([1-9]\d{1,4}\)?[\s\d\-]+)$
- * Extract $1 and set $prefix to '+44<space>' if $1 is '44', otherwise set $prefix to '0'
- * Extract $2 and remove hyphens, spaces and parentheses. Phone number is combined $prefix and $2.
- * A number of very detailed GB telephone number RegEx patterns can also be found at:
- * http://www.aa-asterisk.org.uk/index.php/Regular_Expressions_for_Validating_and_Formatting_GB_Telephone_Numbers
- */
 
-// Matches UK landline + mobile, accepting only 01-3 for landline or 07 for mobile to exclude many premium numbers
+
 $.validator.addMethod( "phonesUK", function( phone_number, element ) {
 	phone_number = phone_number.replace( /\(|\)|\s+|-/g, "" );
 	return this.optional( element ) || phone_number.length > 9 &&
 		phone_number.match( /^(?:(?:(?:00\s?|\+)44\s?|0)(?:1\d{8,9}|[23]\d{9}|7(?:[1345789]\d{8}|624\d{6})))$/ );
 }, "Please specify a valid uk phone number" );
 
-/* For UK phone functions, do the following server side processing:
- * Compare original input with this RegEx pattern:
- * ^\(?(?:(?:00\)?[\s\-]?\(?|\+)(44)\)?[\s\-]?\(?(?:0\)?[\s\-]?\(?)?|0)([1-9]\d{1,4}\)?[\s\d\-]+)$
- * Extract $1 and set $prefix to '+44<space>' if $1 is '44', otherwise set $prefix to '0'
- * Extract $2 and remove hyphens, spaces and parentheses. Phone number is combined $prefix and $2.
- * A number of very detailed GB telephone number RegEx patterns can also be found at:
- * http://www.aa-asterisk.org.uk/index.php/Regular_Expressions_for_Validating_and_Formatting_GB_Telephone_Numbers
- */
+
 $.validator.addMethod( "phoneUK", function( phone_number, element ) {
 	phone_number = phone_number.replace( /\(|\)|\s+|-/g, "" );
 	return this.optional( element ) || phone_number.length > 9 &&
 		phone_number.match( /^(?:(?:(?:00\s?|\+)44\s?)|(?:\(?0))(?:\d{2}\)?\s?\d{4}\s?\d{4}|\d{3}\)?\s?\d{3}\s?\d{3,4}|\d{4}\)?\s?(?:\d{5}|\d{3}\s?\d{3})|\d{5}\)?\s?\d{4,5})$/ );
 }, "Please specify a valid phone number" );
 
-/**
- * Matches US phone number format
- *
- * where the area code may not start with 1 and the prefix may not start with 1
- * allows '-' or ' ' as a separator and allows parens around area code
- * some people may want to put a '1' in front of their number
- *
- * 1(212)-999-2345 or
- * 212 999 2344 or
- * 212-999-0983
- *
- * but not
- * 111-123-5434
- * and not
- * 212 123 4567
- */
+
 $.validator.addMethod( "phoneUS", function( phone_number, element ) {
 	phone_number = phone_number.replace( /\s+/g, "" );
 	return this.optional( element ) || phone_number.length > 9 &&
 		phone_number.match( /^(\+?1-?)?(\([2-9]([02-9]\d|1[02-9])\)|[2-9]([02-9]\d|1[02-9]))-?[2-9]([02-9]\d|1[02-9])-?\d{4}$/ );
 }, "Please specify a valid phone number" );
 
-/*
-* Valida CEPs do brasileiros:
-*
-* Formatos aceitos:
-* 99999-999
-* 99.999-999
-* 99999999
-*/
+
 $.validator.addMethod( "postalcodeBR", function( cep_value, element ) {
 	return this.optional( element ) || /^\d{2}.\d{3}-\d{3}?$|^\d{5}-?\d{3}?$/.test( cep_value );
 }, "Informe um CEP válido." );
 
-/**
- * Matches a valid Canadian Postal Code
- *
- * @example jQuery.validator.methods.postalCodeCA( "H0H 0H0", element )
- * @result true
- *
- * @example jQuery.validator.methods.postalCodeCA( "H0H0H0", element )
- * @result false
- *
- * @name jQuery.validator.methods.postalCodeCA
- * @type Boolean
- * @cat Plugins/Validate/Methods
- */
+
 $.validator.addMethod( "postalCodeCA", function( value, element ) {
 	return this.optional( element ) || /^[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVWXYZ] *\d[ABCEGHJKLMNPRSTVWXYZ]\d$/i.test( value );
 }, "Please specify a valid postal code" );
@@ -932,27 +680,11 @@ $.validator.addMethod( "postalcodeNL", function( value, element ) {
 	return this.optional( element ) || /^[1-9][0-9]{3}\s?[a-zA-Z]{2}$/.test( value );
 }, "Please specify a valid postal code" );
 
-// Matches UK postcode. Does not match to UK Channel Islands that have their own postcodes (non standard UK)
 $.validator.addMethod( "postcodeUK", function( value, element ) {
 	return this.optional( element ) || /^((([A-PR-UWYZ][0-9])|([A-PR-UWYZ][0-9][0-9])|([A-PR-UWYZ][A-HK-Y][0-9])|([A-PR-UWYZ][A-HK-Y][0-9][0-9])|([A-PR-UWYZ][0-9][A-HJKSTUW])|([A-PR-UWYZ][A-HK-Y][0-9][ABEHMNPRVWXY]))\s?([0-9][ABD-HJLNP-UW-Z]{2})|(GIR)\s?(0AA))$/i.test( value );
 }, "Please specify a valid UK postcode" );
 
-/*
- * Lets you say "at least X inputs that match selector Y must be filled."
- *
- * The end result is that neither of these inputs:
- *
- *	<input class="productinfo" name="partnumber">
- *	<input class="productinfo" name="description">
- *
- *	...will validate unless at least one of them is filled.
- *
- * partnumber:	{require_from_group: [1,".productinfo"]},
- * description: {require_from_group: [1,".productinfo"]}
- *
- * options[0]: number of fields that must be filled in the group
- * options[1]: CSS selector that defines the group of conditionally required fields
- */
+
 $.validator.addMethod( "require_from_group", function( value, element, options ) {
 	var $fields = $( options[ 1 ], element.form ),
 		$fieldsFirst = $fields.eq( 0 ),
@@ -964,7 +696,6 @@ $.validator.addMethod( "require_from_group", function( value, element, options )
 	// Store the cloned validator for future validation
 	$fieldsFirst.data( "valid_req_grp", validator );
 
-	// If element isn't being validated, run each require_from_group field's validation rules
 	if ( !$( element ).data( "being_validated" ) ) {
 		$fields.data( "being_validated", true );
 		$fields.each( function() {
@@ -975,27 +706,7 @@ $.validator.addMethod( "require_from_group", function( value, element, options )
 	return isValid;
 }, $.validator.format( "Please fill at least {0} of these fields." ) );
 
-/*
- * Lets you say "either at least X inputs that match selector Y must be filled,
- * OR they must all be skipped (left blank)."
- *
- * The end result, is that none of these inputs:
- *
- *	<input class="productinfo" name="partnumber">
- *	<input class="productinfo" name="description">
- *	<input class="productinfo" name="color">
- *
- *	...will validate unless either at least two of them are filled,
- *	OR none of them are.
- *
- * partnumber:	{skip_or_fill_minimum: [2,".productinfo"]},
- * description: {skip_or_fill_minimum: [2,".productinfo"]},
- * color:		{skip_or_fill_minimum: [2,".productinfo"]}
- *
- * options[0]: number of fields that must be filled in the group
- * options[1]: CSS selector that defines the group of conditionally required fields
- *
- */
+
 $.validator.addMethod( "skip_or_fill_minimum", function( value, element, options ) {
 	var $fields = $( options[ 1 ], element.form ),
 		$fieldsFirst = $fields.eq( 0 ),
@@ -1008,7 +719,6 @@ $.validator.addMethod( "skip_or_fill_minimum", function( value, element, options
 	// Store the cloned validator for future validation
 	$fieldsFirst.data( "valid_skip", validator );
 
-	// If element isn't being validated, run each skip_or_fill_minimum field's validation rules
 	if ( !$( element ).data( "being_validated" ) ) {
 		$fields.data( "being_validated", true );
 		$fields.each( function() {
@@ -1019,40 +729,7 @@ $.validator.addMethod( "skip_or_fill_minimum", function( value, element, options
 	return isValid;
 }, $.validator.format( "Please either skip these fields or fill at least {0} of them." ) );
 
-/* Validates US States and/or Territories by @jdforsythe
- * Can be case insensitive or require capitalization - default is case insensitive
- * Can include US Territories or not - default does not
- * Can include US Military postal abbreviations (AA, AE, AP) - default does not
- *
- * Note: "States" always includes DC (District of Colombia)
- *
- * Usage examples:
- *
- *  This is the default - case insensitive, no territories, no military zones
- *  stateInput: {
- *     caseSensitive: false,
- *     includeTerritories: false,
- *     includeMilitary: false
- *  }
- *
- *  Only allow capital letters, no territories, no military zones
- *  stateInput: {
- *     caseSensitive: false
- *  }
- *
- *  Case insensitive, include territories but not military zones
- *  stateInput: {
- *     includeTerritories: true
- *  }
- *
- *  Only allow capital letters, include territories and military zones
- *  stateInput: {
- *     caseSensitive: true,
- *     includeTerritories: true,
- *     includeMilitary: true
- *  }
- *
- */
+
 $.validator.addMethod( "stateUS", function( value, element, options ) {
 	var isDefault = typeof options === "undefined",
 		caseSensitive = ( isDefault || typeof options.caseSensitive === "undefined" ) ? false : options.caseSensitive,
@@ -1074,7 +751,6 @@ $.validator.addMethod( "stateUS", function( value, element, options ) {
 	return this.optional( element ) || regex.test( value );
 }, "Please specify a valid state" );
 
-// TODO check if value starts with <, otherwise don't try stripping anything
 $.validator.addMethod( "strippedminlength", function( value, element, param ) {
 	return $( value ).text().length >= param;
 }, $.validator.format( "Please enter at least {0} characters" ) );
@@ -1087,23 +763,11 @@ $.validator.addMethod( "time12h", function( value, element ) {
 	return this.optional( element ) || /^((0?[1-9]|1[012])(:[0-5]\d){1,2}(\ ?[AP]M))$/i.test( value );
 }, "Please enter a valid time in 12-hour am/pm format" );
 
-// Same as url, but TLD is optional
 $.validator.addMethod( "url2", function( value, element ) {
 	return this.optional( element ) || /^(https?|ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)*(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test( value );
 }, $.validator.messages.url );
 
-/**
- * Return true, if the value is a valid vehicle identification number (VIN).
- *
- * Works with all kind of text inputs.
- *
- * @example <input type="text" size="20" name="VehicleID" class="{required:true,vinUS:true}" />
- * @desc Declares a required input element whose value must be a valid vehicle identification number.
- *
- * @name $.validator.methods.vinUS
- * @type Boolean
- * @cat Plugins/Validate/Methods
- */
+
 $.validator.addMethod( "vinUS", function( v ) {
 	if ( v.length !== 17 ) {
 		return false;

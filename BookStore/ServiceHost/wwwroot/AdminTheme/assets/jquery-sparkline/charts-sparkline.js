@@ -1,9 +1,4 @@
-/**
-* Theme: Montran Admin Template
-* Author: Coderthemes
-* Component: Sparkline Chart
-* 
-*/
+
 $( document ).ready(function() {
     
     var DrawSparkline = function() {
@@ -89,7 +84,7 @@ $( document ).ready(function() {
         
     },
         DrawMouseSpeed = function () {
-            var mrefreshinterval = 500; // update display every 500ms
+            var mrefreshinterval = 500; 
             var lastmousex=-1; 
             var lastmousey=-1;
             var lastmousetime;
@@ -129,7 +124,6 @@ $( document ).ready(function() {
                 lastmousetime = timenow;
                 setTimeout(mdraw, mrefreshinterval);
             }
-            // We could use setInterval instead, but I prefer to do it this way
             setTimeout(mdraw, mrefreshinterval); 
         };
     

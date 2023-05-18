@@ -1,20 +1,13 @@
 
-/**
-* Theme: Montran Admin Template
-* Author: Coderthemes
-* Demo: Editable (Inline editing)
-* 
-*/
+
 
 
 $(function(){
 
-    //modify buttons style
     $.fn.editableform.buttons = 
     '<button type="submit" class="btn btn-primary editable-submit btn-sm"><i class="md md-done"></i></button>' +
     '<button type="button" class="btn editable-cancel btn-sm"><i class="md md-clear"></i></button>';         
     
-    //editables 
     $('#username').editable({
      type: 'text',
      pk: 1,
@@ -60,7 +53,6 @@ $(function(){
 
 
 
-    //inline
 
 
   $('#inline-username').editable({

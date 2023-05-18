@@ -1,10 +1,4 @@
-/* Reset css */
 
-
-
-
-
-/* Padding - Margin */
 
 .p-0 {
     padding: 0px !important;
@@ -72,7 +66,6 @@
 .m-b-30 {
     margin-bottom: 30px;
 }
-/* ---- Width-Sizes ---*/
 
 .w-xs {
     min-width: 80px;
@@ -86,7 +79,6 @@
 .w-lg {
     min-width: 140px;
 }
-/* Extra */
 
 .m-h-50 {
     min-height: 50px;
@@ -132,14 +124,12 @@
   width: 88px;
 }
 
-/* Grid-structure (Used Grid-page only) */
 
 .grid-structure .grid-container {
     background-color: #f5f5f5;
     padding: 10px 20px;
     margin-bottom: 10px;
 }
-/* Icon-list (Used Demo Purpose only) */
 
 .icon-list div {
     line-height: 40px;

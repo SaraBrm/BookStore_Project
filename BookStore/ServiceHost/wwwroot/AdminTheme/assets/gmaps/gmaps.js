@@ -10,13 +10,6 @@
 
 }(this, function() {
 
-/*!
- * GMaps.js v0.4.15
- * http://hpneo.github.com/gmaps/
- *
- * Copyright 2014, Gustavo Leon
- * Released under the MIT License.
- */
 
 if (!(typeof window.google === 'object' && window.google.maps)) {
   throw 'Google Maps API is required. Please register the following JavaScript library http://maps.google.com/maps/api/js?sensor=true.'
@@ -210,8 +203,8 @@ var GMaps = (function(global) {
 
     this.controls = [];
     this.overlays = [];
-    this.layers = []; // array with kml/georss and fusiontables layers, can be as many
-    this.singleLayers = {}; // object with the other layers, only one per layer
+    this.layers = []; 
+    this.singleLayers = {}; 
     this.markers = [];
     this.polylines = [];
     this.routes = [];
@@ -376,7 +369,6 @@ var GMaps = (function(global) {
       });
     };
 
-    //google.maps.event.addListener(this.map, 'idle', this.hideContextMenu);
     google.maps.event.addListener(this.map, 'zoom_changed', this.hideContextMenu);
 
     for (var ev = 0; ev < events_that_hide_context_menu.length; ev++) {
@@ -668,7 +660,6 @@ GMaps.prototype.createMarker = function(options) {
 GMaps.prototype.addMarker = function(options) {
   var marker;
   if(options.hasOwnProperty('gm_accessors_')) {
-    // Native google.maps.Marker object
     marker = options;
   }
   else {
@@ -1155,7 +1146,6 @@ GMaps.prototype.loadFromKML = function(options) {
 };
 
 GMaps.prototype.addLayer = function(layerName, options) {
-  //var default_layers = ['weather', 'clouds', 'traffic', 'transit', 'bicycling', 'panoramio', 'places'];
   options = options || {};
   var layer;
 
@@ -1175,7 +1165,6 @@ GMaps.prototype.addLayer = function(layerName, options) {
         layer.setTag(options.filter);
         delete options.filter;
 
-        //click event
         if (options.click) {
           google.maps.event.addListener(layer, 'click', function(event) {
             options.click(event);
@@ -1186,7 +1175,6 @@ GMaps.prototype.addLayer = function(layerName, options) {
       case 'places':
         this.singleLayers.places = layer = new google.maps.places.PlacesService(this.map);
 
-        //search, nearbySearch, radarSearch callback, Both are the same
         if (options.search || options.nearbySearch || options.radarSearch) {
           var placeSearchRequest  = {
             bounds : options.bounds || null,
@@ -1211,7 +1199,6 @@ GMaps.prototype.addLayer = function(layerName, options) {
           }
         }
 
-        //textSearch callback
         if (options.textSearch) {
           var textSearchRequest  = {
             bounds : options.bounds || null,
@@ -1341,7 +1328,6 @@ GMaps.prototype.getElevations = function(options) {
 
   var service = new google.maps.ElevationService();
 
-  //location request
   if (!options.path) {
     delete options.path;
     delete options.samples;
@@ -1351,7 +1337,6 @@ GMaps.prototype.getElevations = function(options) {
         callback(result, status);
       }
     });
-  //path request
   } else {
     var pathRequest = {
       path : options.locations,
@@ -1405,12 +1390,10 @@ GMaps.prototype.travelRoute = function(options) {
       unitSystem: options.unitSystem,
       error: options.error,
       callback: function(e) {
-        //start callback
         if (e.length > 0 && options.start) {
           options.start(e[e.length - 1]);
         }
 
-        //step callback
         if (e.length > 0 && options.step) {
           var route = e[e.length - 1];
           if (route.legs.length > 0) {
@@ -1422,7 +1405,6 @@ GMaps.prototype.travelRoute = function(options) {
           }
         }
 
-        //end callback
         if (e.length > 0 && options.end) {
            options.end(e[e.length - 1]);
         }
@@ -1451,12 +1433,10 @@ GMaps.prototype.drawSteppedRoute = function(options) {
       waypoints : options.waypoints,
       error: options.error,
       callback: function(e) {
-        //start callback
         if (e.length > 0 && options.start) {
           options.start(e[e.length - 1]);
         }
 
-        //step callback
         if (e.length > 0 && options.step) {
           var route = e[e.length - 1];
           if (route.legs.length > 0) {
@@ -1474,7 +1454,6 @@ GMaps.prototype.drawSteppedRoute = function(options) {
           }
         }
 
-        //end callback
         if (e.length > 0 && options.end) {
            options.end(e[e.length - 1]);
         }
@@ -1637,7 +1616,6 @@ GMaps.staticMapURL = function(options){
   var polyline = options.polyline;
   delete options.polyline;
 
-  /** Map options **/
   if (options.center) {
     parameters.push('center=' + options.center);
     delete options.center;
@@ -1682,7 +1660,6 @@ GMaps.staticMapURL = function(options){
     }
   }
 
-  /** Markers **/
   if (markers) {
     var marker, loc;
 
@@ -1724,7 +1701,6 @@ GMaps.staticMapURL = function(options){
         marker = marker.join('|');
         parameters.push('markers=' + encodeURI(marker));
       }
-      // New marker without styles
       else {
         marker = parameters.pop() + encodeURI('|' + loc);
         parameters.push(marker);
@@ -1732,7 +1708,6 @@ GMaps.staticMapURL = function(options){
     }
   }
 
-  /** Map Styles **/
   if (styles) {
     for (var i = 0; i < styles.length; i++) {
       var styleRule = [];
@@ -1761,7 +1736,6 @@ GMaps.staticMapURL = function(options){
     }
   }
 
-  /** Polylines **/
   function parseColor(color, opacity) {
     if (color[0] === '#'){
       color = color.replace('#', '0x');
@@ -1815,7 +1789,6 @@ GMaps.staticMapURL = function(options){
     parameters.push('path=' + encodeURI(polyline));
   }
 
-  /** Retina support **/
   var dpi = window.devicePixelRatio || 1;
   parameters.push('scale=' + dpi);
 
@@ -2005,12 +1978,6 @@ GMaps.geocode = function(options) {
     callback(results, status);
   });
 };
-
-//==========================
-// Polygon containsLatLng
-// https://github.com/tparkin/Google-Maps-Point-in-Polygon
-// Poygon getBounds extension - google-maps-extensions
-// http://code.google.com/p/google-maps-extensions/source/browse/google.maps.Polygon.getBounds.js
 if (!google.maps.Polygon.prototype.getBounds) {
   google.maps.Polygon.prototype.getBounds = function(latLng) {
     var bounds = new google.maps.LatLngBounds();
@@ -2029,16 +1996,13 @@ if (!google.maps.Polygon.prototype.getBounds) {
 }
 
 if (!google.maps.Polygon.prototype.containsLatLng) {
-  // Polygon containsLatLng - method to determine if a latLng is within a polygon
   google.maps.Polygon.prototype.containsLatLng = function(latLng) {
-    // Exclude points outside of bounds as there is no way they are in the poly
     var bounds = this.getBounds();
 
     if (bounds !== null && !bounds.contains(latLng)) {
       return false;
     }
 
-    // Raycast point in polygon method
     var inPoly = false;
 
     var numPaths = this.getPaths().getLength();
@@ -2092,11 +2056,8 @@ google.maps.Marker.prototype.getId = function() {
   return this['__gm_id'];
 };
 
-//==========================
-// Array indexOf
-// https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Array/indexOf
 if (!Array.prototype.indexOf) {
-  Array.prototype.indexOf = function (searchElement /*, fromIndex */ ) {
+  Array.prototype.indexOf = function (searchElement  ) {
       "use strict";
       if (this == null) {
           throw new TypeError();
@@ -2109,7 +2070,7 @@ if (!Array.prototype.indexOf) {
       var n = 0;
       if (arguments.length > 1) {
           n = Number(arguments[1]);
-          if (n != n) { // shortcut for verifying if it's NaN
+          if (n != n) { 
               n = 0;
           } else if (n != 0 && n != Infinity && n != -Infinity) {
               n = (n > 0 || -1) * Math.floor(Math.abs(n));

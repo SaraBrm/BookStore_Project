@@ -1,9 +1,4 @@
-/**
-* Theme: Montran Admin Template
-* Author: Coderthemes
-* Chart Js Page
-* 
-*/
+
 
 !function($) {
     "use strict";
@@ -11,17 +6,12 @@
     var ChartJs = function() {};
 
     ChartJs.prototype.respChart = function respChart(selector,type,data, options) {
-        // get selector by context
         var ctx = selector.get(0).getContext("2d");
-        // pointing parent container to make chart js inherit its width
         var container = $(selector).parent();
 
-        // enable resizing matter
         $(window).resize( generateChart );
 
-        // this function produce the responsive Chart JS
         function generateChart(){
-            // make chart width fit with its container
             var ww = selector.attr('width', $(container).width() );
             switch(type){
                 case 'Line':
@@ -43,15 +33,11 @@
                     new Chart(ctx).PolarArea(data, options);
                     break;
             }
-            // Initiate new chart or Redraw
 
         };
-        // run function - render chart at first load
         generateChart();
     },
-    //init
     ChartJs.prototype.init = function() {
-        //creating lineChart
         var data = {
             labels : ["January","February","March","April","May","June","July"],
             datasets : [
@@ -76,7 +62,6 @@
         
         this.respChart($("#lineChart"),'Line',data);
 
-        //donut chart
         var data1 = [
             {
                         value: 80,
@@ -99,7 +84,6 @@
         this.respChart($("#doughnut"),'Doughnut',data1);
 
 
-        //Pie chart
         var data2 = [
             {
                 value: 40,
@@ -117,7 +101,6 @@
         this.respChart($("#pie"),'Pie',data2);
 
 
-        //barchart
         var data3 = {
             labels : ["January","February","March","April","May","June","July"],
                     datasets : [
@@ -135,7 +118,6 @@
         }
         this.respChart($("#bar"),'Bar',data3);
 
-        //radar chart
         var data4 = {
             labels : ["Eating","Drinking","Sleeping","Designing","Coding","Partying","Running"],
             datasets : [
@@ -157,7 +139,6 @@
         }
         this.respChart($("#radar"),'Radar',data4);
 
-        //Polar area chart
         var data5 = [
             {
                 value : 30,
@@ -190,7 +171,6 @@
 
 }(window.jQuery),
 
-//initializing 
 function($) {
     "use strict";
     $.ChartJs.init()

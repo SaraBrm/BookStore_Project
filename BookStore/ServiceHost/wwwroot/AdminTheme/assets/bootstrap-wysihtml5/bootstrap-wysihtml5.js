@@ -156,8 +156,7 @@
         createEditor: function(options) {
             options = options || {};
             
-            // Add the toolbar to a clone of the options object so multiple instances
-            // of the WYISYWG don't break because "toolbar" is already defined
+            
             options = $.extend(true, {}, options);
             options.toolbar = this.toolbar[0];
 
@@ -341,7 +340,7 @@
                     self.editor.currentView.element.focus(false);
                     caretBookmark = self.editor.composer.selection.getBookmark();
                     insertLinkModal.appendTo('body').modal('show');
-                    App.initUniform(); //initialize uniform checkboxes
+                    App.initUniform(); 
                     insertLinkModal.on('click.dismiss.modal', '[data-dismiss="modal"]', function(e) {
                         e.stopPropagation();
                     });
@@ -354,7 +353,7 @@
         }
     };
 
-    // these define our public api
+   
     var methods = {
         resetDefaults: function() {
             $.fn.wysihtml5.defaultOptions = $.extend(true, {}, $.fn.wysihtml5.defaultOptionsCache);
@@ -404,7 +403,7 @@
         events: {},
         parserRules: {
             classes: {
-                // (path_to_project/lib/css/wysiwyg-color.css)
+                
                 "wysiwyg-color-silver" : 1,
                 "wysiwyg-color-gray" : 1,
                 "wysiwyg-color-white" : 1,
@@ -447,19 +446,18 @@
                 },
                 "a":  {
                     check_attributes: {
-                        'href': "url", // important to avoid XSS
+                        'href': "url", 
                         'target': 'alt',
                         'rel': 'alt'
                     }
                 },
                 "span": 1,
                 "div": 1,
-                // to allow save and edit files with code tag hacks
                 "code": 1,
                 "pre": 1
             }
         },
-        stylesheets: ["assets/bootstrap-wysihtml5/wysiwyg-color.css"], // (path_to_project/lib/css/wysiwyg-color.css)
+        stylesheets: ["assets/bootstrap-wysihtml5/wysiwyg-color.css"],
         locale: "en"
     };
 

@@ -1,10 +1,4 @@
-/* General styles for the modal */
 
-/* 
-Styles for the html/body for special modal where we want 3d effects
-Note that we need a container wrapping all content on the page for the 
-perspective effects (not including the modals and the overlay).
-*/
 .md-perspective,
 .md-perspective body {
 	height: 100%;
@@ -122,9 +116,6 @@ perspective effects (not including the modals and the overlay).
 }
 
 
-/* Individual modal styles with animations/transitions */
-
-/* Effect 1: Fade in and scale up */
 .md-effect-1 .md-content {
 	-webkit-transform: scale(0.7);
 	-moz-transform: scale(0.7);
@@ -144,7 +135,6 @@ perspective effects (not including the modals and the overlay).
 	opacity: 1;
 }
 
-/* Effect 2: Slide from the right */
 .md-effect-2 .md-content {
 	-webkit-transform: translateX(20%);
 	-moz-transform: translateX(20%);
@@ -164,7 +154,6 @@ perspective effects (not including the modals and the overlay).
 	opacity: 1;
 }
 
-/* Effect 3: Slide from the bottom */
 .md-effect-3 .md-content {
 	-webkit-transform: translateY(20%);
 	-moz-transform: translateY(20%);
@@ -473,7 +462,6 @@ perspective effects (not including the modals and the overlay).
 	100% { transform: translateZ(0) rotateY(0deg); opacity: 1; }
 }
 
-/* Effect 14:  3D Rotate from bottom */
 .md-effect-14.md-modal {
 	-webkit-perspective: 1300px;
 	-moz-perspective: 1300px;
@@ -571,7 +559,6 @@ perspective effects (not including the modals and the overlay).
 	opacity: 1;
 }
 
-/* Effect 17:  Slide in from bottom with perspective on container */
 .md-show.md-effect-17 ~ .container {
 	height: 100%;
 	overflow: hidden;
@@ -613,7 +600,6 @@ perspective effects (not including the modals and the overlay).
 	transition: all 0.3s 0.2s;
 }
 
-/* Effect 18:  Slide from right with perspective on container */
 .md-show.md-effect-18 ~ .container {
 	height: 100%;
 	overflow: hidden;
@@ -673,7 +659,6 @@ perspective effects (not including the modals and the overlay).
 	transition: all 0.5s 0.1s;
 }
 
-/* Effect 19:  Slip in from the top with perspective on container */
 .md-show.md-effect-19 ~ .container {
 	height: 100%;
 	overflow: hidden;

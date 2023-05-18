@@ -1,6 +1,4 @@
-/* ambiance theme for codemirror */
 
-/* Color scheme */
 
 .cm-s-ambiance .cm-keyword { color: #cda869; }
 .cm-s-ambiance .cm-atom { color: #CF7EA9; }
@@ -36,8 +34,6 @@
 .cm-s-ambiance.CodeMirror-focused .CodeMirror-selected {
   background: rgba(255, 255, 255, 0.10);
 }
-
-/* Editor styling */
 
 .cm-s-ambiance.CodeMirror {
   line-height: 1.40em;

@@ -65,19 +65,13 @@
 			
 			return this;
 		};
-		
-		/*
-		 * External API so that users can perform search programatically. 
-		 * */
+	
 		this.search = function (submittedVal) {
 			val = submittedVal;
 			e.trigger();
 		};
 		
-		/*
-		 * External API to get the number of matched results as seen in 
-		 * https://github.com/ruiz107/quicksearch/commit/f78dc440b42d95ce9caed1d087174dd4359982d6
-		 * */
+	
 		this.currentMatchedResults = function() {
 			return this.matchedResultsCount;
 		};
@@ -138,10 +132,7 @@
 				return this;
 			});
 
-			/*
-			 * Modified fix for sync-ing "val". 
-			 * Original fix https://github.com/michaellwest/quicksearch/commit/4ace4008d079298a01f97f885ba8fa956a9703d1
-			 * */
+	
 			val = val || this.val() || "";
 			
 			return this.go();
@@ -165,10 +156,7 @@
 		this.loader(false);
 		
 		return this.each(function () {
-			
-			/*
-			 * Changed from .bind to .on.
-			 * */
+		
 			$(this).on(options.bind, function () {
 				
 				val = $(this).val();

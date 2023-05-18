@@ -1,8 +1,4 @@
-/**
-* Theme: Montran Admin Template
-* Author: Coderthemes
-* Form wizard page
-*/
+
 
 !function($) {
     "use strict";
@@ -17,7 +13,6 @@
         });
         return $form_container;
     },
-    //creates form with validation
     FormWizard.prototype.createValidatorForm = function($form_container) {
         $form_container.validate({
             errorPlacement: function errorPlacement(error, element) {
@@ -43,7 +38,6 @@
 
         return $form_container;
     },
-    //creates vertical form
     FormWizard.prototype.createVertical = function($form_container) {
         $form_container.steps({
             headerTag: "h3",
@@ -54,22 +48,16 @@
         return $form_container;
     },
     FormWizard.prototype.init = function() {
-        //initialzing various forms
-
-        //basic form
+        
         this.createBasic($("#basic-form"));
 
-        //form with validation
         this.createValidatorForm($("#wizard-validation-form"));
 
-        //vertical form
         this.createVertical($("#wizard-vertical"));
     },
-    //init
     $.FormWizard = new FormWizard, $.FormWizard.Constructor = FormWizard
 }(window.jQuery),
 
-//initializing 
 function($) {
     "use strict";
     $.FormWizard.init()

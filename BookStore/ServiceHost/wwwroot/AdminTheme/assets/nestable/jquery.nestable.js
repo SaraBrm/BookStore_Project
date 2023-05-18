@@ -1,16 +1,9 @@
-/*!
- * Nestable jQuery Plugin - Copyright (c) 2012 David Bushell - http://dbushell.com/
- * Dual-licensed under the BSD or MIT licenses
- */
+
 ;(function($, window, document, undefined)
 {
     var hasTouch = 'ontouchstart' in window;
 
-    /**
-     * Detect CSS pointer-events property
-     * events are normally disabled on the dragging element to avoid conflicts
-     * https://github.com/ausi/Feature-detection-technique-for-pointer-events/blob/master/modernizr-pointerevents.js
-     */
+  
     var hasPointerEvents = (function()
     {
         var el    = document.createElement('div'),
@@ -262,8 +255,7 @@
             this.dragEl = $(document.createElement(this.options.listNodeName)).addClass(this.options.listClass + ' ' + this.options.dragClass);
             this.dragEl.css('width', dragItem.width());
 
-            // fix for zepto.js
-            //dragItem.after(this.placeEl).detach().appendTo(this.dragEl);
+
             dragItem.after(this.placeEl);
             dragItem[0].parentNode.removeChild(dragItem[0]);
             dragItem.appendTo(this.dragEl);
@@ -273,7 +265,6 @@
                 'left' : e.pageX - mouse.offsetX,
                 'top'  : e.pageY - mouse.offsetY
             });
-            // total depth of dragging item
             var i, depth,
                 items = this.dragEl.find(this.options.itemNodeName);
             for (i = 0; i < items.length; i++) {
@@ -286,9 +277,7 @@
 
         dragStop: function(e)
         {
-            // fix for zepto.js
-            //this.placeEl.replaceWith(this.dragEl.children(this.options.itemNodeName + ':first').detach());
-            var el = this.dragEl.children(this.options.itemNodeName).first();
+           var el = this.dragEl.children(this.options.itemNodeName).first();
             el[0].parentNode.removeChild(el[0]);
             this.placeEl.replaceWith(el);
 
@@ -311,32 +300,24 @@
                 'top'  : e.pageY - mouse.offsetY
             });
 
-            // mouse position last events
             mouse.lastX = mouse.nowX;
             mouse.lastY = mouse.nowY;
-            // mouse position this events
             mouse.nowX  = e.pageX;
             mouse.nowY  = e.pageY;
-            // distance mouse moved between events
             mouse.distX = mouse.nowX - mouse.lastX;
             mouse.distY = mouse.nowY - mouse.lastY;
-            // direction mouse was moving
             mouse.lastDirX = mouse.dirX;
             mouse.lastDirY = mouse.dirY;
-            // direction mouse is now moving (on both axis)
             mouse.dirX = mouse.distX === 0 ? 0 : mouse.distX > 0 ? 1 : -1;
             mouse.dirY = mouse.distY === 0 ? 0 : mouse.distY > 0 ? 1 : -1;
-            // axis mouse is now moving on
             var newAx   = Math.abs(mouse.distX) > Math.abs(mouse.distY) ? 1 : 0;
 
-            // do nothing on first move
             if (!mouse.moving) {
                 mouse.dirAx  = newAx;
                 mouse.moving = true;
                 return;
             }
 
-            // calc distance moved on this axis (and direction)
             if (mouse.dirAx !== newAx) {
                 mouse.distAxX = 0;
                 mouse.distAxY = 0;
@@ -352,36 +333,25 @@
             }
             mouse.dirAx = newAx;
 
-            /**
-             * move horizontal
-             */
             if (mouse.dirAx && mouse.distAxX >= opt.threshold) {
-                // reset move distance on x-axis for new phase
                 mouse.distAxX = 0;
                 prev = this.placeEl.prev(opt.itemNodeName);
-                // increase horizontal level if previous sibling exists and is not collapsed
                 if (mouse.distX > 0 && prev.length && !prev.hasClass(opt.collapsedClass)) {
-                    // cannot increase level when item above is collapsed
                     list = prev.find(opt.listNodeName).last();
-                    // check if depth limit has reached
                     depth = this.placeEl.parents(opt.listNodeName).length;
                     if (depth + this.dragDepth <= opt.maxDepth) {
-                        // create new sub-level if one doesn't exist
                         if (!list.length) {
                             list = $('<' + opt.listNodeName + '/>').addClass(opt.listClass);
                             list.append(this.placeEl);
                             prev.append(list);
                             this.setParent(prev);
                         } else {
-                            // else append to next level up
                             list = prev.children(opt.listNodeName).last();
                             list.append(this.placeEl);
                         }
                     }
                 }
-                // decrease horizontal level
                 if (mouse.distX < 0) {
-                    // we can't decrease a level if an item preceeds the current one
                     next = this.placeEl.next(opt.itemNodeName);
                     if (!next.length) {
                         parent = this.placeEl.parent();
@@ -395,7 +365,6 @@
 
             var isEmpty = false;
 
-            // find list item under cursor
             if (!hasPointerEvents) {
                 this.dragEl[0].style.visibility = 'hidden';
             }
@@ -413,26 +382,20 @@
                 return;
             }
 
-            // find parent list of item under cursor
             var pointElRoot = this.pointEl.closest('.' + opt.rootClass),
                 isNewRoot   = this.dragRootEl.data('nestable-id') !== pointElRoot.data('nestable-id');
 
-            /**
-             * move vertical
-             */
+        
             if (!mouse.dirAx || isNewRoot || isEmpty) {
-                // check if groups match if dragging over new root
                 if (isNewRoot && opt.group !== pointElRoot.data('nestable-group')) {
                     return;
                 }
-                // check depth limit
                 depth = this.dragDepth - 1 + this.pointEl.parents(opt.listNodeName).length;
                 if (depth > opt.maxDepth) {
                     return;
                 }
                 var before = e.pageY < (this.pointEl.offset().top + this.pointEl.height() / 2);
                     parent = this.placeEl.parent();
-                // if empty create new list to replace empty placeholder
                 if (isEmpty) {
                     list = $(document.createElement(opt.listNodeName)).addClass(opt.listClass);
                     list.append(this.placeEl);
@@ -450,7 +413,6 @@
                 if (!this.dragRootEl.find(opt.itemNodeName).length) {
                     this.dragRootEl.append('<div class="' + opt.emptyClass + '"/>');
                 }
-                // parent root list has changed
                 if (isNewRoot) {
                     this.dragRootEl = pointElRoot;
                     this.hasNewRoot = this.el[0] !== this.dragRootEl[0];

@@ -1,8 +1,3 @@
-/**
-* Theme: Moltran Admin Template
-* Author: Coderthemes
-* VectorMap
-*/
 
 !function($) {
     "use strict";
@@ -10,7 +5,6 @@
     var VectorMap = function() {};
 
     VectorMap.prototype.init = function() {
-        //various examples
         $('#world-map-markers').vectorMap({
           map: 'world_mill_en',
           scaleColors: ['#ea6c9c', '#ea6c9c'],
@@ -80,11 +74,9 @@
                   }});
 
   },
-    //init
     $.VectorMap = new VectorMap, $.VectorMap.Constructor = VectorMap
 }(window.jQuery),
 
-//initializing 
 function($) {
     "use strict";
     $.VectorMap.init()

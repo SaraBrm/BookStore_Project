@@ -1,9 +1,4 @@
-/**
-* Theme: Montran Admin Template
-* Author: Coderthemes
-* Component: Ion Slider
-* 
-*/
+
 $(document).ready(function () {
     $("#range_01").ionRangeSlider();
     

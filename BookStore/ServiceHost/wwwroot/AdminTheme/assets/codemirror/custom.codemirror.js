@@ -1,9 +1,4 @@
 
-/**
-* Theme: Moltran Admin Template
-* Author: Coderthemes
-* Code Editors pages
-*/
 
 !function($) {
     "use strict";
@@ -23,26 +18,26 @@
     },
     CodeEditor.prototype.init = function() {
         var $this = this;
-        //init plugin
+
         CodeMirror.fromTextArea(document.getElementById("code"), {
             mode: {name: "xml", alignCDATA: true},
             lineNumbers: true
         });
-        //example 2
+
         CodeMirror.fromTextArea(document.getElementById("code2"), {
             mode: {name: "javascript"},
             lineNumbers: true,
             theme: 'ambiance'
         });
 
-        //example 3
+
         var editor = CodeMirror.fromTextArea(document.getElementById("code3"), {
             mode: {name: "javascript"},
             lineNumbers: true,
         });
         CodeMirror.commands["selectAll"](editor);
 
-        //binding controlls
+
         $('.autoformat').click(function(){
             $this.autoFormatSelection(editor);
         });
@@ -55,11 +50,11 @@
             $this.commentSelection(false, editor);
         });
     },
-    //init
+
     $.CodeEditor = new CodeEditor, $.CodeEditor.Constructor = CodeEditor
 }(window.jQuery),
 
-//initializing 
+
 function($) {
     "use strict";
     $.CodeEditor.init()

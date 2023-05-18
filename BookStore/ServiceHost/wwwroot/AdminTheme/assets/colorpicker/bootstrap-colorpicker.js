@@ -1,25 +1,6 @@
-/* =========================================================
- * bootstrap-colorpicker.js 
- * http://www.eyecon.ro/bootstrap-colorpicker
- * =========================================================
- * Copyright 2012 Stefan Petre
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * ========================================================= */
- 
+
 !function( $ ) {
-	
-	// Color object
+
 	
 	var Color = function(val) {
 		this.value = {
@@ -34,7 +15,7 @@
 	Color.prototype = {
 		constructor: Color,
 		
-		//parse a string to HSB
+
 		setColor: function(val){
 			val = val.toLowerCase();
 			var that = this;
@@ -69,8 +50,7 @@
 			this.value.a = parseInt((1 - a)*100, 10)/100;
 		},
 		
-		// HSBtoRGB from RaphaelJS
-		// https://github.com/DmitryBaranovskiy/raphael/
+
 		toRGB: function(h, s, b, a) {
 			if (!h) {
 				h = this.value.h;
@@ -128,8 +108,7 @@
 		}
 	};
 	
-	// Picker object
-	
+
 	var Colorpicker = function(element, options){
 		this.element = $(element);
 		var format = options.format||this.element.data('color-format')||'hex';
@@ -244,16 +223,16 @@
 			});
 		},
 		
-		//preview color change
+
 		previewColor: function(){
 			try {
 				this.preview.backgroundColor = this.format.call(this);
 			} catch(e) {
 				this.preview.backgroundColor = this.color.toHex();
 			}
-			//set the color for brightness/saturation slider
+
 			this.base.backgroundColor = this.color.toHex(this.color.value.h, 1, 1, 1);
-			//set te color for alpha slider
+
 			if (this.alpha) {
 				this.alpha.backgroundColor = this.color.toHex();
 			}
@@ -269,7 +248,6 @@
 			
 			var target = $(e.target);
 			
-			//detect the slider and set the limits and callbacks
 			var zone = target.closest('div');
 			if (!zone.is('.colorpicker')) {
 				if (zone.is('.colorpicker-saturation')) {
@@ -284,7 +262,6 @@
 					return false;
 				}
 				var offset = zone.offset();
-				//reference to knob's style
 				this.slider.knob = zone.find('i')[0].style;
 				this.slider.left = e.pageX - offset.left;
 				this.slider.top = e.pageY - offset.top;
@@ -292,7 +269,6 @@
 					left: e.pageX,
 					top: e.pageY
 				};
-				//trigger mousemove to move the knob to the current position
 				$(document).on({
 					mousemove: $.proxy(this.mousemove, this),
 					mouseup: $.proxy(this.mouseup, this)
@@ -364,7 +340,6 @@
 	
 	var CPGlobal = {
 	
-		// translate a format from Color object to a string
 		translateFormats: {
 			'rgb': function(){
 				var rgb = this.color.toRGB();
@@ -414,8 +389,7 @@
 			}
 		},
 		
-		// HSBtoRGB from RaphaelJS
-		// https://github.com/DmitryBaranovskiy/raphael/
+		
 		RGBtoHSB: function (r, g, b, a){
 			r /= 255;
 			g /= 255;
@@ -474,9 +448,6 @@
 			return [r, g, b, a||1];
 		},
 		
-		// a set of RE's that can match strings and generate color tuples.
-		// from John Resig color plugin
-		// https://github.com/jquery/jquery-color/
 		stringParsers: [
 			{
 				re: /rgba?\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*(?:,\s*(\d+(?:\.\d+)?)\s*)?\)/,

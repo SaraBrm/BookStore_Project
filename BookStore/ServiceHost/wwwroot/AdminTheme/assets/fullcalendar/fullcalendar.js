@@ -1,12 +1,3 @@
-/**
-* Theme: Montran Admin Template
-* Author: Coderthemes
-* Component: Full-Calendar
-* 
-*/
-
-
-
 
 !function($) {
     "use strict";
@@ -23,27 +14,19 @@
     };
 
 
-    /* on drop */
     CalendarApp.prototype.onDrop = function (eventObj, date) { 
         var $this = this;
-            // retrieve the dropped element's stored Event Object
             var originalEventObject = eventObj.data('eventObject');
             var $categoryClass = eventObj.attr('data-class');
-            // we need to copy it, so that multiple events don't have a reference to the same object
             var copiedEventObject = $.extend({}, originalEventObject);
-            // assign it the date that was reported
             copiedEventObject.start = date;
             if ($categoryClass)
                 copiedEventObject['className'] = [$categoryClass];
-            // render the event on the calendar
             $this.$calendar.fullCalendar('renderEvent', copiedEventObject, true);
-            // is the "remove after drop" checkbox checked?
             if ($('#drop-remove').is(':checked')) {
-                // if so, remove the element from the "Draggable Events" list
                 eventObj.remove();
             }
     },
-    /* on click on event */
     CalendarApp.prototype.onEventClick =  function (calEvent, jsEvent, view) {
         var $this = this;
             var form = $("<form></form>");
@@ -65,7 +48,6 @@
                 return false;
             });
     },
-    /* on select */
     CalendarApp.prototype.onSelect = function (start, end, allDay) {
         var $this = this;
             $this.$modal.modal({
@@ -109,27 +91,20 @@
             $this.$calendarObj.fullCalendar('unselect');
     },
     CalendarApp.prototype.enableDrag = function() {
-        //init events
         $(this.$event).each(function () {
-            // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
-            // it doesn't need to have a start or end
             var eventObject = {
-                title: $.trim($(this).text()) // use the element's text as the event title
+                title: $.trim($(this).text()) 
             };
-            // store the Event Object in the DOM element so we can get to it later
             $(this).data('eventObject', eventObject);
-            // make the event draggable using jQuery UI
             $(this).draggable({
                 zIndex: 999,
-                revert: true,      // will cause the event to go back to its
-                revertDuration: 0  //  original position after the drag
+                revert: true,     
+                revertDuration: 0 
             });
         });
     }
-    /* Initializing */
     CalendarApp.prototype.init = function() {
         this.enableDrag();
-        /*  Initialize the calendar  */
         var date = new Date();
         var d = date.getDate();
         var m = date.getMonth();
@@ -154,7 +129,7 @@
 
         var $this = this;
         $this.$calendarObj = $this.$calendar.fullCalendar({
-            slotDuration: '00:15:00', /* If we want to split day time each 15minutes */
+            slotDuration: '00:15:00', 
             minTime: '08:00:00',
             maxTime: '19:00:00',  
             defaultView: 'month',  
@@ -167,8 +142,8 @@
             },
             events: defaultEvents,
             editable: true,
-            droppable: true, // this allows things to be dropped onto the calendar !!!
-            eventLimit: true, // allow "more" link when too many events
+            droppable: true, 
+            eventLimit: true, 
             selectable: true,
             drop: function(date) { $this.onDrop($(this), date); },
             select: function (start, end, allDay) { $this.onSelect(start, end, allDay); },
@@ -176,7 +151,6 @@
 
         });
 
-        //on new event
         this.$saveCategoryBtn.on('click', function(){
             var categoryName = $this.$categoryForm.find("input[name='category-name']").val();
             var categoryColor = $this.$categoryForm.find("select[name='category-color']").val();
@@ -188,12 +162,10 @@
         });
     },
 
-   //init CalendarApp
     $.CalendarApp = new CalendarApp, $.CalendarApp.Constructor = CalendarApp
     
 }(window.jQuery),
 
-//initializing CalendarApp
 function($) {
     "use strict";
     $.CalendarApp.init()

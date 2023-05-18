@@ -135,9 +135,19 @@ a:focus {
     position: absolute;
     width: 100%;
     bottom: 0px;
-    padding: 20px 30px;
+    padding: 10;
     background-color: #f9f9f9;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.footer-logo a img {
+    height: 69px;
+    width: 140px;
+    padding: 5px;
+}
+
+.copyright-text{
+    margin-top:24px;
 }
 
 #wrapper {
@@ -1176,6 +1186,12 @@ lesshat-selector { -lh-property: 0; }
     z-index: 1;
     width: 240px;
     background: #317eeb;
+}
+
+.topbar .topbar-left .text-center img{
+    height:65px;
+    width:140px;
+    padding:9px;
 }
 
 .logo h1 {

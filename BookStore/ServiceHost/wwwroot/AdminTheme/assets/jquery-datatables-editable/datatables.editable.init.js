@@ -1,9 +1,4 @@
-/**
-* Theme: Montran Admin Template
-* Author: Coderthemes
-* Component: Editable
-* 
-*/
+
 
 (function( $ ) {
 
@@ -32,7 +27,6 @@
 			this.$table				= $( this.options.table );
 			this.$addButton			= $( this.options.addButton );
 
-			// dialog
 			this.dialog				= {};
 			this.dialog.$wrapper	= $( this.options.dialog.wrapper );
 			this.dialog.$cancel		= $( this.options.dialog.cancelButton );
@@ -117,9 +111,6 @@
 			return this;
 		},
 
-		// ==========================================================================================
-		// ROW FUNCTIONS
-		// ==========================================================================================
 		rowAdd: function() {
 			this.$addButton.attr({ 'disabled': 'disabled' });
 
@@ -144,7 +135,7 @@
 
 			this.rowEdit( $row );
 
-			this.datatable.order([0,'asc']).draw(); // always show fields
+			this.datatable.order([0,'asc']).draw();
 		},
 
 		rowCancel: function( $row ) {

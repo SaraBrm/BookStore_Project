@@ -1,8 +1,3 @@
-/**
-* Theme: Montran Admin Template
-* Author: Coderthemes
-* Easy pie chart
-*/
 
 !function($) {
     "use strict";
@@ -10,7 +5,6 @@
     var EasyPieChart = function() {};
 
     EasyPieChart.prototype.init = function() {
-    	//initializing various types of easy pie charts
     	$('.easy-pie-chart-1').easyPieChart({
 			easing: 'easeOutBounce',
 			barColor : '#8CC152',
@@ -47,11 +41,9 @@
 			}
 		});
     },
-    //init
     $.EasyPieChart = new EasyPieChart, $.EasyPieChart.Constructor = EasyPieChart
 }(window.jQuery),
 
-//initializing 
 function($) {
     "use strict";
     $.EasyPieChart.init()

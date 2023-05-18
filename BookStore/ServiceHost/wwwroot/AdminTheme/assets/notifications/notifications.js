@@ -1,16 +1,10 @@
 
-/**
-* Theme: Moltran Admin Template
-* Author: Coderthemes
-* Notification
-*/
 
 !function($) {
     "use strict";
 
     var Notification = function() {};
 
-    //simple notificaiton
     Notification.prototype.notify = function(style,position, title, text) {
         var icon = 'fa fa-adjust';
         if(style == "error"){
@@ -40,7 +34,7 @@
         });
     },
 
-    //auto hide notification
+
     Notification.prototype.autoHideNotify = function (style,position, title, text) {
         var icon = "fa fa-adjust";
         if(style == "error"){
@@ -70,7 +64,7 @@
             clickToHide: true
         });
     },
-    //confirmation notification
+
     Notification.prototype.confirm = function(style,position, title) {
         var icon = "fa fa-adjust";
         if(style == "error"){
@@ -98,27 +92,20 @@
             autoHide: false,
             clickToHide: false
         });
-        //listen for click events from this style
         $(document).on('click', '.notifyjs-metro-base .no', function() {
-          //programmatically trigger propogating hide event
           $(this).trigger('notify-hide');
         });
         $(document).on('click', '.notifyjs-metro-base .yes', function() {
-          //show button text
           alert($(this).text() + " clicked!");
-          //hide notification
           $(this).trigger('notify-hide');
         });
     },
-    //init - examples
     Notification.prototype.init = function() {
 
     },
-    //init
     $.Notification = new Notification, $.Notification.Constructor = Notification
 }(window.jQuery),
 
-//initializing 
 function($) {
     "use strict";
     $.Notification.init()

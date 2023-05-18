@@ -11,7 +11,6 @@
   CodeMirror.extendMode("javascript", {
     commentStart: "/*",
     commentEnd: "*/",
-    // FIXME semicolons inside of for
     newlineAfterToken: function(type, content, textAfter, state) {
       if (this.jsonMode) {
         return /^[\[,{]$/.test(content) || /^}/.test(textAfter);
@@ -30,25 +29,23 @@
     }
   });
 
-  // Comment/uncomment the specified range
   CodeMirror.defineExtension("commentRange", function (isComment, from, to) {
     var cm = this, curMode = CodeMirror.innerMode(cm.getMode(), cm.getTokenAt(from).state).mode;
     cm.operation(function() {
-      if (isComment) { // Comment range
+      if (isComment) { 
         cm.replaceRange(curMode.commentEnd, to);
         cm.replaceRange(curMode.commentStart, from);
-        if (from.line == to.line && from.ch == to.ch) // An empty comment inserted - put cursor inside
+        if (from.line == to.line && from.ch == to.ch) 
           cm.setCursor(from.line, from.ch + curMode.commentStart.length);
-      } else { // Uncomment range
+      } else { 
         var selText = cm.getRange(from, to);
         var startIndex = selText.indexOf(curMode.commentStart);
         var endIndex = selText.lastIndexOf(curMode.commentEnd);
         if (startIndex > -1 && endIndex > -1 && endIndex > startIndex) {
-          // Take string till comment start
+          
           selText = selText.substr(0, startIndex)
-          // From comment start till comment end
+          
             + selText.substring(startIndex + curMode.commentStart.length, endIndex)
-          // From comment end till string end
             + selText.substr(endIndex + curMode.commentEnd.length);
         }
         cm.replaceRange(selText, from, to);
@@ -56,7 +53,6 @@
     });
   });
 
-  // Applies automatic mode-aware indentation to the specified range
   CodeMirror.defineExtension("autoIndentRange", function (from, to) {
     var cmInstance = this;
     this.operation(function () {
@@ -66,7 +62,6 @@
     });
   });
 
-  // Applies automatic formatting to the specified range
   CodeMirror.defineExtension("autoFormatRange", function (from, to) {
     var cm = this;
     var outer = cm.getMode(), text = cm.getRange(from, to).split("\n");

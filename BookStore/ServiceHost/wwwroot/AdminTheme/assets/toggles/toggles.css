@@ -44,7 +44,6 @@
     cursor: -webkit-grab;
 }
 
-/*** THEMES ***/
 
 .toggle-default .toggle-slide {
   border: 1px solid #999;
@@ -87,7 +86,7 @@
   background: #fcfcfc;
 }
 
-/* toggle primary */
+
 
 .toggle-primary .toggle-slide {
   border: 1px solid #999;
@@ -130,7 +129,6 @@
   background: #fcfcfc;
 }
 
-/* toggle success */
 
 .toggle-success .toggle-slide {
   border: 1px solid #999;
@@ -173,7 +171,6 @@
   background: #fcfcfc;
 }
 
-/* toggle warning */
 
 .toggle-warning .toggle-slide {
   border: 1px solid #999;
@@ -216,7 +213,7 @@
   background: #fcfcfc;
 }
 
-/* toggle danger */
+
 
 .toggle-danger .toggle-slide {
   border: 1px solid #999;
