@@ -1,8 +1,10 @@
 ﻿@page
+@inject _0_Framework.Application.IAuthHelper AuthHelper
 @model ServiceHost.Pages.LoginModel
 @{
     ViewData["Title"] = "ورود";
 }
+
 
 <div class="breadcrumb-area section-space--half">
     <div class="container wide">
@@ -12,7 +14,17 @@
                     <div class="breadcrumb-content">
                         <h2 class="breadcrumb-content__title">ورود</h2>
                         <ul class="breadcrumb-content__page-map">
-                            <li><a asp-page="/Index">صفحه اصلی</a></li>
+                            <li>
+                                @if (AuthHelper.IsAuthenticated())
+                                {
+                                    <a asp-page="/Index">صفحه اصلی</a>
+                                }
+                                else
+                                {
+                                     <a>صفحه اصلی</a>
+                                }
+                               
+                            </li>
                             <li class="active">ورود</li>
                         </ul>
                     </div>
@@ -30,10 +42,21 @@
                     <div class="page-content-wrapper">
                         <div class="row">
                             <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6">
-                                @if (Model.LoginMessage != null)
+
+                                @if (Model.MessageT != null)
                                 {
-                                    <div class="alert alert-danger">@Model.LoginMessage</div>
+                                    if(Model.MessageT == "ok") 
+                                    {
+                                        <div class="alert alert-success">
+                                            <a asp-page="/Index">برای ورود به صفحه اصلی کلیک کنید.</a>
+                                        </div>
+                                    }
+                                    if(Model.MessageT != "ok")
+                                    {
+                                        <div class="alert alert-danger">@Model.MessageT</div>
+                                    }
                                 }
+
                                 <form method="post" asp-page-handler="Login">
                                     <div class="login-form">
                                         <h4 class="login-title">ورود</h4>

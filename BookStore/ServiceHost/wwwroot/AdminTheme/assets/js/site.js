@@ -21,10 +21,14 @@ SinglePage.LoadModal = function () {
 };
 
 
-function closeModal() {
-/*    window.location.reload(true);*/
 
-    /*    hideModal();*/
+function closeModal() {
+    window.location.reload(true);
+    /*window.location("https://localhost:5001/")*/
+    //sara bia telegram
+    //net daqun shod, voice dadam miad alan
+      hideModal();
+
 }
 
 function showModal() {

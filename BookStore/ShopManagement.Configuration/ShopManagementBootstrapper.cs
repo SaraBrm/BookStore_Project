@@ -1,4 +1,5 @@
 ﻿using _0_Framework.Infrastucture;
+using _01_BookStoreQuery.Contracts;
 using _01_BookStoreQuery.Contracts.Product;
 using _01_BookStoreQuery.Contracts.ProductCategory;
 using _01_BookStoreQuery.Contracts.Slide;
@@ -39,6 +40,7 @@ namespace ShopManagement.Configuration
             services.AddTransient<ISlideQuery, SlideQuery>();
             services.AddTransient<IProductCategoryQuery, ProductCategoryQuery>();
             services.AddTransient<IProductQuery, ProductQuery>();
+            services.AddTransient<ICartCalculatorService, CartCalculatorService>();
 
             services.AddTransient<IPermissionExposer, ShopPermissionExposer>();
 

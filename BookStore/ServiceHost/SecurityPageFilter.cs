@@ -19,6 +19,7 @@ namespace ServiceHost
         {
         }
 
+
         public void OnPageHandlerExecuting(PageHandlerExecutingContext context)
         {
             var handlerPermission =

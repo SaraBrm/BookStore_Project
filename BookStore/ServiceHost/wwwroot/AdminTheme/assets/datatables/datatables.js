@@ -1,4 +1,9 @@
-
+/**
+* Theme: Montran Admin Template
+* Author: Coderthemes
+* Component: Datatable
+* 
+*/
 
 (function (factory) {
     if (typeof define === 'function' && define.amd) {
@@ -8,6 +13,7 @@
         factory(jQuery);
     }
 }(function ($) {
+    /* Set the defaults for DataTables initialisation */
 	$.extend( true, $.fn.dataTable.defaults, {
 		"sDom": "<'row'<'col-sm-12'<'pull-right'f><'pull-left'l>r<'clearfix'>>>t<'row'<'col-sm-12'<'pull-left'i><'pull-right'p><'clearfix'>>>",
 	    "sPaginationType": "bs_normal",
@@ -17,10 +23,12 @@
 	    }
 	} );
 
+	/* Default class modification */
 	$.extend( $.fn.dataTableExt.oStdClasses, {
 		"sWrapper": "dataTables_wrapper"
 	} );
 
+	/* API method to get paging information */
 	$.fn.dataTableExt.oApi.fnPagingInfo = function ( oSettings )
 	{
 		return {
@@ -36,6 +44,7 @@
 		};
 	};
 
+	/* Bootstrap style pagination control */
 	$.extend( $.fn.dataTableExt.oPagination, {
 		"bs_normal": {
 			"fnInit": function( oSettings, nPaging, fnDraw ) {
@@ -355,8 +364,12 @@
 	} );
 
 
-
+	/*
+	 * TableTools Bootstrap compatibility
+	 * Required TableTools 2.1+
+	 */
 	if ( $.fn.DataTable.TableTools ) {
+		// Set the classes that TableTools uses to something suitable for Bootstrap
 		$.extend( true, $.fn.DataTable.TableTools.classes, {
 			"container": "DTTT btn-group",
 			"buttons": {
@@ -378,6 +391,7 @@
 			}
 		} );
 
+		// Have the collection use a bootstrap compatible dropdown
 		$.extend( true, $.fn.DataTable.TableTools.DEFAULTS.oTags, {
 			"collection": {
 				"container": "ul",

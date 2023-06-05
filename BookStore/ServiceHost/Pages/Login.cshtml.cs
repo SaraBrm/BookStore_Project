@@ -1,13 +1,17 @@
-using AcountManagement.Application.Contracts.Account;
+﻿using AcountManagement.Application.Contracts.Account;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ServiceHost.Pages
 {
+    [BindProperties]
     public class LoginModel : PageModel
     {
         [TempData]
-        public string LoginMessage { get; set; }
+
+        public string MessageT { get; set; }
+
+
         private readonly IAccountApplication _accountApplication;
 
         public LoginModel(IAccountApplication accountApplication)
@@ -19,14 +23,19 @@ namespace ServiceHost.Pages
         {
         }
 
-        public IActionResult OnPostLogin(Login command)
+        public void OnPostLogin(Login command)
         {
             var result = _accountApplication.Login(command);
             if (result.IsSucceeded)
-                return RedirectToPage("./Index");
-            LoginMessage=result.Message;
-            return RedirectToPage("./Login");
+                MessageT = "ok";
+            else
+            MessageT = result.Message;
+
+            //return RedirectToPage("./Login");
         }
+ 
+
+
 
         public IActionResult OnGetLogout()
         {
