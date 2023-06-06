@@ -16,13 +16,12 @@ namespace ShopManagement.Domain.OrderAgg
         public List<OrderItem> Items { get; private set; }
 
         public Order(long accountId, double totalAmount, double discountAmount, 
-            double payAmount, string issueTrackingNo)
+            double payAmount)
         {
             AccountId = accountId;
             TotalAmount = totalAmount;
             DiscountAmount = discountAmount;
             PayAmount = payAmount;
-            IssueTrackingNo = issueTrackingNo;
             IsPaid=false;
             IsCanceled=false;
             RefId = 0;
