@@ -21,7 +21,7 @@ namespace DiscountManagement.Infrastructure.EFCore.Repository
 
         public EditColleagueDiscount GetDetails(long id)
         {
-            return _discountContext.CustomerDiscounts.Select(x=>new EditColleagueDiscount
+            return _discountContext.ColleagueDiscounts.Select(x=>new EditColleagueDiscount
             {
                 Id=x.Id,
                 DiscountRate=x.DiscountRate,

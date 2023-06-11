@@ -13,13 +13,20 @@ namespace CommentManagement.Application
         {
             _commentRepository = commentRepository;
         }
-
+ 
         public OperationResult Add(AddComment command)
         {
             var operation = new OperationResult();
-            var comment = new Comment(command.Name, command.Email,command.Website, command.Message,
-                command.OwnerRecordId,command.Type,command.ParentId);
 
+               var comment = new Comment(command.Name, command.Email, command.Website, command.Message,
+                command.OwnerRecordId, command.Type);
+            if (command.ParentId == 0 || command.ParentId is null)
+                comment.ParentComment();
+            else
+                comment.ChildComment((long)comment.ParentId);
+            
+
+           
             _commentRepository.Create(comment);
             _commentRepository.SaveChanges();
             return operation.Succeeded();

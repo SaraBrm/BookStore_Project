@@ -10,6 +10,7 @@ namespace ServiceHost
     {
         private readonly IAuthHelper _authHelper;
 
+
         public SecurityPageFilter(IAuthHelper authHelper)
         {
             _authHelper = authHelper;
@@ -19,12 +20,12 @@ namespace ServiceHost
         {
         }
 
-
         public void OnPageHandlerExecuting(PageHandlerExecutingContext context)
         {
             var handlerPermission =
-                (NeedsPermissionAttribute) context.HandlerMethod.MethodInfo.GetCustomAttribute(
+                (NeedsPermissionAttribute) context?.HandlerMethod?.MethodInfo.GetCustomAttribute(
                     typeof(NeedsPermissionAttribute));
+
 
             if (handlerPermission == null)
                 return;

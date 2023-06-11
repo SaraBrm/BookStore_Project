@@ -38,7 +38,7 @@ namespace ShopManagement.Application
         {
             var order = _orderRepository.GetT(orderId);
             order.PaymentSucceeded(refId);
-            var symbol = _configuration.GetValue<string>("Symbol");
+            var symbol = _configuration["Symbol:name"];
             var issueTrackingNo = CodeGenerator.Generate(symbol);
             order.SetIssueTrackingNo(issueTrackingNo);
 

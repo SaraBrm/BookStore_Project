@@ -80,6 +80,7 @@ namespace _01_BookStoreQuery.Query
                         product.PriceWithDiscount = (price - discountAmount).ToMoney();
                     }
                 }
+         
 
             product.Comments = _commentContext.Comments.
                 Where(x => x.Type == CommentType.Product).
@@ -93,6 +94,7 @@ namespace _01_BookStoreQuery.Query
                 Name = x.Name,
                 CreationDate = x.CreationDate.ToFarsi()
                 }).OrderByDescending(x => x.Id).ToList();
+
 
             return product;
         }

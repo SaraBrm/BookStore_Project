@@ -9,16 +9,17 @@
     ViewData["title"] = "مدیریت تخفیفات مشتریان";
 }
 
+
 <div class="row">
     <div class="col-sm-12">
         <h4 class="page-title pull-right">@ViewData["title"]</h4>
         <p class="pull-left">
-            <a permission="@DiscountPermissions.DefineCustomer" class="btn btn-success btn-lg" href="#showmodal=@Url.Page("./Index", "Create")">تعریف تخفیف مشتری</a>
+            <a class="btn btn-success btn-lg" href="#showmodal=@Url.Page("./Index", "Create")">تعریف تخفیف مشتری</a>
         </p>
     </div>
 </div>
 
-<div class="row" permission="@DiscountPermissions.SearchCustomers">
+<div class="row">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -28,11 +29,11 @@
                 <form class="form-inline" role="form" method="get">
                     <div class="form-group">
                         <label class="sr-only" asp-for="SearchModel.StartDate"></label>
-                        <input class="form-control persianDateInput" asp-for="SearchModel.StartDate">
+                        <input class="form-control persianDateInput" asp-for="SearchModel.StartDate" placeholder="مثال: 1402/01/14">
                     </div>
                     <div class="form-group">
                         <label class="sr-only" asp-for="SearchModel.EndDate"></label>
-                        <input class="form-control persianDateInput" asp-for="SearchModel.EndDate">
+                        <input class="form-control persianDateInput" asp-for="SearchModel.EndDate" placeholder="مثال: 1402/02/14">
                     </div>
                     <div class="form-group">
                         <label class="sr-only" asp-for="SearchModel.ProductId"></label>
@@ -48,7 +49,7 @@
     </div>
 </div>
 
-<div class="row" permission="@DiscountPermissions.ListCustomers">
+<div class="row" id="ProductCategoriesDiv">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -82,7 +83,7 @@
                                         <td>@item.Reason</td>
                                         <td>@item.CreationDate</td>
                                         <td>
-                                            <a permission="@DiscountPermissions.EditCustomer" class="btn btn-warning waves-effect waves-light m-b-5"
+                                            <a class="btn btn-warning waves-effect waves-light m-b-5"
                                                href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
                                                 <i class="fa fa-edit"></i> ویرایش
                                             </a>
@@ -108,3 +109,5 @@
         });
     </script>
 }
+
+

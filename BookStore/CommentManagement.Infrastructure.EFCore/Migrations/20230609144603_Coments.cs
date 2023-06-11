@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CommentManagement.Infrastructure.EFCore.Migrations
 {
-    public partial class NewCommentAdded : Migration
+    public partial class Coments : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -34,6 +34,7 @@ namespace CommentManagement.Infrastructure.EFCore.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.NoAction);
                 });
+            
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_ParentId",

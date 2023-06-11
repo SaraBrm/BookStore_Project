@@ -48,7 +48,10 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach (var item in Model.Cart.Items)
+
+                                        
+                                       @if( Model.Cart.Items != null){
+                                             @foreach (var item in Model.Cart.Items)
                                     {
                                         <tr>
                                             <td class="pro-thumbnail">
@@ -80,6 +83,8 @@
                                             </td>
                                         </tr>
                                     }
+                                        }
+                                   
                                     </tbody>
                                 </table>
                             </div>

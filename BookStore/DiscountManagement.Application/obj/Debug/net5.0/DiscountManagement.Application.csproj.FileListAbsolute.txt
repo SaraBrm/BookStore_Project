@@ -4,8 +4,13 @@ D:\BookStoreProject\BookStore\DiscountManagement.Application\bin\Debug\net5.0\re
 D:\BookStoreProject\BookStore\DiscountManagement.Application\bin\Debug\net5.0\DiscountManagement.Application.pdb
 D:\BookStoreProject\BookStore\DiscountManagement.Application\bin\Debug\net5.0\0_Framework.dll
 D:\BookStoreProject\BookStore\DiscountManagement.Application\bin\Debug\net5.0\DiscountManagement.Application.Contract.dll
+D:\BookStoreProject\BookStore\DiscountManagement.Application\bin\Debug\net5.0\DiscountManagement.Domain.dll
+D:\BookStoreProject\BookStore\DiscountManagement.Application\bin\Debug\net5.0\ShopManagement.Application.Contracts.dll
 D:\BookStoreProject\BookStore\DiscountManagement.Application\bin\Debug\net5.0\DiscountManagement.Application.Contract.pdb
+D:\BookStoreProject\BookStore\DiscountManagement.Application\bin\Debug\net5.0\DiscountManagement.Domain.pdb
 D:\BookStoreProject\BookStore\DiscountManagement.Application\bin\Debug\net5.0\0_Framework.pdb
+D:\BookStoreProject\BookStore\DiscountManagement.Application\bin\Debug\net5.0\ShopManagement.Application.Contracts.pdb
+D:\BookStoreProject\BookStore\DiscountManagement.Application\obj\Debug\net5.0\DiscountManagement.Application.csproj.AssemblyReference.cache
 D:\BookStoreProject\BookStore\DiscountManagement.Application\obj\Debug\net5.0\DiscountManagement.Application.GeneratedMSBuildEditorConfig.editorconfig
 D:\BookStoreProject\BookStore\DiscountManagement.Application\obj\Debug\net5.0\DiscountManagement.Application.AssemblyInfoInputs.cache
 D:\BookStoreProject\BookStore\DiscountManagement.Application\obj\Debug\net5.0\DiscountManagement.Application.AssemblyInfo.cs
@@ -14,8 +19,3 @@ D:\BookStoreProject\BookStore\DiscountManagement.Application\obj\Debug\net5.0\Di
 D:\BookStoreProject\BookStore\DiscountManagement.Application\obj\Debug\net5.0\DiscountManagement.Application.dll
 D:\BookStoreProject\BookStore\DiscountManagement.Application\obj\Debug\net5.0\ref\DiscountManagement.Application.dll
 D:\BookStoreProject\BookStore\DiscountManagement.Application\obj\Debug\net5.0\DiscountManagement.Application.pdb
-D:\BookStoreProject\BookStore\DiscountManagement.Application\bin\Debug\net5.0\DiscountManagement.Domain.dll
-D:\BookStoreProject\BookStore\DiscountManagement.Application\bin\Debug\net5.0\DiscountManagement.Domain.pdb
-D:\BookStoreProject\BookStore\DiscountManagement.Application\bin\Debug\net5.0\ShopManagement.Application.Contracts.dll
-D:\BookStoreProject\BookStore\DiscountManagement.Application\bin\Debug\net5.0\ShopManagement.Application.Contracts.pdb
-D:\BookStoreProject\BookStore\DiscountManagement.Application\obj\Debug\net5.0\DiscountManagement.Application.csproj.AssemblyReference.cache

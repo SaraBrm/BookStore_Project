@@ -22,7 +22,6 @@ namespace ServiceHost.Areas.Administration.Pages.Comments
         {
             Comments = _commentApplication.Search(searchModel);
         }
-
         public IActionResult OnGetCancel(long id)
         {
             var result = _commentApplication.Cancel(id);
@@ -42,5 +41,8 @@ namespace ServiceHost.Areas.Administration.Pages.Comments
             Message = result.Message;
             return RedirectToPage("./Index");
         }
+      
     }
 }
+
+

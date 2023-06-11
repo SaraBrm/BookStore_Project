@@ -4,8 +4,10 @@ D:\BookStoreProject\BookStore\InventoryManagement.Domain\bin\Debug\net5.0\ref\In
 D:\BookStoreProject\BookStore\InventoryManagement.Domain\bin\Debug\net5.0\InventoryManagement.Domain.pdb
 D:\BookStoreProject\BookStore\InventoryManagement.Domain\bin\Debug\net5.0\0_Framework.dll
 D:\BookStoreProject\BookStore\InventoryManagement.Domain\bin\Debug\net5.0\InventoryManagement.Application.Contract.dll
+D:\BookStoreProject\BookStore\InventoryManagement.Domain\bin\Debug\net5.0\ShopManagement.Application.Contracts.dll
 D:\BookStoreProject\BookStore\InventoryManagement.Domain\bin\Debug\net5.0\0_Framework.pdb
 D:\BookStoreProject\BookStore\InventoryManagement.Domain\bin\Debug\net5.0\InventoryManagement.Application.Contract.pdb
+D:\BookStoreProject\BookStore\InventoryManagement.Domain\bin\Debug\net5.0\ShopManagement.Application.Contracts.pdb
 D:\BookStoreProject\BookStore\InventoryManagement.Domain\obj\Debug\net5.0\InventoryManagement.Domain.csproj.AssemblyReference.cache
 D:\BookStoreProject\BookStore\InventoryManagement.Domain\obj\Debug\net5.0\InventoryManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
 D:\BookStoreProject\BookStore\InventoryManagement.Domain\obj\Debug\net5.0\InventoryManagement.Domain.AssemblyInfoInputs.cache
@@ -15,5 +17,3 @@ D:\BookStoreProject\BookStore\InventoryManagement.Domain\obj\Debug\net5.0\Invent
 D:\BookStoreProject\BookStore\InventoryManagement.Domain\obj\Debug\net5.0\InventoryManagement.Domain.dll
 D:\BookStoreProject\BookStore\InventoryManagement.Domain\obj\Debug\net5.0\ref\InventoryManagement.Domain.dll
 D:\BookStoreProject\BookStore\InventoryManagement.Domain\obj\Debug\net5.0\InventoryManagement.Domain.pdb
-D:\BookStoreProject\BookStore\InventoryManagement.Domain\bin\Debug\net5.0\ShopManagement.Application.Contracts.dll
-D:\BookStoreProject\BookStore\InventoryManagement.Domain\bin\Debug\net5.0\ShopManagement.Application.Contracts.pdb

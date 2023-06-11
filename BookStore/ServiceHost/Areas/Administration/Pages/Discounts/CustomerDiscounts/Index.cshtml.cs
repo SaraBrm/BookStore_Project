@@ -40,6 +40,7 @@ namespace ServiceHost.Areas.Administration.Pages.Discounts.CustomerDiscounts
             {
                 Products = _productApplication.GetProducts()
             };
+
             return Partial("./Create", command);
         }
 

@@ -57,9 +57,10 @@ namespace _01_BookStoreQuery.Query
                     Id = x.Id,
                     Message = x.Message,
                     Name = x.Name,
-                    ParentId = x.ParentId,
+                    ParentId = (long)x.ParentId,
                     CreationDate = x.CreationDate.ToFarsi()
                 }).OrderByDescending(x => x.Id).ToList();
+      
 
             foreach (var comment in comments)
             {

@@ -22,6 +22,7 @@ namespace ServiceHost.Pages
         {
             Product=_productQuery.GetProductDetails(id);
         }
+        
 
         public IActionResult OnPost(AddComment command,string productSlug)
         {

@@ -7,9 +7,16 @@ D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\bin\Debu
 D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\0_Framework.dll
 D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\InventoryManagement.Application.Contract.dll
 D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\InventoryManagement.Domain.dll
+D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\ShopManagement.Application.Contracts.dll
+D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\ShopManagement.Domain.dll
+D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\ShopManagement.Infrastructure.EFCore.dll
 D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\InventoryManagement.Domain.pdb
+D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\ShopManagement.Infrastructure.EFCore.pdb
 D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\0_Framework.pdb
 D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\InventoryManagement.Application.Contract.pdb
+D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\ShopManagement.Application.Contracts.pdb
+D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\ShopManagement.Domain.pdb
+D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\obj\Debug\net5.0\InventoryManagement.Infrastructure.EFCore.csproj.AssemblyReference.cache
 D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\obj\Debug\net5.0\InventoryManagement.Infrastructure.EFCore.GeneratedMSBuildEditorConfig.editorconfig
 D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\obj\Debug\net5.0\InventoryManagement.Infrastructure.EFCore.AssemblyInfoInputs.cache
 D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\obj\Debug\net5.0\InventoryManagement.Infrastructure.EFCore.AssemblyInfo.cs
@@ -19,10 +26,3 @@ D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\obj\Debu
 D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\obj\Debug\net5.0\ref\InventoryManagement.Infrastructure.EFCore.dll
 D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\obj\Debug\net5.0\InventoryManagement.Infrastructure.EFCore.pdb
 D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\obj\Debug\net5.0\InventoryManagement.Infrastructure.EFCore.genruntimeconfig.cache
-D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\ShopManagement.Application.Contracts.dll
-D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\ShopManagement.Domain.dll
-D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\ShopManagement.Infrastructure.EFCore.dll
-D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\ShopManagement.Infrastructure.EFCore.pdb
-D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\ShopManagement.Application.Contracts.pdb
-D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\bin\Debug\net5.0\ShopManagement.Domain.pdb
-D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.EFCore\obj\Debug\net5.0\InventoryManagement.Infrastructure.EFCore.csproj.AssemblyReference.cache

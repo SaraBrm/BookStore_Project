@@ -1,8 +1,3 @@
-D:\BookStoreProject\BookStore\DiscountManagement.Configuration\obj\Debug\net5.0\DiscountManagement.Configuration.csproj.AssemblyReference.cache
-D:\BookStoreProject\BookStore\DiscountManagement.Configuration\obj\Debug\net5.0\DiscountManagement.Configuration.GeneratedMSBuildEditorConfig.editorconfig
-D:\BookStoreProject\BookStore\DiscountManagement.Configuration\obj\Debug\net5.0\DiscountManagement.Configuration.AssemblyInfoInputs.cache
-D:\BookStoreProject\BookStore\DiscountManagement.Configuration\obj\Debug\net5.0\DiscountManagement.Configuration.AssemblyInfo.cs
-D:\BookStoreProject\BookStore\DiscountManagement.Configuration\obj\Debug\net5.0\DiscountManagement.Configuration.csproj.CoreCompileInputs.cache
 D:\BookStoreProject\BookStore\DiscountManagement.Configuration\bin\Debug\net5.0\DiscountManagement.Configuration.deps.json
 D:\BookStoreProject\BookStore\DiscountManagement.Configuration\bin\Debug\net5.0\DiscountManagement.Configuration.runtimeconfig.json
 D:\BookStoreProject\BookStore\DiscountManagement.Configuration\bin\Debug\net5.0\DiscountManagement.Configuration.runtimeconfig.dev.json
@@ -25,6 +20,11 @@ D:\BookStoreProject\BookStore\DiscountManagement.Configuration\bin\Debug\net5.0\
 D:\BookStoreProject\BookStore\DiscountManagement.Configuration\bin\Debug\net5.0\ShopManagement.Application.Contracts.pdb
 D:\BookStoreProject\BookStore\DiscountManagement.Configuration\bin\Debug\net5.0\ShopManagement.Domain.pdb
 D:\BookStoreProject\BookStore\DiscountManagement.Configuration\bin\Debug\net5.0\ShopManagement.Infrastructure.EFCore.pdb
+D:\BookStoreProject\BookStore\DiscountManagement.Configuration\obj\Debug\net5.0\DiscountManagement.Configuration.csproj.AssemblyReference.cache
+D:\BookStoreProject\BookStore\DiscountManagement.Configuration\obj\Debug\net5.0\DiscountManagement.Configuration.GeneratedMSBuildEditorConfig.editorconfig
+D:\BookStoreProject\BookStore\DiscountManagement.Configuration\obj\Debug\net5.0\DiscountManagement.Configuration.AssemblyInfoInputs.cache
+D:\BookStoreProject\BookStore\DiscountManagement.Configuration\obj\Debug\net5.0\DiscountManagement.Configuration.AssemblyInfo.cs
+D:\BookStoreProject\BookStore\DiscountManagement.Configuration\obj\Debug\net5.0\DiscountManagement.Configuration.csproj.CoreCompileInputs.cache
 D:\BookStoreProject\BookStore\DiscountManagement.Configuration\obj\Debug\net5.0\DiscountManagement.Configuration.csproj.CopyComplete
 D:\BookStoreProject\BookStore\DiscountManagement.Configuration\obj\Debug\net5.0\DiscountManagement.Configuration.dll
 D:\BookStoreProject\BookStore\DiscountManagement.Configuration\obj\Debug\net5.0\ref\DiscountManagement.Configuration.dll
