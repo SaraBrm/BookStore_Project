@@ -25,4 +25,3 @@ D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug
 D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\ref\DiscountManagement.Infrastructure.EFCore.dll
 D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.pdb
 D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.genruntimeconfig.cache
-D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.csproj.AssemblyReference.cache

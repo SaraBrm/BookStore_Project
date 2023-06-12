@@ -34,14 +34,20 @@ namespace ShopManagement.Application
             _orderRepository.SaveChanges();
             return order.Id;
         }
-        public void PaymentSucceeded(long orderId, long refId)
+        public string PaymentSucceeded(long orderId, long refId)
         {
             var order = _orderRepository.GetT(orderId);
             order.PaymentSucceeded(refId);
             var symbol = _configuration["Symbol:name"];
             var issueTrackingNo = CodeGenerator.Generate(symbol);
             order.SetIssueTrackingNo(issueTrackingNo);
+            _orderRepository.SaveChanges();
+            return issueTrackingNo;
+        }
 
+        public double GetAmountBy(long id)
+        {
+            return _orderRepository.GetAmountBy(id);
         }
     }
 }

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Nancy.Json;
 using ShopManagement.Application.Contracts.Order;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 namespace ServiceHost.Pages
@@ -58,9 +59,8 @@ namespace ServiceHost.Pages
                 return RedirectToPage("/Cart");
 
             var orderId = _orderApplication.PlaceOrder(cart);
-            var accountUserName = _authHelper.CurrentAccountInfo().Username;
             var paymentResponse = _zarinPalFactory.CreatePaymentRequest(
-                    cart.PayAmount.ToString(), "", accountUserName,
+                    cart.PayAmount.ToString(), "", "",
                     "خرید از درگاه فرازبوک", orderId);
 
             return Redirect(
@@ -70,7 +70,22 @@ namespace ServiceHost.Pages
         public IActionResult OnGetCallBack([FromQuery] string authority, [FromQuery] string status,
             [FromQuery] long oId)
         {
-            return null;
+            var orderAmount = _orderApplication.GetAmountBy(oId);
+            var verificationResponse =
+                _zarinPalFactory.CreateVerificationRequest(authority,
+                    orderAmount.ToString(CultureInfo.InvariantCulture));
+            var result = new PaymentResult();
+            if (status == "OK" && verificationResponse.Status >= 100)
+            {
+                var issueTrackingNo = _orderApplication.PaymentSucceeded(oId, verificationResponse.RefID);
+                Response.Cookies.Delete("cart-items");
+                result = result.Succeeded("پرداخت با موفقیت انجام شد.", issueTrackingNo);
+                return RedirectToPage("/PaymentResult", result);
+            }
+
+            result = result.Failed(
+                "پرداخت با موفقیت انجام نشد. درصورت کسر وجه از حساب، مبلغ تا 24 ساعت دیگر به حساب شما بازگردانده خواهد شد.");
+            return RedirectToPage("/PaymentResult", result);
         }
     }
 }
