@@ -51,20 +51,30 @@ namespace ServiceHost.Pages
 
         }
 
-        public IActionResult OnGetPay()
+        public IActionResult OnPostPay(int paymentMethod)
         {
             var cart = _cartService.Get();
+            cart.SetPaymentMethod(paymentMethod);
+
             var result = _productQuery.CheckInventoryStatus(cart.Items);
             if (result.Any(x => !x.IsInStock))
                 return RedirectToPage("/Cart");
 
             var orderId = _orderApplication.PlaceOrder(cart);
-            var paymentResponse = _zarinPalFactory.CreatePaymentRequest(
-                    cart.PayAmount.ToString(), "", "",
+            if (paymentMethod == 1)
+            {
+                var paymentResponse = _zarinPalFactory.CreatePaymentRequest(
+                    cart.PayAmount.ToString(CultureInfo.InvariantCulture), "", "",
                     "خرید از درگاه فرازبوک", orderId);
 
-            return Redirect(
+                return Redirect(
                     $"https://{_zarinPalFactory.Prefix}.zarinpal.com/pg/StartPay/{paymentResponse.Authority}");
+            }
+
+            var paymentResult = new PaymentResult();
+            return RedirectToPage("/PaymentResult",
+                paymentResult.Succeeded(
+                    "سفارش شما با موفقیت ثبت شد. پس از تماس کارشناسان ما و پرداخت وجه، سفارش ارسال خواهد شد.", null));
         }
 
         public IActionResult OnGetCallBack([FromQuery] string authority, [FromQuery] string status,
