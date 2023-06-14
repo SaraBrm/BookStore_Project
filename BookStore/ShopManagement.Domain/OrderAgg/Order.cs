@@ -34,7 +34,7 @@ namespace ShopManagement.Domain.OrderAgg
         {
             IsPaid = true;
 
-            if (RefId != 0)
+            if (refId != 0)
                 RefId = refId;
         }
 

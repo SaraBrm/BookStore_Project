@@ -26,3 +26,9 @@ D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug
 D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.pdb
 D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.genruntimeconfig.cache
 D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\obj\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.csproj.AssemblyReference.cache
+D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Domain.dll
+D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.dll
+D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\AcountManagement.Application.Contracts.dll
+D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Domain.pdb
+D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.pdb
+D:\BookStoreProject\BookStore\DiscountManagement.Infrastructure.EFCore\bin\Debug\net5.0\AcountManagement.Application.Contracts.pdb

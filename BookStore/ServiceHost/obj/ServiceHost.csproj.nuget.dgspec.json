@@ -2390,6 +2390,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "D:\\BookStoreProject\\BookStore\\AccountManagement.Infrastructure.EFCore\\AccountManagement.Infrastructure.EFCore.csproj": {
+                "projectPath": "D:\\BookStoreProject\\BookStore\\AccountManagement.Infrastructure.EFCore\\AccountManagement.Infrastructure.EFCore.csproj"
+              },
               "D:\\BookStoreProject\\BookStore\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
                 "projectPath": "D:\\BookStoreProject\\BookStore\\ShopManagement.Domain\\ShopManagement.Domain.csproj"
               }

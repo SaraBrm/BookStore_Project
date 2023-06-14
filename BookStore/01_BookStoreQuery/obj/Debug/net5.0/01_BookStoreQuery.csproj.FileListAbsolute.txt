@@ -43,3 +43,9 @@ D:\BookStoreProject\BookStore\01_BookStoreQuery\obj\Debug\net5.0\01_BookStoreQue
 D:\BookStoreProject\BookStore\01_BookStoreQuery\obj\Debug\net5.0\01_BookStoreQuery.dll
 D:\BookStoreProject\BookStore\01_BookStoreQuery\obj\Debug\net5.0\ref\01_BookStoreQuery.dll
 D:\BookStoreProject\BookStore\01_BookStoreQuery\obj\Debug\net5.0\01_BookStoreQuery.pdb
+D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\AccountManagement.Domain.dll
+D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.dll
+D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\AcountManagement.Application.Contracts.dll
+D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\AccountManagement.Domain.pdb
+D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.pdb
+D:\BookStoreProject\BookStore\01_BookStoreQuery\bin\Debug\net5.0\AcountManagement.Application.Contracts.pdb

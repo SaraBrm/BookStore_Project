@@ -50,3 +50,11 @@ D:\BookStoreProject\BookStore\ShopManagement.Configuration\obj\Debug\net5.0\Shop
 D:\BookStoreProject\BookStore\ShopManagement.Configuration\obj\Debug\net5.0\ref\ShopManagement.Configuration.dll
 D:\BookStoreProject\BookStore\ShopManagement.Configuration\obj\Debug\net5.0\ShopManagement.Configuration.pdb
 D:\BookStoreProject\BookStore\ShopManagement.Configuration\obj\Debug\net5.0\ShopManagement.Configuration.genruntimeconfig.cache
+D:\BookStoreProject\BookStore\ShopManagement.Configuration\bin\Debug\net5.0\AccountManagement.Domain.dll
+D:\BookStoreProject\BookStore\ShopManagement.Configuration\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.dll
+D:\BookStoreProject\BookStore\ShopManagement.Configuration\bin\Debug\net5.0\AcountManagement.Application.Contracts.dll
+D:\BookStoreProject\BookStore\ShopManagement.Configuration\bin\Debug\net5.0\ShopManagement.Infrastructure.InventoryAcl.dll
+D:\BookStoreProject\BookStore\ShopManagement.Configuration\bin\Debug\net5.0\ShopManagement.Infrastructure.InventoryAcl.pdb
+D:\BookStoreProject\BookStore\ShopManagement.Configuration\bin\Debug\net5.0\AccountManagement.Domain.pdb
+D:\BookStoreProject\BookStore\ShopManagement.Configuration\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.pdb
+D:\BookStoreProject\BookStore\ShopManagement.Configuration\bin\Debug\net5.0\AcountManagement.Application.Contracts.pdb

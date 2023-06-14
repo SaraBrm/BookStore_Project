@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using ShopManagement.Application.Contracts.Order;
 using ShopManagement.Domain.OrderAgg;
 using ShopManagement.Domain.Services;
+using System.Collections.Generic;
 
 namespace ShopManagement.Application
 {
@@ -59,6 +60,11 @@ namespace ShopManagement.Application
         public double GetAmountBy(long id)
         {
             return _orderRepository.GetAmountBy(id);
+        }
+
+        public List<OrderViewModel> Search(OrderSearchModel searchModel)
+        {
+            return _orderRepository.Search(searchModel);
         }
     }
 }

@@ -30,3 +30,9 @@ D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.Configuration\o
 D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.Configuration\obj\Debug\net5.0\ref\InventoryManagement.Infrastructure.Configuration.dll
 D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.Configuration\obj\Debug\net5.0\InventoryManagement.Infrastructure.Configuration.pdb
 D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.Configuration\obj\Debug\net5.0\InventoryManagement.Infrastructure.Configuration.genruntimeconfig.cache
+D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\AccountManagement.Domain.dll
+D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.dll
+D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\AcountManagement.Application.Contracts.dll
+D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\AccountManagement.Domain.pdb
+D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.pdb
+D:\BookStoreProject\BookStore\InventoryManagement.Infrastructure.Configuration\bin\Debug\net5.0\AcountManagement.Application.Contracts.pdb

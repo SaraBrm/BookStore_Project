@@ -12,5 +12,6 @@ namespace AcountManagement.Application.Contracts.Account
         EditAccount GetDetails(long id);
         List<AccountViewModel> Search(AccountSearchModel searchModel);
         void Logout();
+        List<AccountViewModel> GetAccounts();
     }
 }

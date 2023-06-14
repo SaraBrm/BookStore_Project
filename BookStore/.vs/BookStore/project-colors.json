@@ -185,7 +185,12 @@
       "ProjectGuid": "7b932b76-5f25-42e5-8de0-fdaac2d196cc",
       "DisplayName": "AccountManagement.Configuration",
       "ColorIndex": 3
+    },
+    "dced44b3-b1fe-4a15-9a49-6ed00800011d": {
+      "ProjectGuid": "dced44b3-b1fe-4a15-9a49-6ed00800011d",
+      "DisplayName": "ShopManagement.Infrastructure.InventoryAcl",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 5
 }
