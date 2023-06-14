@@ -14,3 +14,4 @@ D:\BookStoreProject\BookStore\ShopManagement.Domain\obj\Debug\net5.0\ShopManagem
 D:\BookStoreProject\BookStore\ShopManagement.Domain\obj\Debug\net5.0\ShopManagement.Domain.dll
 D:\BookStoreProject\BookStore\ShopManagement.Domain\obj\Debug\net5.0\ref\ShopManagement.Domain.dll
 D:\BookStoreProject\BookStore\ShopManagement.Domain\obj\Debug\net5.0\ShopManagement.Domain.pdb
+D:\BookStoreProject\BookStore\ShopManagement.Domain\obj\Debug\net5.0\ShopManagement.Domain.csproj.AssemblyReference.cache

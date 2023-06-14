@@ -50,10 +50,6 @@ namespace ShopManagement.Application
 
             _orderRepository.SaveChanges();
 
-            //var (name, mobile) = _shopAccountAcl.GetAccountBy(order.AccountId);
-
-            //_smsService.Send(mobile,
-            //    $"{name} گرامی سفارش شما با شماره پیگیری {issueTrackingNo} با موفقیت پرداخت شد و ارسال خواهد شد.");
             return issueTrackingNo;
         }
 
@@ -65,6 +61,18 @@ namespace ShopManagement.Application
         public List<OrderViewModel> Search(OrderSearchModel searchModel)
         {
             return _orderRepository.Search(searchModel);
+        }
+
+        public void Cancel(long id)
+        {
+            var order = _orderRepository.GetT(id);
+            order.Cancel();
+            _orderRepository.SaveChanges();
+        }
+
+        public List<OrderItemViewModel> GetItems(long orderId)
+        {
+            return _orderRepository.GetItems(orderId);
         }
     }
 }
