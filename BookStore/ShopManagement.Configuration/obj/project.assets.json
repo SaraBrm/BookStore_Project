@@ -1860,6 +1860,48 @@
           "bin/placeholder/0_Framework.dll": {}
         }
       },
+      "AccountManagement.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "0_Framework": "1.0.0",
+          "AcountManagement.Application.Contracts": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AccountManagement.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AccountManagement.Domain.dll": {}
+        }
+      },
+      "AccountManagement.Infrastructure.EFCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "AccountManagement.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.17",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.17"
+        },
+        "compile": {
+          "bin/placeholder/AccountManagement.Infrastructure.EFCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AccountManagement.Infrastructure.EFCore.dll": {}
+        }
+      },
+      "AcountManagement.Application.Contracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "0_Framework": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AcountManagement.Application.Contracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AcountManagement.Application.Contracts.dll": {}
+        }
+      },
       "BlogManagement.Application.Contracts/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -2023,6 +2065,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "AccountManagement.Infrastructure.EFCore": "1.0.0",
           "InventoryManagement.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.17",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.17",
@@ -2090,6 +2133,20 @@
         },
         "runtime": {
           "bin/placeholder/ShopManagement.Infrastructure.EFCore.dll": {}
+        }
+      },
+      "ShopManagement.Infrastructure.InventoryAcl/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "InventoryManagement.Application.Contract": "1.0.0",
+          "ShopManagement.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ShopManagement.Infrastructure.InventoryAcl.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ShopManagement.Infrastructure.InventoryAcl.dll": {}
         }
       }
     }
@@ -6702,6 +6759,21 @@
       "path": "../0_Framework/0_Framework.csproj",
       "msbuildProject": "../0_Framework/0_Framework.csproj"
     },
+    "AccountManagement.Domain/1.0.0": {
+      "type": "project",
+      "path": "../AccountManagement.Domain/AccountManagement.Domain.csproj",
+      "msbuildProject": "../AccountManagement.Domain/AccountManagement.Domain.csproj"
+    },
+    "AccountManagement.Infrastructure.EFCore/1.0.0": {
+      "type": "project",
+      "path": "../AccountManagement.Infrastructure.EFCore/AccountManagement.Infrastructure.EFCore.csproj",
+      "msbuildProject": "../AccountManagement.Infrastructure.EFCore/AccountManagement.Infrastructure.EFCore.csproj"
+    },
+    "AcountManagement.Application.Contracts/1.0.0": {
+      "type": "project",
+      "path": "../AcountManagement.Application.Contracts/AcountManagement.Application.Contracts.csproj",
+      "msbuildProject": "../AcountManagement.Application.Contracts/AcountManagement.Application.Contracts.csproj"
+    },
     "BlogManagement.Application.Contracts/1.0.0": {
       "type": "project",
       "path": "../BlogManagement.Application.Contracts/BlogManagement.Application.Contracts.csproj",
@@ -6781,6 +6853,11 @@
       "type": "project",
       "path": "../ShopManagement.Infrastructure.EFCore/ShopManagement.Infrastructure.EFCore.csproj",
       "msbuildProject": "../ShopManagement.Infrastructure.EFCore/ShopManagement.Infrastructure.EFCore.csproj"
+    },
+    "ShopManagement.Infrastructure.InventoryAcl/1.0.0": {
+      "type": "project",
+      "path": "../ShopManagement.Infrastructure.InventoryAcl/ShopManagement.Infrastructure.InventoryAcl.csproj",
+      "msbuildProject": "../ShopManagement.Infrastructure.InventoryAcl/ShopManagement.Infrastructure.InventoryAcl.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6791,7 +6868,8 @@
       "ShopManagement.Application >= 1.0.0",
       "ShopManagement.Application.Contracts >= 1.0.0",
       "ShopManagement.Domain >= 1.0.0",
-      "ShopManagement.Infrastructure.EFCore >= 1.0.0"
+      "ShopManagement.Infrastructure.EFCore >= 1.0.0",
+      "ShopManagement.Infrastructure.InventoryAcl >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -6842,6 +6920,9 @@
             },
             "D:\\BookStoreProject\\BookStore\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj": {
               "projectPath": "D:\\BookStoreProject\\BookStore\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj"
+            },
+            "D:\\BookStoreProject\\BookStore\\ShopManagement.Infrastructure.InventoryAcl\\ShopManagement.Infrastructure.InventoryAcl.csproj": {
+              "projectPath": "D:\\BookStoreProject\\BookStore\\ShopManagement.Infrastructure.InventoryAcl\\ShopManagement.Infrastructure.InventoryAcl.csproj"
             }
           }
         }
