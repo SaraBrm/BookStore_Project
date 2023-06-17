@@ -3454,6 +3454,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "01_BookStoreQuery": "1.0.0",
           "InventoryManagement.Application": "1.0.0",
           "InventoryManagement.Domain": "1.0.0",
           "InventoryManagement.Infrastructure.EFCore": "1.0.0",

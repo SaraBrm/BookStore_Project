@@ -1829,6 +1829,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "D:\\BookStoreProject\\BookStore\\01_BookStoreQuery\\01_BookStoreQuery.csproj": {
+                "projectPath": "D:\\BookStoreProject\\BookStore\\01_BookStoreQuery\\01_BookStoreQuery.csproj"
+              },
               "D:\\BookStoreProject\\BookStore\\InventoryManagement.Application\\InventoryManagement.Application.csproj": {
                 "projectPath": "D:\\BookStoreProject\\BookStore\\InventoryManagement.Application\\InventoryManagement.Application.csproj"
               },

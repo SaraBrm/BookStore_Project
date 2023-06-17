@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mORNzO1tFKV2gd9TgyygAmgZqsOGeSL6HaIPZHvGFD51NzT/asua2+b0tXAnjNZAu8SPPVbrlEALcqFV0u4mTA==",
+  "dgSpecHash": "FZyw4v/CUBGabkpW2y6zCkntgZ+ddldO0jSPmZGe5SVJW3V/YjtK8piED9dHHx6+JOT8W31igmssiBu6Aabx6Q==",
   "success": true,
   "projectFilePath": "D:\\BookStoreProject\\BookStore\\InventoryManagement.Infrastructure.Configuration\\InventoryManagement.Infrastructure.Configuration.csproj",
   "expectedPackageFiles": [

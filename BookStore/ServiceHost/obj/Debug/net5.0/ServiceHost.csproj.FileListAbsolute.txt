@@ -474,7 +474,6 @@ D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\ShopManagement.Applic
 D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\ShopManagement.Application.Contracts.pdb
 D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\ShopManagement.Domain.pdb
 D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\ShopManagement.Infrastructure.EFCore.pdb
-D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\ServiceHost.MvcApplicationPartsAssemblyInfo.cs
 D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\scopedcss\bundle\ServiceHost.styles.css
 D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\staticwebassets\ServiceHost.StaticWebAssets.Manifest.cache
 D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\ServiceHost.TagHelpers.input.cache
@@ -562,3 +561,4 @@ D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administr
 D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\Orders\Items.cshtml.g.cs
 D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\ShopManagement.Infrastructure.InventoryAcl.dll
 D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\ShopManagement.Infrastructure.InventoryAcl.pdb
+D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\ServiceHost.MvcApplicationPartsAssemblyInfo.cs

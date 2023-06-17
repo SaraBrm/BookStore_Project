@@ -8,7 +8,6 @@ D:\BookStoreProject\BookStore\InventoryManagement.Domain\bin\Debug\net5.0\ShopMa
 D:\BookStoreProject\BookStore\InventoryManagement.Domain\bin\Debug\net5.0\0_Framework.pdb
 D:\BookStoreProject\BookStore\InventoryManagement.Domain\bin\Debug\net5.0\InventoryManagement.Application.Contract.pdb
 D:\BookStoreProject\BookStore\InventoryManagement.Domain\bin\Debug\net5.0\ShopManagement.Application.Contracts.pdb
-D:\BookStoreProject\BookStore\InventoryManagement.Domain\obj\Debug\net5.0\InventoryManagement.Domain.csproj.AssemblyReference.cache
 D:\BookStoreProject\BookStore\InventoryManagement.Domain\obj\Debug\net5.0\InventoryManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
 D:\BookStoreProject\BookStore\InventoryManagement.Domain\obj\Debug\net5.0\InventoryManagement.Domain.AssemblyInfoInputs.cache
 D:\BookStoreProject\BookStore\InventoryManagement.Domain\obj\Debug\net5.0\InventoryManagement.Domain.AssemblyInfo.cs

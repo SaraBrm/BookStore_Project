@@ -9,4 +9,3 @@ D:\BookStoreProject\BookStore\0_Framework\obj\Debug\net5.0\0_Framework.csproj.Co
 D:\BookStoreProject\BookStore\0_Framework\obj\Debug\net5.0\0_Framework.dll
 D:\BookStoreProject\BookStore\0_Framework\obj\Debug\net5.0\ref\0_Framework.dll
 D:\BookStoreProject\BookStore\0_Framework\obj\Debug\net5.0\0_Framework.pdb
-D:\BookStoreProject\BookStore\0_Framework\obj\Debug\net5.0\0_Framework.csproj.AssemblyReference.cache
