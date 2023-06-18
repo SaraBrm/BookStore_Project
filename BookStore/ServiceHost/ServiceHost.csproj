@@ -30,4 +30,11 @@
     <Folder Include="wwwroot\ProductPictures\روانشناسی\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="wwwroot\Theme\assets\img\logo-site-black.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

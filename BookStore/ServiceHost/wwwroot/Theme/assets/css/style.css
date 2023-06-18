@@ -1475,8 +1475,9 @@ select {
 }
 
 .footer-copyright-wrapper {
-    padding: 40px 0;
+    padding: 45px 0;
     border-top: 1px solid #ebebeb;
+    background-color: #E8E8E8;
 }
 
     .footer-copyright-wrapper .copyright-text {
@@ -1572,6 +1573,7 @@ select {
     padding: 30px;
     padding-bottom: 0;
     background-color: #fff;
+/*    padding-right:25%;*/
 }
 
 .page-content-wrapper {
@@ -2084,15 +2086,19 @@ select {
     }
 
 .single-category-item__content .title {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 18px;
+    background-color: #F3F3F3;
+    padding: 8px;
 }
 
 .single-category-item__content a {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1;
     display: inline-block;
     color: #707070;
+    background-color: #F3F3F3;
+    padding: 8px;
 }
 
     .single-category-item__content a:hover {
@@ -3184,6 +3190,8 @@ select {
 
 .breadcrumb-content {
     text-align: center;
+    background-color: rgba(243,243,243,0.7);
+    padding:17px;
 }
 
 .breadcrumb-content__title {
@@ -3222,7 +3230,7 @@ select {
 }
 
 .breadcrumb-bg {
-    background-image: url('../img/backgrounds/category-image-1820x400.jpg');
+    background-image: url('../img/backgrounds/category-image.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -3235,21 +3243,7 @@ select {
 =============================================*/
 
 .pagination-area {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    padding: 20px 0;
-    border-top: 1px solid #f0f0f0;
-    border-bottom: 1px solid #f0f0f0;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
+    height:20px;
 }
 
 .pagination-area__left {
@@ -3289,21 +3283,7 @@ select {
 =============================================*/
 
 .shop-header {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    margin-bottom: 50px;
-    border-top: 1px solid #f0f0f0;
-    border-bottom: 1px solid #f0f0f0;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
+    height:5px;
 }
 
 .shop-header__left__message {
@@ -3891,6 +3871,7 @@ select {
     line-height: 17px;
     margin-bottom: 10px;
     color: #707070;
+    padding-top:15px;
 }
 
     .single-product-content-description .single-info .value {
