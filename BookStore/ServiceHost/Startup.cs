@@ -6,6 +6,7 @@ using BlogManagement.Infrastructure.Configuration;
 using CommentManagement.Configuration;
 using DiscountManagement.Configuration;
 using InventoryManagement.Infrastructure.Configuration;
+using InventoryManagement.Presentation.Api;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -94,9 +95,8 @@ namespace ServiceHost
                 options.Conventions.AuthorizeAreaFolder("Administration", "/Discounts", "Discount");
                 options.Conventions.AuthorizeAreaFolder("Administration", "/Inventory", "Discount");
                 options.Conventions.AuthorizeAreaFolder("Administration", "/Accounts", "Inventory");
-            });
-
-
+            }).AddApplicationPart(typeof(InventoryController).Assembly)
+            .AddNewtonsoftJson();
 
         }
 

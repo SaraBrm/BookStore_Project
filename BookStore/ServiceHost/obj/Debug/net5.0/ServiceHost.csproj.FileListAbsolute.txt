@@ -562,3 +562,8 @@ D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administr
 D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\ShopManagement.Infrastructure.InventoryAcl.dll
 D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\ShopManagement.Infrastructure.InventoryAcl.pdb
 D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\ServiceHost.MvcApplicationPartsAssemblyInfo.cs
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\InventoryManagement.Presentation.Api.dll
+D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\InventoryManagement.Presentation.Api.pdb

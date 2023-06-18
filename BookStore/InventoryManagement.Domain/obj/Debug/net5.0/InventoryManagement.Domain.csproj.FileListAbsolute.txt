@@ -16,3 +16,4 @@ D:\BookStoreProject\BookStore\InventoryManagement.Domain\obj\Debug\net5.0\Invent
 D:\BookStoreProject\BookStore\InventoryManagement.Domain\obj\Debug\net5.0\InventoryManagement.Domain.dll
 D:\BookStoreProject\BookStore\InventoryManagement.Domain\obj\Debug\net5.0\ref\InventoryManagement.Domain.dll
 D:\BookStoreProject\BookStore\InventoryManagement.Domain\obj\Debug\net5.0\InventoryManagement.Domain.pdb
+D:\BookStoreProject\BookStore\InventoryManagement.Domain\obj\Debug\net5.0\InventoryManagement.Domain.csproj.AssemblyReference.cache
