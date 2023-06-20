@@ -42,8 +42,8 @@
                                                     <div class="single-blog-post__image">
                                                         <a asp-page="./Article" asp-route-id="@article.Slug">
                                                             <img src="~/ProductPictures/@article.Picture"
-                                                                 class="img-fluid" alt="@article.PictureAlt"
-                                                                 title="@article.Title">
+                                                             class="img-fluid" alt="@article.PictureAlt"
+                                                             title="@article.Title">
                                                         </a>
                                                     </div>
                                                     <div class="single-blog-post__content">
@@ -58,34 +58,18 @@
                                                         <p class="short-desc">
                                                             @article.ShortDescription
                                                         </p>
-                                                        <a asp-page="./Article" asp-route-id="@article.Slug"
-                                                           class="blog-post-link">ادامه مطلب</a>
+                                                       @* <div class="col-lg-6 col-12 d-flex">*@
+                                                            <div class="cart-summary">
+                                                                <div class="cart-summary-button">
+                                                                    <a asp-page="./Article" asp-route-id="@article.Slug"
+                                                                   class="checkout-btn"  style="margin-bottom:30px;">ادامه مطلب</a>
+                                                                @*</div>*@
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         }
-                                    </div>
-                                </div>
-
-                                <div class="pagination-area">
-                                    <div class="pagination-area__left">
-                                        Showing 1 to 9 of 11 (2 Pages)
-                                    </div>
-                                    <div class="pagination-area__right">
-                                        <ul class="pagination-section">
-                                            <li>
-                                                <a class="active" href="#">1</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">2</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">></a>
-                                            </li>
-                                            <li>
-                                                <a href="#">>|</a>
-                                            </li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -116,8 +100,8 @@
                                                     <div class="image">
                                                         <a asp-page="./Article" asp-route-id="@article.Slug">
                                                             <img src="~/ProductPictures/@article.Picture"
-                                                                 class="img-fluid" alt="@article.PictureAlt"
-                                                                 title="@article.PictureTitle">
+                                                             class="img-fluid" alt="@article.PictureAlt"
+                                                             title="@article.PictureTitle">
                                                         </a>
                                                     </div>
                                                     <div class="content">
@@ -131,7 +115,7 @@
                                             }
                                         </div>
                                     </div>
-                                    
+
                                     <div class="single-sidebar-widget">
                                         <h4 class="single-sidebar-widget__title">تگ ها</h4>
                                         <ul class="single-sidebar-widget__tag-list">

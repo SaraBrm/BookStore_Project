@@ -567,3 +567,4 @@ D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\Microsoft.AspNetCore.
 D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
 D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\InventoryManagement.Presentation.Api.dll
 D:\BookStoreProject\BookStore\ServiceHost\bin\Debug\net5.0\InventoryManagement.Presentation.Api.pdb
+D:\BookStoreProject\BookStore\ServiceHost\obj\Debug\net5.0\Razor\Pages\AboutUs.cshtml.g.cs
