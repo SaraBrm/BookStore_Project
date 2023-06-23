@@ -5,9 +5,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title-wrapper text-center section-space--half">
-                    <h2 class="section-title">محصولات ما</h2>
+                    <h2 class="section-title">فروشگاه ما</h2>
                     <p class="section-subtitle">
-                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
+                        فرازبوک، رسالت خود را ارائه‌ی اطلسی جامع از برترین کتاب‌ها و معتبرترین جوایز ادبی سراسر دنیا می‌داند و بر آن است تا با خلق آرمان‌شهری ادبی، بهترین‌ها را در اختیار علاقه‌مندان قرار دهد.
                     </p>
                 </div>
             </div>
@@ -20,7 +20,7 @@
                             @foreach (var category in Model)
                             {
                                 <a class="nav-item nav-link @(Model.First() == category ? "active" : "")" id="product-tab-@category.Id" data-toggle="tab"
-                                   href="#product-series-@category.Id" role="tab" aria-selected="true">@category.Name</a>
+                               href="#product-series-@category.Id" role="tab" aria-selected="true">@category.Name</a>
                             }
                         </div>
                     </div>
@@ -28,7 +28,7 @@
                         @foreach (var category in Model)
                         {
                             <div class="tab-pane fade show @(Model.First() == category ? "active" : "")" id="product-series-@category.Id" role="tabpanel"
-                                 aria-labelledby="product-tab-1">
+                             aria-labelledby="product-tab-1">
                                 <div class="single-row-slider-wrapper">
                                     <div class="ht-slick-slider" data-slick-setting='{
                                 "slidesToShow": 4,
@@ -60,9 +60,9 @@
                                                                 <span class="sale">-@product.DiscountRate%</span>
                                                             </div>
                                                         }
-                                                        <a asp-page="/Product" asp-route-id="@product.Slug"> 
+                                                        <a asp-page="/Product" asp-route-id="@product.Slug">
                                                             <img src="~/ProductPictures/@product.Picture" title="@product.PictureTitle" class="img-fluid"
-                                                                 alt="@product.PictureAlt">
+                                                         alt="@product.PictureAlt">
                                                         </a>
                                                     </div>
                                                     <div class="single-grid-product__content">
