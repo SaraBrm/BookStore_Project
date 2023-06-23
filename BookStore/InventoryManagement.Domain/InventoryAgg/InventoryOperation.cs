@@ -17,7 +17,7 @@ namespace InventoryManagement.Domain.InventoryAgg
 
         protected InventoryOperation()
         {
-                
+             
         }
 
         public InventoryOperation(bool operation, long count, long operatorId, long currentCount, 

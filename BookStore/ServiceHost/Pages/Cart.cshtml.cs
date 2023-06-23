@@ -24,14 +24,18 @@ namespace ServiceHost.Pages
 
         public void OnGet()
         {
+            
             var serializer = new JavaScriptSerializer();
             var value = Request.Cookies[CookieName];
             var cartItems = serializer.Deserialize<List<CartItem>>(value);
 
-            foreach (var item in cartItems)
-                item.CalculateTotalItemPrice();
+            if(cartItems != null)  
+            {
+                foreach (var item in cartItems)
+                    item.CalculateTotalItemPrice();
+                CartItems = _productQuery.CheckInventoryStatus(cartItems);
+            }
 
-            CartItems = _productQuery.CheckInventoryStatus(cartItems);
         }
 
         public IActionResult OnGetRemoveFromCart(long id)
