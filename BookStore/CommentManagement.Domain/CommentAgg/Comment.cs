@@ -48,7 +48,6 @@ namespace CommentManagement.Domain.CommentAgg
             ParentId = cm;
         }
 
-
         public void Confirm()
         {
             IsConfirmed = true;

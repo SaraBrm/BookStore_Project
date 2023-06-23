@@ -23,10 +23,11 @@ namespace CommentManagement.Application
             if (command.ParentId == 0 || command.ParentId is null)
                 comment.ParentComment();
             else
-                comment.ChildComment((long)comment.ParentId);
-            
+            {
+                var temp = (long)command.ParentId;
+                comment.ChildComment(temp);
+            }
 
-           
             _commentRepository.Create(comment);
             _commentRepository.SaveChanges();
             return operation.Succeeded();

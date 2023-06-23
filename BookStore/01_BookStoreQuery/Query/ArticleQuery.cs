@@ -24,11 +24,11 @@ namespace _01_BookStoreQuery.Query
 
         public ArticleQueryModel GetArticleDetails(string slug)
         {
-            var article= _blogContext.Articles.Include(x => x.Category).
+            var article = _blogContext.Articles.Include(x => x.Category).
                 Where(x => x.PublishDate <= DateTime.Now).
                 Select(x => new ArticleQueryModel
                 {
-                    Id=x.Id,
+                    Id = x.Id,
                     Title = x.Title,
                     ShortDescription = x.ShortDescription,
                     Description = x.Description,
@@ -42,12 +42,13 @@ namespace _01_BookStoreQuery.Query
                     CanonicalAddress = x.CanonicalAddress,
                     CategoryName = x.Category.Name,
                     CategorySlug = x.Category.Slug
-                }).FirstOrDefault(x=>x.Slug==slug);
+                }).FirstOrDefault(x => x.Slug == slug);
 
             if (!string.IsNullOrWhiteSpace(article.Keywords))
                 article.KeywordList = article.Keywords.Split(",").ToList();
 
-            var comments= _commentContext.Comments
+
+            var comments = _commentContext?.Comments
                 .Where(x => !x.IsCanceled)
                 .Where(x => x.IsConfirmed)
                 .Where(x => x.Type == CommentType.Article)
@@ -57,16 +58,18 @@ namespace _01_BookStoreQuery.Query
                     Id = x.Id,
                     Message = x.Message,
                     Name = x.Name,
-                    ParentId = (long)x.ParentId,
+                    ParentId = x.ParentId != null ?(long)x.ParentId : 0 ,
+                   
                     CreationDate = x.CreationDate.ToFarsi()
                 }).OrderByDescending(x => x.Id).ToList();
-      
+
 
             foreach (var comment in comments)
             {
                 if (comment.ParentId > 0)
                     comment.ParentName = comments.FirstOrDefault(x => x.Id == comment.ParentId)?.Name;
             }
+           
 
             article.Comments = comments;
 
@@ -78,16 +81,16 @@ namespace _01_BookStoreQuery.Query
             return _blogContext.Articles.Include(x => x.Category).
                 Where(x => x.PublishDate <= DateTime.Now).
                 Select(x => new ArticleQueryModel
-            {
-                Id= x.Id,
-                Title = x.Title,
-                ShortDescription = x.ShortDescription,
-                Picture = x.Picture,
-                PictureAlt = x.PictureAlt,
-                PictureTitle = x.PictureTitle,
-                PublishDate = x.PublishDate.ToFarsi(),
-                Slug = x.Slug,
-            }).AsNoTracking().OrderByDescending(x=>x.Id).Take(6).ToList();
+                {
+                    Id = x.Id,
+                    Title = x.Title,
+                    ShortDescription = x.ShortDescription,
+                    Picture = x.Picture,
+                    PictureAlt = x.PictureAlt,
+                    PictureTitle = x.PictureTitle,
+                    PublishDate = x.PublishDate.ToFarsi(),
+                    Slug = x.Slug,
+                }).AsNoTracking().OrderByDescending(x => x.Id).Take(6).ToList();
         }
     }
 }

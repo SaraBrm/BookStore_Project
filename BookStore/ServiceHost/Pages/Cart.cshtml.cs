@@ -23,8 +23,7 @@ namespace ServiceHost.Pages
         }
 
         public void OnGet()
-        {
-            
+        {           
             var serializer = new JavaScriptSerializer();
             var value = Request.Cookies[CookieName];
             var cartItems = serializer.Deserialize<List<CartItem>>(value);
