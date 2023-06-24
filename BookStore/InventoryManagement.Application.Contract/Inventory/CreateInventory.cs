@@ -12,7 +12,6 @@ namespace InventoryManagement.Application.Contract.Inventory
 
         [Range(1, double.MaxValue, ErrorMessage = ValidationMessages.IsRequired)]
         public double UnitPrice { get; set; }
-
         public List<ProductViewModel> Products { get; set; }
     }
 }

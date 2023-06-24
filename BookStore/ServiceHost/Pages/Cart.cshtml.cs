@@ -34,7 +34,6 @@ namespace ServiceHost.Pages
                     item.CalculateTotalItemPrice();
                 CartItems = _productQuery.CheckInventoryStatus(cartItems);
             }
-
         }
 
         public IActionResult OnGetRemoveFromCart(long id)

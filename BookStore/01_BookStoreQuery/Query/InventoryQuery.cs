@@ -15,7 +15,7 @@ namespace _01_LampshadeQuery.Query
             _inventoryContext = inventoryContext;
             _shopContext = shopContext;
         }
-
+        
         public StockStatus CheckStock(IsInStock command)
         {
             var inventory = _inventoryContext.Inventory.FirstOrDefault(x => x.ProductId == command.ProductId);

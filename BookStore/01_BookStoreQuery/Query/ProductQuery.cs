@@ -38,7 +38,7 @@ namespace _01_BookStoreQuery.Query
             
             var discounts = _discountContext.CustomerDiscounts.
                 Where(x => x.StartDate < DateTime.Now && x.EndDate > DateTime.Now).
-                Select(x => new { x.DiscountRate, x.ProductId }).ToList();
+                Select(x => new { x.DiscountRate, x.ProductId , x.EndDate }).ToList();
             
             var product = _shopContext.Products.Include(x => x.Category).
                 Include(x=>x.ProductPictures).
@@ -63,24 +63,25 @@ namespace _01_BookStoreQuery.Query
             if (product == null)
                 return new ProductQueryModel();
           
-                var productInventory = inventory.FirstOrDefault(x => x.ProductId == product.Id);
-                if (productInventory != null)
+            var productInventory = inventory.FirstOrDefault(x => x.ProductId == product.Id);
+            if (productInventory != null)
+            {
+                product.IsInStock=productInventory.InStock;
+                var price = productInventory.UnitPrice;
+                product.Price = price.ToMoney();
+                product.DoublePrice = price;
+                var discount = discounts.FirstOrDefault(x => x.ProductId == product.Id);
+                if (discount != null)
                 {
-                    product.IsInStock=productInventory.InStock;
-                    var price = productInventory.UnitPrice;
-                    product.Price = price.ToMoney();
-                    product.DoublePrice = price;
-                    var discount = discounts.FirstOrDefault(x => x.ProductId == product.Id);
-                    if (discount != null)
-                    {
-                        var discountRate = discount.DiscountRate;
-                        product.DiscountRate = discountRate;
-                        product.HasDiscount = discountRate > 0;
-                        var discountAmount = Math.Round((price * discountRate) / 100);
-                        product.PriceWithDiscount = (price - discountAmount).ToMoney();
-                    }
+                    var discountRate = discount.DiscountRate;
+                    product.DiscountRate = discountRate;
+                    product.HasDiscount = discountRate > 0;
+                    var discountAmount = Math.Round((price * discountRate) / 100);
+                    product.PriceWithDiscount = (price - discountAmount).ToMoney();
+                    product.DiscountExpireDate = discount.EndDate.ToDiscountFormat();
                 }
-         
+                    
+            }
 
             product.Comments = _commentContext.Comments.
                 Where(x => x.Type == CommentType.Product).
@@ -95,11 +96,9 @@ namespace _01_BookStoreQuery.Query
                 CreationDate = x.CreationDate.ToFarsi()
                 }).OrderByDescending(x => x.Id).ToList();
 
-
             return product;
         }
 
-        
         private static List<ProductPictureQueryModel> MapProductPictures(List<ProductPicture> pictures)
         {
             return pictures.Select(x => new ProductPictureQueryModel

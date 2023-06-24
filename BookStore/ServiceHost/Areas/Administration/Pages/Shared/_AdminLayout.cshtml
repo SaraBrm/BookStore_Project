@@ -56,7 +56,7 @@
                             </button>
                             <span class="clearfix"></span>
                         </div>
-  
+
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@
                     @RenderBody()
 
                 </div>
-            </div> 
+            </div>
 
             <footer class="footer text-right">
                 <div class="footer-area">
@@ -103,7 +103,7 @@
                     </div>
                 </div>
             </footer>
-        </div>    
+        </div>
     </div>
 
     <div id="MainModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
@@ -163,10 +163,9 @@
     <script src="~/AdminTheme/assets/js/persian-date.min.js"></script>
     <script src="~/AdminTheme/assets/js/persian-datepicker.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.min.js" integrity="sha512-mlz/Fs1VtBou2TrUkGzX4VoGvybkD9nkeXWJm3rle0DPHssYYx4j+8kIS15T78ttGfmOjH0lLaBXGcShaVkdkg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        @RenderSection("Scripts",false)
+    @RenderSection("Scripts",false)
 
-        <script>
+    <script>
         $('.persianDateInput').persianDatepicker({
             format: 'YYYY/MM/DD',
             autoClose: true,
@@ -175,16 +174,7 @@
     </script>
 
 
-        <script src="https://cdn.tiny.cloud/1/03bywyfc22f080o11wndvso5su892zkphj49li728tkw9f3f/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-
-
-        @*<script>
-        $('.persianDateInput').persianDatepicker({
-        format: 'YYYY/MM/DD',
-        autoClose:true
-        });
-    </script>*@
-
+    <script src="https://cdn.tiny.cloud/1/03bywyfc22f080o11wndvso5su892zkphj49li728tkw9f3f/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
 </body>
 </html>

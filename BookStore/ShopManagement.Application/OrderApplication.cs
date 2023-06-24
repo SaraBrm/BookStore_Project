@@ -40,6 +40,7 @@ namespace ShopManagement.Application
         }
         public string PaymentSucceeded(long orderId, long refId)
         {
+
             var order = _orderRepository.GetT(orderId);
             order.PaymentSucceeded(refId);
             var symbol = _configuration["Symbol:name"];
